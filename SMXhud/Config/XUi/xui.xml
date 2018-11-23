@@ -1,0 +1,104 @@
+<configs>
+
+<!--	// MODLET:			SMXhud
+
+		// EAC:				Friendly
+
+		// VERSION:			A17b199eR1
+
+		// BUILD:			A17b199
+
+		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
+							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
+							and you can verify this by looking at the date of the standard files when an update have occured.
+
+		// MOD DESCRIPTION:	The purpose of this modlet is to enhance the ingame HUD. Please note that this modlet will change the HUD only. If you want a
+							total UI conversion you need to add the SMXui modlet also(currently not available). You can also opt to supplement this modlet
+							with the new SMXmainMenu modlet(available now).
+
+		// DEPENDENCIES:	None.
+
+		// TERMS OF USE:	You are allowed to use this modlet for your own personal use and/or distribute said modlet bundled with something of your own
+							creation as long as the files remain unaltered and you do not claim credit for its creation.
+							You are welcome to, but not required to, inform the author of this modlet should you wish to bundle and re-distribute said
+							modlet as described above.
+
+		// CREDITS:			Sirillion (author)
+-->
+
+
+<!--	// SMX // HUD Logo -->
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
+			<window name="SMXhudLogo" anchor="RightTop" />
+		</append>
+
+
+<!--	// SMX // In-game Menu -->
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='ingameMenu']">
+			<window name="SMXingameMenu" />
+		</append>
+
+		<remove xpath="/xui/ruleset[@name='default']/window_group[@name='ingameMenu']/window[@name='ingameMenu']" />
+
+
+<!--	// SMX // Compass -->
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
+			<window name="SMXwindowCompass" />
+		</append>
+
+		<remove xpath="/xui/ruleset[@name='default']/window_group[@name='compass']/window[@name='windowCompass']" />
+
+
+<!--	// SMX // Unit Frame -->
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
+			<window name="SMXunitFrame" anchor="LeftBottom" />
+		</append>
+
+		<remove xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']/window[@name='HUDLeftStatBars']" />
+
+
+<!--	// SMX // Right HUD Frame -->
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
+			<window name="SMXhudRight" anchor="RightBottom" />
+		</append>
+
+		<remove xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']/window[@name='HUDRightStatBars']" />
+
+
+<!--	// SMX // Toolbelt -->
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
+			<window name="SMXwindowToolbelt" anchor="CenterBottom" />
+		</append>
+
+		<remove xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']/window[@name='windowToolbelt']" />
+
+
+<!--	// SMX // Level Display & XP Bar -->
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
+			<window name="SMXlevelXP" anchor="LeftTop" />
+		</append>
+
+
+<!--	// SMX // Day & Time Display -->
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
+			<window name="SMXdayTimeFrame" />
+		</append>
+
+
+<!--	// SMX // Quest Tracker -->
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
+			<window name="SMXquestTracker" anchor="RightTop" />
+		</append>
+
+		<remove xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']/window[@name='windowQuestTracker']" />
+
+</configs>

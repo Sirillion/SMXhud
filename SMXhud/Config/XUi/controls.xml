@@ -1,0 +1,80 @@
+<configs>
+
+	<append xpath="/controls">
+
+
+<!--	// SMX // Toolbelt Interface Design -->
+
+		<SMX_item_stack_85>
+			<rect controller="ItemStack" style="SMXitemStack85, hover" collider_scale="1.1">
+
+				<texture name="SMXslotBG" depth="0" size="83,83" texture="@modfolder:Textures/toolbelt/smxslotbg.png" material="Materials/Transparent Colored" type="sliced" />
+
+				<sprite name="backgroundMain" depth="2" pos="-3,3" width="78" height="78" sprite="menu_empty3px" color="[black]" fillcenter="false" type="sliced" visible="false" />
+				<sprite name="background" depth="3" pos="-21,2" width="123" height="86" atlas="itemiconatlas" sprite="smxtbselect" type="sliced" fillcenter="false" globalopacity="true" />
+				<sprite name="highlightOverlay" depth="2" pos="0,0" width="82" height="82" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" />
+
+				<sprite name="itemIcon" depth="4" pos="40,-35" width="80" height="60" atlas="ItemIconAtlas" sprite="{itemicon}" color="{iconcolor}" foregroundlayer="true" pivot="center" />
+				<sprite name="lockTypeIcon" depth="8" pos="2,-2" width="24" height="24" sprite="" foregroundlayer="true" />
+
+		<!-- REVISIT: DURABILITY REMAKE -->
+		
+				<!--sprite name="durabilityBackground" depth="3" pos="1,-60" width="70" height="10" sprite="menu_empty3px" color="[darkGrey]" type="sliced" foregroundlayer="true" /-->
+				<!--filledsprite name="durability" depth="4" pos="1,-60" width="70" height="10" sprite="menu_empty2px" color="[transparent]" type="filled" foregroundlayer="true" /-->
+				<sprite name="durabilityBackground" depth="3" pos="5,-74" width="73" height="5" atlas="itemiconatlas" sprite="smxdurbg" type="sliced" foregroundlayer="true" />
+				<filledsprite name="durability" depth="4" pos="5, -74" width="73" height="5" sprite="menu_empty2px" color="[transparent]" type="filled" foregroundlayer="true" />
+				<!--sprite name="durabilityBackground" depth="5" pos="5,-74" width="73" height="5" atlas="itemiconatlas" sprite="smxdurbartst" type="sliced" foregroundlayer="true" /-->
+
+				<sprite name="disabledOverlay" depth="5" pos="1,-1" width="82" height="82" color="[darkGrey_half_alpha]" type="sliced" visible="false" />
+
+				<label name="stackValue" depth="7" pos="3,-55" width="73" height="28" text="{itemcount}" font_size="22" effect="outline" justify="center" />
+				<label name="timer" depth="7" pos="35,-38" width="70" height="24" font_size="24" effect="outline" color="[beige]" justify="center" pivot="center" />
+				<sprite name="cancel" depth="9" width="40" height="40" atlas="itemiconatlas" sprite="smxcancelx" type="sliced" foregroundlayer="true" visible="false" />
+
+				<label name="itemName" depth="12" pos="36,-35" width="0" height="0" text="" font_size="26" effect="outline" overflow="resizefreely" justify="center" pivot="center" above_soft_cursor="true" />
+
+				<sprite name="assembleIcon" depth="13" pos="19,-19" size="40,40" sprite="{stacklockicon}" visible="{isassemblelocked}" foregroundlayer="true" />
+			</rect>
+		</SMX_item_stack_85>
+
+
+<!--	// SMX // In-Game Menu Buttons -->
+
+		<SMX_menu_button_1>
+			<rect name="${name}" enabled_font_color="${enabled_font_color|[labelColor]}" disabled_font_color="${disabled_font_color|[disabledLabelColor]}" controller="SimpleButton">
+				<sprite name="border" style="SMXButton1" />
+				<button name="clickable" style="SMXButtonHover1" pos="23,-16" />
+				<label depth="2" name="btnLabel" pos="2,${Round(-height/2,0)|-42}" justify="center" text="${caption|}" text_key="${caption_key|}" effect="outline" pivot="${pivot|left}" font_size="${font_size|40}" />
+			</rect>
+		</SMX_menu_button_1>
+
+		<SMX_menu_button_2>
+			<rect name="${name}" enabled_font_color="${enabled_font_color|[labelColor]}" disabled_font_color="${disabled_font_color|[disabledLabelColor]}" controller="SimpleButton">
+				<sprite name="border" style="SMXButton2" />
+				<button name="clickable" style="SMXButtonHover1" pos="23,-16" />
+				<label depth="2" name="btnLabel" pos="2,${Round(-height/2,0)|-42}" justify="center" text="${caption|}" text_key="${caption_key|}" effect="outline" pivot="${pivot|left}" font_size="${font_size|40}" />
+			</rect>
+		</SMX_menu_button_2>
+
+		<SMX_menu_button_3>
+			<rect name="${name}" enabled_font_color="${enabled_font_color|[labelColor]}" disabled_font_color="${disabled_font_color|[disabledLabelColor]}" controller="SimpleButton">
+				<sprite name="border" style="SMXButton3" pos="20,0" />
+				<button name="clickable" style="SMXButtonHover2" pos="43,-16" />
+				<label depth="2" name="btnLabel" pos="2,${Round(-height/2,0)|-42}" justify="center" text="${caption|}" text_key="${caption_key|}" effect="outline" pivot="${pivot|left}" font_size="${font_size|40}" />
+			</rect>
+		</SMX_menu_button_3>
+
+
+<!--	// SMX // Quest Tracker -->
+
+		<SMX_quest_objective_tracker_entry>
+			<rect width="280" height="26" controller="QuestTrackerObjectiveEntry" visible="{hasobjective}">
+				<sprite name="iconTrack" depth="2" pos="280,0" style="SMXicon15px" color="{objectivecompletecolor}" sprite="{objectivecompletesprite}" visible="{objectiveshowicon}" />
+
+				<label name="SMXqtObjective" depth="1" pos="0,4" width="{objectivetextwidth}" text="{objectiveoptional}{objectivedescription} " font_size="22" effect="outline" upper_case="true" justify="left" visible="{hasobjective}" />
+				<label name="SMXqtState" depth="1" pos="0,4" width="{objectivetextwidth}" text=" [{objectivecompletehexcolor}]{objectivestate}[-]" font_size="22" effect="outline" upper_case="true" justify="right" visible="{hasobjective}" />
+			</rect>
+		</SMX_quest_objective_tracker_entry>
+
+	</append>
+</configs>
