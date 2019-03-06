@@ -186,7 +186,7 @@
 				<rect width="400" height="43">
 					<sprite name="SMXdayTimeBG" depth="1" pos="-20,12" size="214,148" atlas="itemiconatlas" sprite="smxdaytimebg" globalopacitymod="1.0" />
 
-					<label name="SMXdayDisplay" depth="2" pos="25,-50" width="60" height="43" text="Day {day|always}" font_size="22" color="[white]" effect="outline" upper_case="true" justify="left" />
+					<label name="SMXdayDisplay" depth="2" pos="25,-50" width="60" height="43" text="{daytitle}: [{daycolor|always}]{day|always}" font_size="22" effect="outline" upper_case="true" justify="left" />
 				</rect>
 				<rect>
 					<label name="SMXtimeDisplay" depth="2" pos="25,-50" width="60" height="43" text=" {time|always}" font_size="22" color="[white]" effect="outline" upper_case="true" justify="left" />
