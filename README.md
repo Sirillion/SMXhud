@@ -1,4 +1,6 @@
-# SMXhud A172b27r1
+# SMXhud - A17
+
+**Description:**
 
 SMXhud is SMX as you know it from A16 remade into a modlet with some new tweaks and additions. Its purpose is to convert the game HUD into a more horror like and gritty art style to complement the setting that is 7 Days to Die.
 
