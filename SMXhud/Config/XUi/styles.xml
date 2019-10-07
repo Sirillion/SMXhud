@@ -1,215 +1,47 @@
 <configs>
 
-<!--	// SMX // WINDOW // HUD Logo -->
+<!--	// SMX // Global Colors -->
+
+		<append xpath="/styles/global">
+			<style_entry name="hudElementsBG"			value="0,0,0" />
+			<style_entry name="hudElementsRed"			value="175,30,25" />
+			<style_entry name="hudElementsIcon"			value="255,255,255" />
+			<style_entry name="hudElementsLabel"		value="255,255,255" />
+
+			<style_entry name="compassindicator"		value="114,114,114" />
+			<style_entry name="tbslotnumber"			value="96,96,96" />
+			<style_entry name="throwbar"				value="0,180,0,120" />
+		</append>
+
+
+<!--	// SMX // Defined Icon Colors -->
 
 		<append xpath="/styles">
-			<style name="SMX.hudLogo.window" type="window">
-				<style_entry name="pos" value="0,2" />
-				<style_entry name="size" value="250,40" />
-			</style>
-
-			<style name="SMX.hudLogo.texture" type="texture">
-				<style_entry name="depth" value="1" />
-				<style_entry name="pos" value="-350,0" />
-				<style_entry name="size" value="250,40" />
-				<style_entry name="texture" value="@modfolder:Textures/menu/smx_hud_logo.png" />
+			<style name="smx_hud_icon_colors">
+				<style_entry name="color" 				value="[white]" />				
+				<style_entry name="hovercolor" 			value="[mediumGrey]" />				
+				<style_entry name="selectedcolor" 		value="[lightGrey]" />				
 			</style>
 		</append>
 
 
-<!--	// SMX // WINDOW // Compass Window -->
+<!--	// SMX // Toolbelt Interface Design -->
 
 		<append xpath="/styles">
-			<style name="SMX.compass.window" type="window">
-				<style_entry name="pos" value="-190,-9" />
-				<style_entry name="size" value="380,43" />
-			</style>
-
-			<style name="SMX.compass.window.background" type="texture">
-				<style_entry name="depth" value="0" />
-				<style_entry name="pos" value="-200,12" />
-				<style_entry name="size" value="689,168" />
-				<style_entry name="texture" value="@modfolder:Textures/compass/smx_compass_bg.png" />
-			</style>
-
-			<style name="SMX.compass.window.bar" type="texture">
-				<style_entry name="depth" value="8" />
-				<style_entry name="pos" value="40,-7" />
-				<style_entry name="size" value="300,23" />
-				<!--style_entry name="texture" value="@modfolder:Textures/compass/smx_compass_bar.png" /-->
-				<style_entry name="texture" value="Textures/UI/ui_game_compass" />
-				<style_entry name="color" value="[iconColor]" />
-				<style_entry name="tooltip" value="CHARACTER" />
-			</style>
-
-			<style name="SMX.compass.window.bar.indicator" type="texture">
-				<style_entry name="depth" value="9" />
-				<style_entry name="pos" value="170,10" />
-				<style_entry name="size" value="42,58" />
-				<style_entry name="texture" value="@modfolder:Textures/compass/smx_compass_ind.png" />
-			</style>
-		</append>
-
-
-<!--	// SMX // WINDOW // Unit Frame Window -->
-
-		<append xpath="/styles">
-			<style name="SMX.unitFrame.window" type="window">
-				<style_entry name="pos" value="9,15" />
-				<style_entry name="size" value="240,175" />
-			</style>
-		</append>
-
-
-<!--	// SMX // WINDOW // Item Frame Window -->
-
-		<append xpath="/styles">
-			<style name="SMX.itemFrame.background" type="texture">
-				<style_entry name="depth" value="0" />
-				<style_entry name="pos" value="-230,-48" />
-				<style_entry name="size" value="165,355" />
-				<style_entry name="texture" value="@modfolder:Textures/itemframe/smx_itemframe_bg.png" />
-				<style_entry name="justify" value="right" />
-				<style_entry name="rotation" value="90" />
-			</style>
-		</append>
-
-
-<!--	// SMX // WINDOW // Toolbelt Window -->
-
-		<append xpath="/styles">
-			<style name="SMX.toolbelt.window" type="window">
-				<style_entry name="depth" value="0" />
-				<style_entry name="pos" value="0,85" />
-				<style_entry name="size" value="760,226" />
-			</style>
-
-			<style name="SMX.toolbelt.background" type="texture">
-				<style_entry name="depth" value="0" />
-				<style_entry name="pos" value="-380,30" />
-				<style_entry name="size" value="760,120" />
-				<style_entry name="texture" value="@modfolder:Textures/toolbelt/smx_toolbelt_bg.png" />
-			</style>
-		</append>
-
-
-<!--	// SMX // WINDOW // Level Display & XP Bar Window -->
-
-		<append xpath="/styles">
-			<style name="SMX.levelXP.window" type="window">
-				<style_entry name="pos" value="-30,-15" />
-				<style_entry name="size" value="140,96" />
-			</style>
-
-			<style name="SMX.levelxp.background" type="texture">
-				<style_entry name="depth" value="0" />
-				<style_entry name="pos" value="30,10" />
-				<style_entry name="size" value="105,102" />
-				<style_entry name="texture" value="@modfolder:Textures/levelxp/smx_levelxp_bg.png" />
-			</style>
-
-			<style name="SMX.levelxp.foreground" type="texture">
-				<style_entry name="depth" value="1" />
-				<style_entry name="pos" value="50,-10" />
-				<style_entry name="size" value="60,52" />
-				<style_entry name="texture" value="@modfolder:Textures/levelxp/smx_levelxp_fg.png" />
-			</style>
-
-			<style name="SMX.levelxp.bar" type="sprite">
-				<style_entry name="depth" value="2" />
-				<style_entry name="pos" value="45,0" />
-				<style_entry name="size" value="75,75" />
-				<style_entry name="atlas" value="itemiconatlas" />
-				<style_entry name="sprite" value="smx_levelxp_bar" />
-				<style_entry name="color" value="255,255,255" />
-			</style>
-
-			<style name="SMX.levelxp.level" type="label">
-				<style_entry name="depth" value="3" />
-				<style_entry name="pos" value="45,-25" />
-				<style_entry name="size" value="75,75" />
-				<style_entry name="text" value="{playerlevel}[-]" />
-				<style_entry name="font_face" value="AgencyB" />
-				<style_entry name="font_size" value="40" />
-				<style_entry name="color" value="[white]" />
-				<style_entry name="justify" value="center" />
-				<style_entry name="crispness" value="Never" />
-				<style_entry name="effect" value="outline" />
-				<style_entry name="upper_case" value="true" />
-			</style>
-		</append>
-
-
-<!--	// SMX // WINDOW // Day & Time Display Window -->
-
-		<append xpath="/styles">
-			<style name="SMX.daytime.window" type="window">
-				<style_entry name="depth" value="-1" />
-				<style_entry name="pos" value="-12,50" />
-				<style_entry name="size" value="100,100" />
-			</style>
-
-			<style name="SMX.daytime.background" type="texture">
-				<style_entry name="depth" value="-1" />
-				<style_entry name="pos" value="60,-50" />
-				<style_entry name="size" value="200,115" />
-				<style_entry name="texture" value="@modfolder:Textures/daytime/smx_daytime_bg.png" />
-			</style>
-
-			<style name="SMX.time.background" type="texture">
-				<style_entry name="depth" value="-1" />
-				<style_entry name="pos" value="7,-125" />
-				<style_entry name="size" value="110,80" />
-				<style_entry name="texture" value="@modfolder:Textures/daytime/smx_time_bg.png" />
-			</style>
-		</append>
-
-
-<!--	// SMX // WINDOW // Temperature & Elevation Display Window -->
-
-		<append xpath="/styles">
-			<style name="SMX.weathersurvival.window" type="window">
-				<style_entry name="pos" value="80,-90" />
-				<style_entry name="size" value="120,60" />
-			</style>
-
-			<style name="SMX.weathersurvival.background" type="sprite">
-				<style_entry name="size" value="60,60" />
-				<style_entry name="atlas" value="itemiconatlas" />
-				<style_entry name="sprite" value="smx_icon_bg" />
-			</style>
-		</append>
-
-
-<!--	// SMX // SPRITE // 15px Icon Template -->
-
-		<append xpath="/styles">
-			<style name="SMXicon15px" type="sprite">
-				<style_entry name="color" value="[iconColor]" />
-				<style_entry name="width" value="15" />
-				<style_entry name="height" value="15" />
-				<style_entry name="foregroundlayer" value="true" />
-			</style>
-		</append>
-
-
-<!--	// SMX // "GLOBAL" // Toolbelt Interface Design -->
-
-		<append xpath="/styles">
-			<style name="SMX.itemStack.85">
-				<style_entry name="select_color" value="[beige]" />
-				<style_entry name="press_color" value="[limeGreen]" />
+			<style name="smx_itemStack_85">
+				<style_entry name="select_color"		value="[lightGrey]" />
+				<style_entry name="press_color" 		value="[white]" />
 				<style_entry name="final_pressed_color" value="[lightGrey]" />
-				<style_entry name="background_color" value="[mediumGrey]" />
-				<style_entry name="highlight_color" value="[hoverColor]" />
-				<style_entry name="holding_color" value="[white]" />
-				<style_entry name="width" value="82" />
-				<style_entry name="height" value="82" />
-				<style_entry name="hover_icon_grow" value="1.5" />
-				<style_entry name="on_press" value="true" />
-				<style_entry name="sound_volume" value="0.75" />
-				<style_entry name="pickup_sound" value="[pickup_click]" />
-				<style_entry name="place_sound" value="[place_click]" />
+				<style_entry name="background_color" 	value="[darkGrey]" />
+				<style_entry name="highlight_color" 	value="[white]" />
+				<style_entry name="holding_color" 		value="[white]" />
+				<style_entry name="width" 				value="82" />
+				<style_entry name="height" 				value="82" />
+				<style_entry name="hover_icon_grow" 	value="1.5" />
+				<style_entry name="on_press" 			value="true" />
+				<style_entry name="sound_volume" 		value="0.75" />
+				<style_entry name="pickup_sound" 		value="[pickup_click]" />
+				<style_entry name="place_sound" 		value="[place_click]" />
 			</style>
 		</append>
 

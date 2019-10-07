@@ -4,9 +4,9 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			A172b27r1
+		// VERSION:			A18b139r1
 
-		// BUILD:			A172b27
+		// BUILD:			A18b139
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -14,7 +14,7 @@
 
 		// MOD DESCRIPTION:	The purpose of this modlet is to enhance the ingame HUD. Please note that this modlet will change the HUD only. If you want a
 							total UI conversion you need to add the SMXui modlet also(currently in development). You can also opt to supplement this modlet
-							with the new SMXmenu modlet(available now) for the full experience.
+							with the new SMXmenu modlet(update pending) for the full experience.
 
 		// DEPENDENCIES:	None.
 
@@ -41,7 +41,6 @@
 
 		<append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
 			<window name="SMXhudLogo" anchor="RightTop" />
-			<!--window name="SMXalignmentTool" anchor="CenterCenter" /-->
 		</append>
 
 
@@ -126,7 +125,7 @@
 <!--	// SMX // Temperature & Elevation Display -->
 
 		<append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
-			<window name="SMXweatherSurvival" anchor="LeftTop" />
+			<window name="SMXenvironment" anchor="LeftTop" />
 		</append>
 
 </configs>
