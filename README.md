@@ -1,7 +1,7 @@
-# SMXhud - A17
+# SMXhud - A18
 
 <p align="center">
-  <img src="https://i.imgur.com/yQYm5gK.jpg" width="700" title="SMXhud - A17.2">
+  <img src="https://i.imgur.com/yQYm5gK.jpg" width="700" title="SMXhud - A18">
 </p>
 
 **Description:**
