@@ -174,6 +174,30 @@
 		</append>
 
 
+<!--	// SMX // Radial Menu -->
+
+		<remove xpath="/windows/window[@name='windowRadial']" />
+
+		<append xpath="/windows">
+			<window name="windowRadial" anchor="CenterCenter">
+				<rect name="radialPanel" repeat_content="true" count="20" pivot="center">
+					<radial_entry />
+					<radial_entry />
+					<radial_entry />
+					<radial_entry />
+					<radial_entry />
+					<radial_entry />
+					<radial_entry />
+					<radial_entry />
+					<radial_entry />
+					<radial_entry />
+					<radial_entry />
+					<label name="selection" depth="10" width="150" height="50" text=" " font_size="26" font_face="AgencyB" crispness="Never" effect="outline" pivot="center" justify="center" />
+				</rect>
+			</window>
+		</append>
+
+
 <!--	// SMX // Chat Output -->
 
 		<remove xpath="/windows/window[@name='chatoutput']" />

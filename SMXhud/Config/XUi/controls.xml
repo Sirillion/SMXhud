@@ -28,6 +28,22 @@
 		</append>
 
 
+<!--	// SMX // Radial Menu Design -->
+
+		<remove xpath="/controls/radial_entry" />
+
+		<append xpath="/controls">
+			<radial_entry>
+				<rect depth="15" height="75" width="75" style="hover" highlight_color="[mediumGrey]" pivot="center" controller="RadialEntry">
+					<sprite name="border" depth="1" size="0,0" sprite="ui_game_filled_circle" color="0,0,0,128" pivot="center" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="background" depth="2" size="100,100" atlas="hudElements" sprite="smx_icon_background" color="[hudElementsBG]" effect="outline" pivot="center" globalopacitymod="0.9" />
+					<sprite name="icon" depth="3" size="52,56" atlas="UIAtlas" color="255,255,255,255" pivot="center" foregroundlayer="true" />
+					<label name="text" depth="4" width="48" height="48" pos="-15,15" font_size="20" font_face="AgencyB" crispness="Never" effect="outline" color="[white]" justify="center" pivot="center" visible="false" />
+				</rect>
+			</radial_entry>
+		</append>
+
+
 <!--	// SMX // Toolbelt Interface Design -->
 
 		<append xpath="/controls">
