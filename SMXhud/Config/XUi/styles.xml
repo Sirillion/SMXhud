@@ -25,10 +25,10 @@
 		</append>
 
 
-<!--	// SMX // Toolbelt Interface Design -->
+<!--	// SMX // Toolbelt Layout -->
 
 		<append xpath="/styles">
-			<style name="smx_itemStack_85">
+			<style name="smx_toolbelt_itemstack_65">
 				<style_entry name="select_color"		value="[lightGrey]" />
 				<style_entry name="press_color" 		value="[white]" />
 				<style_entry name="final_pressed_color" value="[lightGrey]" />

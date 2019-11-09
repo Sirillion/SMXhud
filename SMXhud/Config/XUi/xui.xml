@@ -4,17 +4,17 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			A18b139r1
+		// VERSION:			18.r2
 
-		// BUILD:			A18b139
+		// BUILD:			A18b155
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
 							and you can verify this by looking at the date of the standard files when an update have occured.
 
 		// MOD DESCRIPTION:	The purpose of this modlet is to enhance the ingame HUD. Please note that this modlet will change the HUD only. If you want a
-							total UI conversion you need to add the SMXui modlet also(currently in development). You can also opt to supplement this modlet
-							with the new SMXmenu modlet(update pending) for the full experience.
+							total UI conversion you need to add the SMXui modlet also. You can also opt to supplement this modlet with the SMXmenu
+							modlet for the full experience.
 
 		// DEPENDENCIES:	None.
 
@@ -118,6 +118,10 @@
 		</append>
 
 		<append xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_cementMixer']">
+			<window name="SMXtimeFrame" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='assemble']">
 			<window name="SMXtimeFrame" anchor="LeftTop" />
 		</append>
 

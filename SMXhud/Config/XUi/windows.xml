@@ -89,7 +89,7 @@
 
 		<append xpath="/windows">
 			<window name="windowGroupBars" depth="-20" controller="PartyWindow">
-				<grid name="hud" pos="9,-165" rows="5" cols="1" width="168" cell_width="168" cell_height="40" side="left" repeat_content="true" controller="PartyEntryList">
+				<grid name="hud" pos="9,-175" rows="5" cols="1" width="168" cell_width="168" cell_height="40" side="left" repeat_content="true" controller="PartyEntryList">
 					<!--smx_party_entry /-->
 					<party_entry />
 				</grid>
@@ -238,7 +238,7 @@
 					<sprite name="SMXtoolbeltBG" depth="0" pos="-380,30" size="760,120" atlas="hudElements" sprite="smx_toolbelt_background" color="[hudElementsBG]" globalopacitymod="1.2" />
 
 					<grid name="SMXtoolbelt" depth="1" pos="-338,20" rows="1" cols="8" cell_width="85" cell_height="85" controller="Toolbelt" repeat_content="true">
-						<smx_item_stack_85 name="0" />
+						<smx_toolbelt_itemstack_65 name="0" />
 					</grid>
 
 					<grid name="SMXtoolbeltNumbers" depth="1" pos="-305,-65" rows="1" cols="8" cell_width="85" cell_height="85" repeat_content="false">
@@ -276,7 +276,7 @@
 		<append xpath="/windows">
 			<window name="SMXdayTimeFrame" depth="-1" pos="-12,50" size="100,100" controller="CompassWindow">
 
-				<texture name="compassTexture" style="compass.window.compass.texture" rect_size="0.25,1" rect_offset=".8,0" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+				<texture name="compassTexture" pos="99999,99999" style="compass.window.compass.texture" rect_size="0.25,1" rect_offset=".8,0" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
 				<sprite name="SMXdayTimeBG" depth="-1" pos="60,-50" size="200,115" atlas="hudElements" sprite="smx_lootitem_background" color="[hudElementsBG]" globalopacitymod="0.8" />
 

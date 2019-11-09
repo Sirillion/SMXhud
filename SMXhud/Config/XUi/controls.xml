@@ -47,16 +47,15 @@
 <!--	// SMX // Toolbelt Interface Design -->
 
 		<append xpath="/controls">
-			<smx_item_stack_85>
-				<rect controller="ItemStack" style="smx_itemStack_85, hover" collider_scale="1.1">
-
-					<sprite name="backgroundMain" depth="2" pos="-3,3" size="78,78" sprite="menu_empty3px" color="[black]" fillcenter="false" type="sliced" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+			<smx_toolbelt_itemstack_65>
+				<rect controller="ItemStack" style="hover, smx_toolbelt_itemstack_65" collider_scale="1.1">
+					<sprite name="backgroundMain" depth="2" pos="-2,-42" size="74,54" atlas="hudElements" sprite="smx_uipanel_slot_background" color="[hudElementsBG]" type="sliced" globalopacitymod="0.8" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 					<sprite name="background" depth="3" pos="0,0" size="83,83" atlas="hudElements" sprite="smx_slot_select" type="sliced" fillcenter="false" globalopacity="true" />
 					<sprite name="highlightOverlay" depth="2" pos="0,0" size="82,82" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
 					<sprite name="itemIcon" depth="4" pos="40,-35" size="74,74" atlas="ItemIconAtlas" sprite="{itemicon}" color="{iconcolor}" foregroundlayer="true" pivot="center" />
-					<sprite name="lockTypeIcon" depth="8" pos="2,-2" size="24,24" sprite="" foregroundlayer="true" />
-					<sprite name="itemtypeicon" depth="8" pos="4,-4" size="24,24" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
+					<sprite name="lockTypeIcon" depth="8" pos="4,-4" size="20,20" sprite="" foregroundlayer="true" />
+					<sprite name="itemtypeicon" depth="8" pos="4,-4" size="20,20" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
 
 					<sprite name="durabilityBackground" depth="3" pos="5,-74" size="73,7" atlas="hudElements" sprite="smx_iteminfo_durability" color="[hudElementsBG]" type="sliced" foregroundlayer="true" />
 					<sprite name="durability" depth="4" pos="5, -74" size="73,7" atlas="hudElements" sprite="smx_iteminfo_durability" color="[transparent]" type="filled" foregroundlayer="true" />
@@ -71,7 +70,7 @@
 
 					<sprite name="assembleIcon" depth="13" pos="19,-19" size="40,40" sprite="{stacklockicon}" visible="{isassemblelocked}" foregroundlayer="true" />
 				</rect>
-			</smx_item_stack_85>
+			</smx_toolbelt_itemstack_65>
 		</append>
 
 
