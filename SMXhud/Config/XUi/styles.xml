@@ -3,14 +3,28 @@
 <!--	// SMX // Global Colors -->
 
 		<append xpath="/styles/global">
-			<style_entry name="hudElementsBG"			value="0,0,0" />
-			<style_entry name="hudElementsRed"			value="175,30,25" />
-			<style_entry name="hudElementsIcon"			value="255,255,255" />
-			<style_entry name="hudElementsLabel"		value="255,255,255" />
+			<style_entry name="hudElementsBG"						value="0,0,0" />
+			<style_entry name="hudElementsLine"						value="255,255,255" />
+			<style_entry name="hudElementsACNTClr1"					value="175,30,25" />
 
-			<style_entry name="compassindicator"		value="114,114,114" />
-			<style_entry name="tbslotnumber"			value="96,96,96" />
-			<style_entry name="throwbar"				value="0,180,0,120" />
+			<style_entry name="hudElementsIcon"						value="255,255,255" />
+			<style_entry name="hudElementsLBLPri"					value="255,255,255" />
+			<style_entry name="hudElementsLBLSec"					value="128,128,128" />
+
+			<style_entry name="hudElementsCPSInd"					value="114,114,114" />
+
+			<style_entry name="hudElementsTBSlot"					value="96,96,96" />
+			<style_entry name="hudElementsTHRWBar"					value="0,180,0,120" />
+
+			<style_entry name="hudElementsHealth"					value="175,30,25" />
+			<style_entry name="hudElementsStamina"					value="17,97,146" />
+			<style_entry name="hudElementsFuel"						value="152,174,0" />
+
+			<!--style_entry name="hudElementsStamina"				value="64,129,198" /-->
+
+			<style_entry name="hudElementsStealth"					value="255,174,28" />
+			<style_entry name="hudElementsFood"						value="23,81,23" />
+			<style_entry name="hudElementsWater"					value="16,77,96" />
 		</append>
 
 
@@ -18,9 +32,9 @@
 
 		<append xpath="/styles">
 			<style name="smx_hud_icon_colors">
-				<style_entry name="color" 				value="[white]" />				
-				<style_entry name="hovercolor" 			value="[mediumGrey]" />				
-				<style_entry name="selectedcolor" 		value="[lightGrey]" />				
+				<style_entry name="color" 							value="[white]" />				
+				<style_entry name="hovercolor" 						value="[mediumGrey]" />				
+				<style_entry name="selectedcolor" 					value="[lightGrey]" />				
 			</style>
 		</append>
 
@@ -28,20 +42,20 @@
 <!--	// SMX // Toolbelt Layout -->
 
 		<append xpath="/styles">
-			<style name="smx_toolbelt_itemstack_65">
-				<style_entry name="select_color"		value="[lightGrey]" />
-				<style_entry name="press_color" 		value="[white]" />
-				<style_entry name="final_pressed_color" value="[lightGrey]" />
-				<style_entry name="background_color" 	value="[darkGrey]" />
-				<style_entry name="highlight_color" 	value="[white]" />
-				<style_entry name="holding_color" 		value="[white]" />
-				<style_entry name="width" 				value="82" />
-				<style_entry name="height" 				value="82" />
-				<style_entry name="hover_icon_grow" 	value="1.5" />
-				<style_entry name="on_press" 			value="true" />
-				<style_entry name="sound_volume" 		value="0.75" />
-				<style_entry name="pickup_sound" 		value="[pickup_click]" />
-				<style_entry name="place_sound" 		value="[place_click]" />
+			<style name="smx_toolbelt_itemstack_85">
+				<style_entry name="select_color"					value="[lightGrey]" />
+				<style_entry name="press_color" 					value="[white]" />
+				<style_entry name="final_pressed_color" 			value="[lightGrey]" />
+				<style_entry name="background_color" 				value="[darkGrey]" />
+				<style_entry name="highlight_color" 				value="[white]" />
+				<style_entry name="holding_color" 					value="[white]" />
+				<style_entry name="width" 							value="82" />
+				<style_entry name="height" 							value="82" />
+				<style_entry name="hover_icon_grow" 				value="1.5" />
+				<style_entry name="on_press" 						value="true" />
+				<style_entry name="sound_volume" 					value="0.75" />
+				<style_entry name="pickup_sound" 					value="[pickup_click]" />
+				<style_entry name="place_sound" 					value="[place_click]" />
 			</style>
 		</append>
 

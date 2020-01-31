@@ -1,44 +1,16 @@
 <configs>
 
-<!--	// SMX // Party Frame Design --> <!-- WIP - DISABLED -->
-
-		<append xpath="/controls">
-			<smx_party_entry>
-				<rect width="168" height="37" controller="PartyEntry" visible="{partyvisible}">
-
-					<sprite depth="1" name="border" color="0,0,0,128" type="sliced" />
-
-					<sprite depth="2" name="background" color="0,0,0,140" height="37" type="sliced" />
-					<filledsprite depth="3" name="BarHealthModifiedMax" color="110,110,110,128" height="37" type="filled" fill="{healthmodifiedmax}" />
-					<!-- <filledsprite depth="3" name="BarStaminaModifiedMax" color="110,110,110,128" height="37" type="filled" fill="{staminamodifiedmax}" /> -->
-
-					<filledsprite depth="5"  name="BarHealth" color="255,0,0,128" width="165" height="37" type="filled" fill="{healthfill}" />
-					<!-- <filledsprite depth="5"  name="BarStamina" color="0,54,255,128" height="37" type="filled" fill="{staminafill}" /> -->
-
-					<sprite depth="1" name="border" color="0,0,0,255" width="168" height="37" type="sliced" fillcenter="false" />
-					<filledsprite depth="8" name="BarHealthModifiedMax" color="0,0,0,255" width="167" fillcenter="false" type="filled" fill="{healthmodifiedmax}" />
-					<filledsprite depth="3" name="BarHealthModifiedMax" color="0,0,0,255" width="167" fillcenter="false" type="filled" fill="{healthmodifiedmax}" />
-
-					<label depth="6" name="TextContent" pos="6, -6" font_size="26" color="[white]" justify="left" pivot="topleft" text="{name}" height="30" width="124" />
-					<label depth="6" name="TextContent" pos="200,-6" font_size="26" color="{distancecolor}" pivot="topleft" text="{distance}" height="30" effect="outline" />
-					<sprite depth="8" name="leader" style="icon30px" pos="135,-3" sprite="{icon}" visible="{showicon}" />		
-					<sprite depth="8" name="arrowContent" style="icon22px" pos="184,-18" sprite="ui_game_symbol_map_player_arrow" visible="{showarrow}" pivot="center" color="{arrowcolor}" />		
-				</rect>
-			</smx_party_entry>
-		</append>
-
-
 <!--	// SMX // Radial Menu Design -->
 
 		<remove xpath="/controls/radial_entry" />
 
 		<append xpath="/controls">
 			<radial_entry>
-				<rect depth="15" height="75" width="75" style="hover" highlight_color="[mediumGrey]" pivot="center" controller="RadialEntry">
+				<rect depth="15" height="75" width="75" style="hover" highlight_color="[mediumGrey]" pivot="center" controller="RadialEntry" sound_play_on_hover="[default_hover]">
 					<sprite name="border" depth="1" size="0,0" sprite="ui_game_filled_circle" color="0,0,0,128" pivot="center" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
-					<sprite name="background" depth="2" size="100,100" atlas="hudElements" sprite="smx_icon_background" color="[hudElementsBG]" effect="outline" pivot="center" globalopacitymod="0.9" />
+					<sprite name="background" depth="2" size="100,100" atlas="uiAtlas" sprite="smx_hud_icon_background_radial" color="[hudElementsBG]" effect="outline" pivot="center" globalopacitymod="0.9" />
 					<sprite name="icon" depth="3" size="52,56" atlas="UIAtlas" color="255,255,255,255" pivot="center" foregroundlayer="true" />
-					<label name="text" depth="4" width="48" height="48" pos="-15,15" font_size="20" font_face="AgencyB" crispness="Never" effect="outline" color="[white]" justify="center" pivot="center" visible="false" />
+					<label name="text" depth="4" width="48" height="48" pos="-15,15" font_size="20" crispness="Never" effect="outline" effect_distance="1,1" color="[hudElementsLBLPri]" justify="center" pivot="center" visible="false" />
 				</rect>
 			</radial_entry>
 		</append>
@@ -47,30 +19,30 @@
 <!--	// SMX // Toolbelt Interface Design -->
 
 		<append xpath="/controls">
-			<smx_toolbelt_itemstack_65>
-				<rect controller="ItemStack" style="hover, smx_toolbelt_itemstack_65" collider_scale="1.1">
-					<sprite name="backgroundMain" depth="2" pos="-2,-42" size="74,54" atlas="hudElements" sprite="smx_uipanel_slot_background" color="[hudElementsBG]" type="sliced" globalopacitymod="0.8" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
-					<sprite name="background" depth="3" pos="0,0" size="83,83" atlas="hudElements" sprite="smx_slot_select" type="sliced" fillcenter="false" globalopacity="true" />
+			<smx_toolbelt_itemstack_85>
+				<rect style="hover, smx_toolbelt_itemstack_85" controller="ItemStack" collider_scale="1.1">
+					<sprite name="backgroundMain" depth="2" pos="-2,-42" size="74,54" atlas="uiAtlas" sprite="smx_hud_slot_background" color="[hudElementsBG]" type="sliced" globalopacitymod="0.8" rotation="45" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
+					<sprite name="background" depth="3" pos="0,0" size="83,83" atlas="uiAtlas" sprite="smx_hud_slot_frame" type="sliced" fillcenter="false" globalopacity="true" />
 					<sprite name="highlightOverlay" depth="2" pos="0,0" size="82,82" color="[darkGrey]" type="sliced" globalopacity="true" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
 					<sprite name="itemIcon" depth="4" pos="40,-35" size="74,74" atlas="ItemIconAtlas" sprite="{itemicon}" color="{iconcolor}" foregroundlayer="true" pivot="center" />
 					<sprite name="lockTypeIcon" depth="8" pos="4,-4" size="20,20" sprite="" foregroundlayer="true" />
 					<sprite name="itemtypeicon" depth="8" pos="4,-4" size="20,20" sprite="ui_game_symbol_{itemtypeicon}" color="{itemtypeicontint}" foregroundlayer="true" visible="{hasitemtypeicon}" />
 
-					<sprite name="durabilityBackground" depth="3" pos="5,-74" size="73,7" atlas="hudElements" sprite="smx_iteminfo_durability" color="[hudElementsBG]" type="sliced" foregroundlayer="true" />
-					<sprite name="durability" depth="4" pos="5, -74" size="73,7" atlas="hudElements" sprite="smx_iteminfo_durability" color="[transparent]" type="filled" foregroundlayer="true" />
+					<sprite name="durabilityBackground" depth="3" pos="5,-74" size="73,7" atlas="uiAtlas" sprite="smx_hud_iteminfo_durability" color="[hudElementsBG]" type="sliced" foregroundlayer="true" />
+					<sprite name="durability" depth="4" pos="5, -74" size="73,7" atlas="uiAtlas" sprite="smx_hud_iteminfo_durability" color="[transparent]" type="filled" foregroundlayer="true" />
 
 					<sprite name="disabledOverlay" depth="5" pos="1,-1" size="82,82" color="[darkGrey_half_alpha]" type="sliced" visible="false" /> <!-- MANDATORY ASSET, OR IT BLOWS UP -->
 
-					<label name="stackValue" depth="7" pos="3,-55" size="73,28" text="{itemcount}" font_size="22" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="center" />
-					<label name="timer" depth="7" pos="35,-38" size="70,24" font_size="24" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" color="[beige]" justify="center" pivot="center" />
-					<sprite name="cancel" depth="9" size="40,40" atlas="hudIcons" sprite="smx_general_cancel_icon" type="sliced" foregroundlayer="true" visible="false" />
+					<label name="stackValue" depth="7" pos="3,-58" size="73,28" text="{itemcount}" font_size="20" color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="center" />
+					<label name="timer" depth="7" pos="35,-38" size="70,24" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" color="[beige]" justify="center" pivot="center" />
+					<sprite name="cancel" depth="9" size="40,40" atlas="itemiconatlas" sprite="smx_hud_general_cancel_icon" type="sliced" foregroundlayer="true" visible="false" />
 
-					<label name="itemName" depth="12" pos="36,-35" size="0,0" text="" font_size="26" font_face="AgencyB" crispness="Never" effect="outline" overflow="resizefreely" justify="center" pivot="center" above_soft_cursor="true" />
+					<label name="itemName" depth="12" pos="36,-35" size="0,0" text="" font_size="22" color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" overflow="resizefreely" justify="center" pivot="center" above_soft_cursor="true" />
 
 					<sprite name="assembleIcon" depth="13" pos="19,-19" size="40,40" sprite="{stacklockicon}" visible="{isassemblelocked}" foregroundlayer="true" />
 				</rect>
-			</smx_toolbelt_itemstack_65>
+			</smx_toolbelt_itemstack_85>
 		</append>
 
 
@@ -79,12 +51,12 @@
 		<append xpath="/controls">
 			<smx_quest_objective_tracker_entry>
 				<rect size="280,26" controller="QuestTrackerObjectiveEntry" visible="{hasobjective}">
-					<sprite name="iconTrack" depth="2" pos="280,6" size="22,22" color="{objectivecompletecolor}" atlas="hudIcons" sprite="{objectivecompletesprite}" visible="{objectiveshowicon}" />
+					<sprite name="iconTrack" depth="2" pos="280,6" size="22,22" color="{objectivecompletecolor}" atlas="itemiconatlas" sprite="{objectivecompletesprite}" visible="{objectiveshowicon}" />
 
-					<sprite name="SMXobjectiveBG" depth="0" pos="-15,11" size="340,36" atlas="hudElements" sprite="smx_objective_background" color="[hudElementsBG]" globalopacitymod="1.0" />
+					<sprite name="SMXobjectiveBG" depth="0" pos="-15,11" size="340,36" atlas="uiAtlas" sprite="smx_hud_objective_background" color="[hudElementsBG]" globalopacitymod="1.0" />
 
-					<label name="SMXqtObjective" depth="1" pos="0,4" width="{objectivetextwidth}" text="{objectiveoptional}{objectivedescription} " font_size="22" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="left" visible="{hasobjective}" />
-					<label name="SMXqtState" depth="1" pos="0,4" width="{objectivetextwidth}" text=" [{objectivecompletehexcolor}]{objectivestate}[-]" font_size="22" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" upper_case="true" justify="right" visible="{hasobjective}" />
+					<label name="SMXqtObjective" depth="1" pos="0,6" width="{objectivetextwidth}" text="{objectiveoptional}{objectivedescription} " font_size="20" color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="left" visible="{hasobjective}" />
+					<label name="SMXqtState" depth="1" pos="0,6" width="{objectivetextwidth}" text=" [{objectivecompletehexcolor}]{objectivestate}[-]" font_size="20" color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="right" visible="{hasobjective}" />
 				</rect>
 			</smx_quest_objective_tracker_entry>
 		</append>
@@ -95,11 +67,11 @@
 		<append xpath="/controls">
 			<smx_chat_combobox>
 				<rect name="${name}" controller="${type}" depth="${depth|3}" pos="${pos|0,0}" width="${width|200}" height="${height|30}" value_min="${value_min|@DEF}" value_max="${value_max|@DEF}" value_wrap="${value_wrap|@DEF}" value_increment="${value_increment|@DEF}" values="${values|@DEF}" reverse_list="${reverse_list|@DEF}" localization_prefix="${localization_prefix|}" format_string="${format_string|}" enabled_color="${enabled_color|[white]}" disabled_color="${disabled_color|[lightGrey]}" pivot="left" visible="${visible|true}">
-					<button name="back"        depth="${1+depth|4}" style="press, hover, smx_hud_icon_colors" pos="${height/2|15},${-height/2|-15}" size="40,40" pivot="center" atlas="hudIcons" sprite="smx_general_arrow_icon" disabledcolor="[disabledColor]" sound="[paging_click]" tooltip_key="${tooltip_key|}" />
+					<button name="back"        depth="${1+depth|4}" style="press, hover, smx_hud_icon_colors" pos="${height/2|15},${-height/2|-15}" size="14,26" pivot="center" atlas="itemiconatlas" sprite="smx_hud_general_arrow_icon" disabledcolor="[disabledColor]" sound="[paging_click]" tooltip_key="${tooltip_key|}" />
 					<sprite name="background"  depth="${1+depth|4}" style="icon30px" pos="${2+height|32},0" width="${width-height*2-4|136}" height="${height|30}" pivot="topleft" color="[black]" type="sliced" foregroundlayer="${foregroundlayer|false}" />
 					<filledsprite name="fill"  depth="${2+depth|5}" pos="${2+height|32},0" width="${width-height*2-4|136}" height="${height|30}" pivot="topleft" color="[white]" fill="{fillvalue}" filldirection="horizontal" visible="{isnumber}" foregroundlayer="true" />
-					<label name="currentValue" depth="${3+depth|6}" pos="${2+height|32},${-height/2|-15}" width="${width-height*2-4|136}" height="${height-2|28}" pivot="left" text="{val|always}" font_size="${Defined(font_size) ? font_size : height-4|26}" justify="center" color="[white]" font_face="AgencyB" crispness="Never" effect="outline" effect_color="[black]" effect_distance="1,1" />
-					<button name="forward"     depth="${1+depth|4}" style="press, hover, smx_hud_icon_colors" pos="${width-height/2|185},${-height/2|-15}" size="40,40" pivot="center" atlas="hudIcons" sprite="smx_general_arrow_icon" disabledcolor="[disabledColor]" sound="[paging_click]" tooltip_key="${tooltip_key|}" flip="Horizontally" />
+					<label name="currentValue" depth="${3+depth|6}" pos="${2+height|32},${-height/2|-15}" width="${width-height*2-4|136}" height="${height-2|28}" pivot="left" text="{val|always}" font_size="${Defined(font_size) ? font_size : height-4|26}" justify="center" color="[hudElementsLBLPri]" crispness="Never" effect="outline" effect_color="[black]" effect_distance="1,1" />
+					<button name="forward"     depth="${1+depth|4}" style="press, hover, smx_hud_icon_colors" pos="${width-height/2|185},${-height/2|-15}" size="14,26" pivot="center" atlas="itemiconatlas" sprite="smx_hud_general_arrow_icon" disabledcolor="[disabledColor]" sound="[paging_click]" tooltip_key="${tooltip_key|}" flip="Horizontally" />
 					<panel name="directvalue" style="press, scroll, hover, drag" pos="${2+height|32},0" width="${width-height*2-4|136}" height="${height|30}" pivot="topleft" disableautobackground="true" tooltip_key="${tooltip_key|}" />
 				</rect>
 			</smx_chat_combobox>
