@@ -1,4 +1,4 @@
-# // SMXhud // The HUD replacement modlet... - A19
+# SMXhud - A19
 
 <p align="center">
   <img src="https://staticdelivery.nexusmods.com/mods/1059/images/22/22-1601026574-1112789228.jpeg" width="700" title="SMXhud - A19">
