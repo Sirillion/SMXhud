@@ -1,0 +1,158 @@
+<ZMXhudCP name="xui.xml">
+
+<!--	// MODLET:			ZMXhudCP
+
+		// EAC:				Friendly
+
+		// VERSION:			19.1.Release1
+
+		// BUILD:			A19.1
+
+		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
+							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
+							and you can verify this by looking at the date of the standard files when an update have occured.
+
+		// MOD DESCRIPTION:	The purpose of this modlet is to ensure that modlets that load AFTER SMXhud will achieve a higher chance for compatibility and get
+							patched to fit the SMXhud design. Please note that this modlet is also mandatory for SMXhud to work as I did not want to add
+							redundant code and rather have it all handled within this one modlet.
+
+		// DEPENDENCIES:	SMXhud, SMXlib.
+
+		// TERMS OF USE:	You are allowed to use this modlet as is for your own personal use and/or on a server you run and/or administrate.
+		
+							You are under no circumstance allowed to distribute any SMX and/or ZMX branded modlets without written consent from the developer.
+
+							If you wish to distribute SMX and/or ZMX branded modlets as part of your own project and consent have been given you are required
+							to do so in such a way so that all the files of the SMX and/or ZMX modlet or modlets in question remain unaltered and you cannot
+							under any circumstance claim credit for creating the modlet or modlets or any of the files provided with it/them.
+							
+							If consent is given you are required to make the changes as a new modlet that injects into the modlet in question and
+							keeping load order in mind it is to be named so that it loads AFTER the original modlet. The original modlet shall be distributed
+							as is with no change to its files what so ever.
+
+							If consent is given it is only given on a case to case basis and those that receive consent cannot pass that consent on to another
+							party or project. Nor will the consent pass on to other creators that opt to include consented work into their project.
+
+							You are not allowed to use any of the assets bundled with SMX and/or ZMX branded modlets in other projects. This restriction
+							applies to all files that the SMX and/or ZMX modlets consist of.
+
+							You are required to seek special consent from the developer should you wish to make changes to any asset files provided with the
+							SMX and/or ZMX branded modlets.
+
+							You are required to inform the developer when your project that contains any SMX and/or ZMX modlet or modlets have been	made
+							available to the public.
+
+		// CREDITS:			Sirillion (developer, author)
+-->
+
+<!--	// SMX // Compass -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
+			<window name="windowCompass" anchor="CenterTop" />
+			<window name="windowTargetBar" anchor="CenterTop" />
+			<window name="onScreenIcons" />
+			<window name="SMXhudDayTimeHUD" anchor="LeftTop" />
+			<window name="SMXhudEnvironment" anchor="LeftTop" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='compass']" name="actionset">false</setattribute>
+
+
+<!--	// SMX // Toolbelt -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
+			<window name="windowToolbelt" anchor="CenterBottom" />
+			<window name="HUDLeftStatBars" anchor="LeftBottom" />
+			<window name="HUDRightStatBars" anchor="RightBottom" />
+			<window name="windowQuestTracker" anchor="RightTop" />
+			<window name="windowGroupBars" anchor="LeftTop" />
+			<window name="SMXhudLogo" anchor="RightTop" />
+			<window name="SMXhudLevelXP" anchor="LeftTop" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='toolbelt']" name="actionset">false</setattribute>
+
+
+<!--	// SMX // Time Display UI -->
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='crafting']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='character']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_forge']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='looting']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='creative']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='questTurnIn']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='vehicle']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='vehicleStorage']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='map']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='players']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='assemble']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='skills']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='quests']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='journal']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='trader']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='powersource']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='powertrigger']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='powerrangedtrap']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='powercamera']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+		<append xpath="/xui/ruleset[@name='default']/window_group[@name='powerspotlight']">
+			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
+		</append>
+
+</ZMXhudCP>

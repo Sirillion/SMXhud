@@ -1,0 +1,19 @@
+<ZMXhudCP name="windows.xml">
+
+<!--	// SMX // Target Frame -->
+
+		<remove xpath="/windows/window[@name='windowTargetBar']" />
+
+		<append xpath="/windows">
+			<window name="windowTargetBar" controller="TargetBar" visibility="never">
+				<rect pos="0,-120" size="420,80" visible="{visible}">
+					<sprite name="border" depth="1" pos="0,0" size="400,50" sprite="smxlib_ui_game_element_target_frame_background" color="[SMXlibElementsBG]" type="sliced" globalopacity="false" pivot="center" globalopacitymod="1.8" />
+					<sprite name="background" depth="2" pos="0,0" size="400,50" sprite="smxlib_ui_game_element_target_frame_bar" color="[SMXlibElementsBG]" type="sliced" globalopacity="false" pivot="center" globalopacitymod="1.8" />
+					<sprite name="BarContent" depth="3" pos="0,0" size="400,50" sprite="smxlib_ui_game_element_target_frame_bar" color="[SMXlibElementsHealth]" type="filled" fill="{fill}" globalopacity="false" pivot="center" globalopacitymod="1.0" />
+					<label name="TextContent" depth="4" pos="0,20" height="30" text="{name}" color="[SMXlibElementsLBLPri]" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
+					<label name="TextContent" depth="4" pos="0,-4" height="30" text="{currentwithmax}" color="[SMXlibElementsLBLPri]" font_size="18" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
+				</rect>
+			</window>
+		</append>
+
+</ZMXhudCP>

@@ -1,0 +1,7 @@
+﻿<SMXhud name="nav_objects.xml">
+
+<!--	// SMX // On Screen Sprite QoL Changes -->
+
+		<set xpath="/nav_object_classes/nav_object_class[@name='party']/onscreen_settings/property[@name='offset']/@value">0,2.1,0</set>
+
+</SMXhud>
