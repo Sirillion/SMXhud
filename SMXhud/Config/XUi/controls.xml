@@ -47,6 +47,7 @@
 			<smxhud_toolbelt_itemstack_85>
 				<rect style="hover, smxhud_toolbelt_itemstack_85" controller="ItemStack" collider_scale="1.0" pivot="center">
 					<!--sprite name="backgroundMain" depth="1" pos="0,0" size="78,78" sprite="menu_empty3px" color="[SMXlibElementsBG]" type="sliced" globalopacitymod="0.5" pivot="center" /-->
+					<sprite name="backgroundMain2" depth="1" pos="0,0" size="71,71" sprite="menu_empty" color="[SMXlibElementsSlotBackground]" type="sliced" globalopacitymod="0.8" pivot="center" />
 					<sprite name="backgroundMain" depth="2" pos="0,3" size="80,70" sprite="smxlib_ui_element_slot_background" color="[SMXlibElementsBG]" type="sliced" rotation="45" globalopacitymod="0.8" pivot="center" />
 					<sprite name="background" depth="4" pos="0,0" size="83,83" sprite="smxlib_ui_element_slot_frame_narrow" type="sliced" fillcenter="false" globalopacity="true" globalopacitymod="1.8" pivot="center" />
 					<sprite name="highlightOverlay" depth="2" pos="0,0" size="82,82" color="[darkGrey]" type="sliced" globalopacity="true" pivot="center" visible="false" />
