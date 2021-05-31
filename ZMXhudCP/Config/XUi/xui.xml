@@ -4,9 +4,9 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			19.2.Release1
+		// VERSION:			r19.rc1
 
-		// BUILD:			A19.2
+		// BUILD:			A19.5
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -65,6 +65,7 @@
 			<window name="HUDLeftStatBars" anchor="LeftBottom" />
 			<window name="HUDRightStatBars" anchor="RightBottom" />
 			<window name="windowQuestTracker" anchor="RightTop" />
+			<window name="windowTwitch" anchor="RightCenter" />
 			<window name="windowGroupBars" anchor="LeftTop" />
 			<window name="SMXhudLogo" anchor="RightTop" />
 			<window name="SMXhudLevelXP" anchor="LeftTop" />

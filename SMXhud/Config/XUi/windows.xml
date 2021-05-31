@@ -4,9 +4,9 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			19.2.Release1
+		// VERSION:			r19.rc1
 
-		// BUILD:			A19.2
+		// BUILD:			A19.5
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -412,5 +412,14 @@
 				<label name="lblText" depth="2" text="{text}" font_size="24" crispness="Never" effect="outline" effect_distance="1,1" effect_color="0,0,0,150" justify="center" pivot="center" parse_actions="true" actions_default_format="( [AF1E19]###[-] )" />
 			</window>
 		</append>
+
+
+<!--	// SMX // Twitch Interaction Adjustment -->
+
+		<set xpath="/windows/window[@name='windowTwitch']/panel[@name='buttonBar']/button[@name='pauseButton']/@pos">230,-21</set>
+		<set xpath="/windows/window[@name='windowTwitch']/panel[@name='buttonBar']/button[@name='optionsButton']/@pos">270,-21</set>
+
+		<set xpath="/windows/window[@name='windowTwitch']/panel[@name='buttonBar']/label/@pos">30,-6</set>
+		<set xpath="/windows/window[@name='windowTwitch']/panel[@name='buttonBar']/label/@justify">left</set>
 
 </SMXhud>
