@@ -1,12 +1,12 @@
-<ZMXhudCP name="xui.xml">
+<ZMXhudCP name="XUi/xui.xml">
 
 <!--	// MODLET:			ZMXhudCP
 
-		// EAC:				Friendly
+		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r19.rc1
+		// VERSION:			r20.rc2
 
-		// BUILD:			A19.5
+		// BUILD:			A20.0
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -19,13 +19,13 @@
 		// DEPENDENCIES:	SMXhud, SMXlib.
 
 		// TERMS OF USE:	You are allowed to use this modlet as is for your own personal use and/or on a server you run and/or administrate.
-		
-							You are under no circumstance allowed to distribute any SMX and/or ZMX branded modlets without written consent from the developer.
+
+							You are under no circumstance allowed to distribute any SMX and/or ZMX branded modlets without written consent from the main developer.
 
 							If you wish to distribute SMX and/or ZMX branded modlets as part of your own project and consent have been given you are required
 							to do so in such a way so that all the files of the SMX and/or ZMX modlet or modlets in question remain unaltered and you cannot
 							under any circumstance claim credit for creating the modlet or modlets or any of the files provided with it/them.
-							
+
 							If consent is given you are required to make the changes as a new modlet that injects into the modlet in question and
 							keeping load order in mind it is to be named so that it loads AFTER the original modlet. The original modlet shall be distributed
 							as is with no change to its files what so ever.
@@ -34,25 +34,27 @@
 							party or project. Nor will the consent pass on to other creators that opt to include consented work into their project.
 
 							You are not allowed to use any of the assets bundled with SMX and/or ZMX branded modlets in other projects. This restriction
-							applies to all files that the SMX and/or ZMX modlets consist of.
+							applies to all files that the SMX and/or ZMX modlets consist of. EXCEPTION: The content of the Harmony folder is to be considered
+							open source and can be used freely as long as the original credit comments within the files are not removed or altered other than
+							adding to.
 
-							You are required to seek special consent from the developer should you wish to make changes to any asset files provided with the
+							You are required to seek special consent from the main developer should you wish to make changes to any asset files provided with the
 							SMX and/or ZMX branded modlets.
 
-							You are required to inform the developer when your project that contains any SMX and/or ZMX modlet or modlets have been	made
+							You are required to inform the main developer when your project that contains any SMX and/or ZMX modlet or modlets have been made
 							available to the public.
 
-		// CREDITS:			Sirillion (developer, author)
+		// CREDITS:			Sirillion (main developer/designer/harmony/frontend/backend/author), sphereii (developer/harmony/backend), TormentedEmu (developer/harmony/backend)
 -->
 
 <!--	// SMX // Compass -->
 
 		<set xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
-			<window name="windowCompass" anchor="CenterTop" />
+			<window name="windowCompass" />
 			<window name="windowTargetBar" anchor="CenterTop" />
 			<window name="onScreenIcons" />
-			<window name="SMXhudDayTimeHUD" anchor="LeftTop" />
-			<window name="SMXhudEnvironment" anchor="LeftTop" />
+			<window name="smxhudLevelXP" anchor="LeftTop" />
+			<window name="smxhudBuffFrame" anchor="CenterBottom" />
 		</set>
 
 		<setattribute xpath="/xui//window_group[@name='compass']" name="actionset">false</setattribute>
@@ -63,97 +65,93 @@
 		<set xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
 			<window name="windowToolbelt" anchor="CenterBottom" />
 			<window name="HUDLeftStatBars" anchor="LeftBottom" />
+			<!--window name="smxhudBuffFrame" anchor="CenterBottom" /-->
 			<window name="HUDRightStatBars" anchor="RightBottom" />
 			<window name="windowQuestTracker" anchor="RightTop" />
-			<window name="windowTwitch" anchor="RightCenter" />
 			<window name="windowGroupBars" anchor="LeftTop" />
-			<window name="SMXhudLogo" anchor="RightTop" />
-			<window name="SMXhudLevelXP" anchor="LeftTop" />
 		</set>
 
 		<setattribute xpath="/xui//window_group[@name='toolbelt']" name="actionset">false</setattribute>
 
 
-<!--	// SMX // Time Display UI -->
+<!--	// SMX // Death -->
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='crafting']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='death']">
+			<window name="windowDeathBar" anchor="CenterBottom" />
+		</set>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='character']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_forge']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+<!--	// SMX // Interaction Prompt -->
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='looting']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='interactionPrompt']">
+			<window name="interactionPrompt" />
+		</set>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='creative']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+		<setattribute xpath="/xui//window_group[@name='interactionPrompt']" name="actionset">false</setattribute>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='questTurnIn']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='vehicle']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+<!--	// SMX // Focused Block Health -->
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='vehicleStorage']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='focusedBlockHealth']">
+			<window name="focusedBlockHealth" />
+		</set>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='map']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+		<setattribute xpath="/xui//window_group[@name='focusedBlockHealth']" name="actionset">false</setattribute>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='players']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='assemble']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+<!--	// SMX // Timer -->
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='skills']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='timer']">
+			<window name="windowTimer" />
+		</set>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='quests']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='journal']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+<!--	// SMX // Throw -->
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='trader']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='throwpower']">
+			<window name="windowThrow" />
+		</set>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='powersource']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+		<setattribute xpath="/xui//window_group[@name='throwpower']" name="actionset">false</setattribute>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='powertrigger']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='powerrangedtrap']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+<!--	// SMX // Twitch -->
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='powercamera']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='twitch']">
+			<window name="windowTwitch" />
+		</set>
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='powerspotlight']">
-			<window name="SMXhudDayTimeUI" anchor="LeftTop" />
-		</append>
+		<setattribute xpath="/xui//window_group[@name='twitch']" name="actionset">false</setattribute>
+
+
+<!--	// SMX // Radial -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='radial']">
+			<window name="windowRadial" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='radial']" name="actionset">keyboard</setattribute>
+		<setattribute xpath="/xui//window_group[@name='radial']" name="controller">Radial</setattribute>
+
+
+<!--	// SMX // Chat Output -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='chatoutput']">
+			<window name="chatoutput" />
+		</set>
+
+		<setattribute xpath="/xui//window_group[@name='chatoutput']" name="actionset">false</setattribute>
+
+
+<!--	// SMX // Chat -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[@name='chat']">
+			<window name="chat" />
+		</set>
+
+
+<!--	// SMX // In Game Menu (compass close) -->
+
+		<setattribute xpath="/xui//window_group[@name='ingameMenu']" name="close_compass_on_open">true</setattribute>
 
 </ZMXhudCP>

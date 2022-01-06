@@ -1,12 +1,12 @@
-<SMXhud name="windows.xml">
+<SMXhud file="XUi/windows.xml">
 
 <!--	// MODLET:			SMXhud
 
-		// EAC:				Friendly
+		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r19.rc1
+		// VERSION:			r20.rc2
 
-		// BUILD:			A19.5
+		// BUILD:			A20.0
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -19,13 +19,13 @@
 		// DEPENDENCIES:	SMXlib, ZMXhudCP.
 
 		// TERMS OF USE:	You are allowed to use this modlet as is for your own personal use and/or on a server you run and/or administrate.
-		
-							You are under no circumstance allowed to distribute any SMX and/or ZMX branded modlets without written consent from the developer.
+
+							You are under no circumstance allowed to distribute any SMX and/or ZMX branded modlets without written consent from the main developer.
 
 							If you wish to distribute SMX and/or ZMX branded modlets as part of your own project and consent have been given you are required
 							to do so in such a way so that all the files of the SMX and/or ZMX modlet or modlets in question remain unaltered and you cannot
 							under any circumstance claim credit for creating the modlet or modlets or any of the files provided with it/them.
-							
+
 							If consent is given you are required to make the changes as a new modlet that injects into the modlet in question and
 							keeping load order in mind it is to be named so that it loads AFTER the original modlet. The original modlet shall be distributed
 							as is with no change to its files what so ever.
@@ -34,45 +34,31 @@
 							party or project. Nor will the consent pass on to other creators that opt to include consented work into their project.
 
 							You are not allowed to use any of the assets bundled with SMX and/or ZMX branded modlets in other projects. This restriction
-							applies to all files that the SMX and/or ZMX modlets consist of.
+							applies to all files that the SMX and/or ZMX modlets consist of. EXCEPTION: The content of the Harmony folder is to be considered
+							open source and can be used freely as long as the original credit comments within the files are not removed or altered other than
+							adding to.
 
-							You are required to seek special consent from the developer should you wish to make changes to any asset files provided with the
+							You are required to seek special consent from the main developer should you wish to make changes to any asset files provided with the
 							SMX and/or ZMX branded modlets.
 
-							You are required to inform the developer when your project that contains any SMX and/or ZMX modlet or modlets have been	made
+							You are required to inform the main developer when your project that contains any SMX and/or ZMX modlet or modlets have been made
 							available to the public.
 
-		// CREDITS:			Sirillion (developer, author)
+		// CREDITS:			Sirillion (main developer/designer/harmony/frontend/backend/author), sphereii (developer/harmony/backend), TormentedEmu (developer/harmony/backend)
 -->
-
-
-<!--	// SMX // Alignment Helper Lines -->
-
-		<!--sprite name="alignment" depth="99" pos="0,0" size="1,50000" sprite="menu_empty" color="[alignmenthelper]" pivot="center" /-->
-		<!--sprite name="alignment" depth="99" pos="0,0" size="50000,1" sprite="menu_empty" color="[alignmenthelper]" pivot="center" /-->
-		<!--sprite name="backgroundDONE" depth="0" width="100%" height="100%" sprite="menu_empty" color="178,255,102,96" pivot="center" /-->
-		<!--sprite name="backgroundWIP" depth="0" width="100%" height="100%" sprite="menu_empty" color="255,128,0,96" pivot="center" /-->
-
-
-<!--	// SMX // HUD Logo -->
-
-		<append xpath="/windows">
-			<window name="SMXhudLogo" depth="99" pos="-260,-20" size="250,40">
-				<sprite name="SMXhudLogo" depth="1" pos="0,0" size="250,40" sprite="smxlib_ui_game_element_hud_logo" pivot="center" />
-			</window>
-		</append>
-
 
 <!--	// SMX // Compass -->
 
 		<remove xpath="/windows/window[@name='windowCompass']" />
 
 		<append xpath="/windows">
-			<window name="windowCompass" pos="-190,-12" size="380,43" controller="CompassWindow">
-				<sprite name="SMXhudCompassBackground" depth="0" pos="-200,15" size="690,145" sprite="smxlib_ui_game_element_compass_background" color="[SMXlibElementsBG]" globalopacitymod="1.5" />
-				<sprite name="SMXhudCompassIndicator" depth="9" pos="170,13" size="42,58" sprite="smxlib_ui_game_element_compass_indicator" color="[SMXlibElementsCPSInd]" />
-				<texture name="compassTexture" depth="8" pos="40,-3" size="300,33" texture="@modfolder(SMXlib)://Textures/smxlib_ui_game_element_compass_line.png" color="[iconColor]" rect_size="0.25,1" rect_offset=".8,0" />
-				<!--texture name="compassTexture" depth="8" pos="40,0" size="300,33" texture="@https://i.imgur.com/lD2sVKP.png" color="[iconColor]" rect_size="0.25,1" rect_offset=".8,0" /-->
+			<window name="windowCompass" depth="5" pos="-300,-12" width="600" height="43" anchor="CenterTop" controller="CompassWindow">
+
+				<!-- SMX COMMENT: The compass backsplash was removed with the A20 design upgrade. A "new" version can be enabled by activating the commented code below should you still want to use one. -->
+				<!--sprite name="smxhud_compass_background" depth="0" pos="-250,15" width="1200" height="108" sprite="smxhud_element_background" flip="vertically" color="[smxlib_window_body_bg]" globalopacitymod="1.2" /-->
+
+				<sprite name="smxhud_compass_indicator" depth="9" pos="295,10" width="10" height="10" sprite="smxhud_compass_indicator" color="[smxhud_compass_indicator]" globalopacitymod="0.8" />
+				<texture name="smxhud_compass_texture" depth="8" pos="50,-2" width="500" height="27" texture="@modfolder(SMXlib)://Textures/smxhud_compass_texture.png" color="[iconColor]" rect_size="0.50,1" rect_offset="{#compass_rotation / 360 + 0.3785 - 0.125},0" />
 			</window>
 		</append>
 
@@ -80,67 +66,153 @@
 <!--	// SMX // LevelXP Display -->
 
 		<append xpath="/windows">
-			<window name="SMXhudLevelXP" depth="2" pos="55,-55" size="105,105">
-				<rect pos="0,0">
-					<sprite name="SMXhudLevelXPBackground" depth="1" pos="0,-3" size="105,102" sprite="smxlib_ui_game_element_levelxp_background" color="[SMXlibElementsBG]" globalopacitymod="1.5" pivot="center" />
-					<sprite name="SMXhudLevelXPForeground" depth="2" pos="-2,0" size="60,52" sprite="smxlib_ui_game_element_levelxp_foreground" color="[SMXlibElementsAccentColor1]" globalopacitymod="1.3" pivot="center" />
-					<sprite name="SMXhudLevelXPBar" depth="3" pos="0,0" size="75,75" sprite="smxlib_ui_game_element_levelxp_bar" globalopacitymod="1.5" type="filled" fill="{xp}" filldirection="radial360" color="{xpcolor}" standard_xp_color="[white]" updating_xp_color="[green]" deficit_xp_color="[red]" xp_fill_speed="2.5" pivot="center" controller="ToolbeltWindow" />
-					<label name="SMXhudLevelXPLevel" depth="4" pos="0,0" size="105,105" text="{playerlevel}[-]" font_size="36" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="center" pivot="center" controller="PlayerStatsWindow" />
+			<window name="smxhudLevelXP" depth="2" pos="183,-108" width="360" height="210">
+				<rect name="smxhud_levelxp_content" depth="2" pos="-34,35">
+
+					<!-- SMX COMMENT: This module contains the levelXP display in the top left corner. -->
+					<rect name="smxhud_levelxp_module" depth="2" pos="-85,0">
+						<sprite name="smxhud_levelxp_background" depth="1" pos="0,0" width="110" height="110" sprite="smxhud_levelxp_background" pivot="center" color="[smxhud_element_bg]" globalopacitymod="1.5" />
+						<sprite name="smxhud_levelxp_foreground" depth="2" pos="0,5" width="60" height="50" sprite="smxhud_levelxp_foreground" pivot="center" rotation="-15" color="[smxhud_accentcolor_1]" globalopacitymod="1.3" />
+						<sprite name="smxhud_levelxp_bar_background" depth="3" pos="1,3" width="80" height="80" sprite="smxhud_levelxp_bar" pivot="center" color="[smxhud_bar_background]" globalopacitymod="1.5" />
+						<sprite name="smxhud_levelxp_bar_fill" depth="4" pos="1,3" width="80" height="80" sprite="smxhud_levelxp_bar" type="filled" fill="{xp}" filldirection="radial360" pivot="center" color="{xpcolor}" standard_xp_color="[smxhud_standard_xp_bar]" updating_xp_color="[smxhud_updating_xp_bar]" deficit_xp_color="[smxhud_deficit_xp_bar]" globalopacitymod="1.5" xp_fill_speed="2.5" controller="ToolbeltXP, SMXhud" />
+						<label name="smxhud_levelxp_level" depth="5" pos="0,0" width="70" height="50" style="smxlib_label_normal" text="{playerlevel}" font_size="42" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+						<label name="smxhud_levelxp_nextlevel" depth="6" pos="-25,65" width="70" height="50" style="smxlib_label_normal" text="{playerxptonextlevel}" font_size="16" pivot="center" justify="left" upper_case="true" spacing_x="2" overflow="ShrinkContent" color="[smxhud_labelcolor_2]" controller="PlayerStatWindow, SMXhud" />
+					</rect>
+
+					<!-- SMX COMMENT: A slightly oversized version of the levelXP design, cut to preserve size consistency throughout the HUD. Works, but a little bit too big! If enabled make sure to disable the one above! -->
+					<!--rect name="smxhud_levelxp_module" depth="2" pos="-85,0">
+						<sprite name="smxhud_levelxp_background" depth="1" pos="0,0" width="127" height="125" sprite="smxhud_levelxp_background" pivot="center" color="[smxhud_element_bg]" globalopacitymod="1.5" />
+						<sprite name="smxhud_levelxp_foreground" depth="2" pos="0,5" width="80" height="70" sprite="smxhud_levelxp_foreground" pivot="center" rotation="-15" color="[smxhud_accentcolor_1]" globalopacitymod="1.3" />
+						<sprite name="smxhud_levelxp_bar_background" depth="3" pos="1,3" width="95" height="95" sprite="smxhud_levelxp_bar" pivot="center" color="[smxhud_bar_background]" globalopacitymod="1.5" />
+						<sprite name="smxhud_levelxp_bar_fill" depth="4" pos="1,3" width="95" height="95" sprite="smxhud_levelxp_bar" type="filled" fill="{xp}" filldirection="radial360" pivot="center" color="{xpcolor}" standard_xp_color="[smxhud_standard_xp_bar]" updating_xp_color="[smxhud_updating_xp_bar]" deficit_xp_color="[smxhud_deficit_xp_bar]" globalopacitymod="1.5" xp_fill_speed="2.5" controller="ToolbeltWindow" />
+						<label name="smxhud_levelxp_level" depth="5" pos="0,0" width="70" height="50" style="smxlib_label_normal" text="{playerlevel}" font_size="42" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+						<label name="smxhud_levelxp_nextlevel" depth="6" pos="-25,65" width="70" height="50" style="smxlib_label_normal" text="{playerxptonextlevel}" font_size="16" pivot="center" justify="left" upper_case="true" spacing_x="2" overflow="ShrinkContent" color="[smxhud_labelcolor_2]" controller="PlayerStatWindow, SMXhud" />
+					</rect-->
+
+					<!-- SMX COMMENT: This module contains the day and time display in the top left corner. -->
+					<rect name="smxhud_daytime_module" depth="1" pos="-120,300" width="300" height="130" controller="CompassWindow">
+						<sprite name="smxhud_daytime_background" depth="1" pos="160,-305" width="220" height="130" sprite="smxhud_daytime_background" pivot="center" color="[smxhud_element_bg]" globalopacitymod="1.3" />
+
+						<rect name="smxhud_daytime_labels" depth="2" pos="140,-275">
+							<label name="smxhud_day_label" depth="3" pos="0,-5" width="100" height="40" style="smxlib_label_normal" text=" [C0C0C0]{daytitle}[-] [{daycolor}]{day}[-] " font_size="40" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" />
+							<label name="smxhud_time_label" depth="3" pos="0,-40" width="100" height="40" style="smxlib_label_normal" text="{time}" font_size="32" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" />
+						</rect>
+					</rect>
+
+					<!-- SMX COMMENT: This module contains the environmental icons in the top left corner, under the day and time display. -->
+					<rect name="smxhud_environmental_module" depth="3" pos="80,-80" width="260" height="80">
+						<rect name="smxhud_environment_elevation" depth="1" pos="-100,10" width="60" height="60" pivot="center">
+							<sprite name="smxhud_elevation_background" depth="1" pos="0,0" width="62" height="62" sprite="smxhud_icon_background" pivot="center" rotation="0" color="[smxhud_element_bg]" globalopacitymod="1.2" />
+							<sprite name="smxhud_elevation_icon" depth="2" pos="0,0" size="28,28" sprite="ui_game_symbol_climb" pivot="center" color="[smxhud_icons_1]" globalopacitymod="1.4" />
+							<label name="smxhud_elevation_value" depth="2" pos="0,-38" width="60" height="30" style="smxlib_label_normal" text="{mapelevation} M" font_size="18" pivot="center" justify="center" color="[smxhud_labelcolor_1]" controller="MapStats" />
+						</rect>
+
+						<rect name="smxhud_environment_maptemp" depth="1" pos="-40,10" width="60" height="60" pivot="center">
+							<sprite name="smxhud_maptemp_background" depth="1" pos="0,0" width="62" height="62" sprite="smxhud_icon_background" pivot="center" rotation="0" color="[smxhud_element_bg]" globalopacitymod="1.2" />
+							<sprite name="smxhud_maptemp_icon" depth="2" pos="0,0" size="28,28" sprite="ui_game_symbol_temperature" pivot="center" color="[smxhud_icons_1]" globalopacitymod="1.4" />
+							<label name="smxhud_maptemp_value" depth="2" pos="0,-38" width="60" height="30" style="smxlib_label_normal" text="{maptemperature}" font_size="18" pivot="center" justify="center" color="[smxhud_labelcolor_1]" controller="MapStats" />
+						</rect>
+
+						<rect name="smxhud_environment_coretemp" depth="1" pos="20,10" width="60" height="60" pivot="center">
+							<sprite name="smxhud_coretemp_background" depth="1" pos="0,0" width="62" height="62" sprite="smxhud_icon_background" pivot="center" rotation="0" color="[smxhud_element_bg]" globalopacitymod="1.2" />
+							<sprite name="smxhud_coretemp_icon" depth="2" pos="0,0" size="28,28" sprite="smxlib_ui_game_symbol_beanie" pivot="center" color="[smxhud_icons_1]" globalopacitymod="1.4" />
+							<label name="smxhud_coretemp_value" depth="2" pos="0,-38" width="60" height="30" style="smxlib_label_normal" text="{playercoretemp}" font_size="18" pivot="center" justify="center" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+						</rect>
+
+						<!-- SMX COMMENT: Test for HUD skillpoints - NOT ready. -->
+						<!--rect name="smxhud_environment_coretemp" depth="1" pos="80,10" width="60" height="60" pivot="center">
+							<sprite name="smxhud_coretemp_background" depth="1" pos="0,0" width="62" height="62" sprite="smxhud_icon_background" pivot="center" rotation="0" color="[smxhud_element_bg]" globalopacitymod="1.2" controller="PlayerStatWindow, SMXhud" visible="{hasskillpoint}"/>
+							<sprite name="smxhud_coretemp_icon" depth="2" pos="0,0" size="28,28" sprite="smxlib_ui_game_symbol_beanie" pivot="center" color="[smxhud_icons_1]" globalopacitymod="1.4" controller="PlayerStatWindow, SMXhud" visible="{hasskillpoint}"/>
+							<label name="smxhud_coretemp_value" depth="2" pos="0,-38" width="60" height="30" style="smxlib_label_normal" text="{skillpointsavailable}" font_size="18" pivot="center" justify="center" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" visible="{hasskillpoint}"/>
+						</rect-->
+					</rect>
 				</rect>
 			</window>
 		</append>
 
 
-<!--	// SMX // Day & Time Display HUD -->
+<!--	// SMX // Unit Frame - Left -->
+
+		<remove xpath="/windows/window[@name='HUDLeftStatBars']" />
 
 		<append xpath="/windows">
-			<window name="SMXhudDayTimeHUD" depth="0" pos="-12,150" size="550,514" controller="CompassWindow">
+			<window name="HUDLeftStatBars" depth="2" pos="183,108" width="360" height="210">
+				<rect name="smxhud_unitframe_content" depth="2" pos="-140,0" width="350" height="80">
 
-				<texture name="compassTexture" pos="99999,99999" size="300,33" texture="Textures/UI/ui_game_compass" color="[iconColor]" tooltip="CHARACTER" rect_size="0.25,1" rect_offset=".8,0" />
+					<!-- SMX COMMENT: This contains the unitframe core design in the lower left corner. -->
+					<sprite name="smxhud_unitframe_main_background" depth="2" pos="0,0" width="265" height="82" sprite="smxhud_unitframe_background" color="[smxhud_element_bg]" globalopacitymod="1.6" />
 
-				<sprite name="SMXhudDayTimeHUDBackground" depth="1" pos="60,-150" size="220,115" sprite="smxlib_ui_game_element_lootitem_background" color="[SMXlibElementsBG]" globalopacitymod="1.0" />
+					<sprite name="smxhud_unitframe_wellness_main_background" depth="1" pos="-35,1" width="110" height="110" sprite="smxhud_levelxp_background" color="[smxhud_element_bg]" globalopacitymod="1.5" />
+					<sprite name="smxhud_unitframe_wellness_background" depth="10" pos="-18,-12" width="80" height="80" sprite="smxhud_unitframe_wellness_background" color="[smxhud_element_bg]" globalopacitymod="1.4" />
+					<sprite name="smxhud_unitframe_wellness_foreground" depth="12" pos="-18,-12" width="80" height="80" sprite="smxhud_unitframe_wellness_foreground" color="[smxhud_bar_background_alt]" globalopacitymod="1.3" />
 
-				<sprite pos="145,-175" sprite="" color="255,255,255,255" globalopacitymod="1.8">
-					<label name="SMXhudDay" depth="3" pos="10,-5" width="80" height="30" text="{daytitle} [{daycolor|always}]{day|always}" font_size="32" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="center" pivot="center" overflow="ShrinkContent" />
-					<label name="SMXhudTime" depth="3" pos="10,-35" width="80" height="40" text="{time|always}" font_size="38" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="center" pivot="center" overflow="ShrinkContent" />
-				</sprite>
-			</window>
-		</append>
+					<!-- SMX COMMENT: Diamond art box, not used but "saved" for future feature. -->
+					<!--sprite name="smxui_artbox_background_45" depth="14" pos="-23,-50" width="32" height="32" sprite="smxlib_artbox_background" pivot="center" rotation="45" color="[smxhud_element_bg]" globalopacitymod="1.8" />
+					<sprite name="smxui_artbox_foreground_45" depth="15" pos="-23,-50" width="28" height="28" sprite="smxlib_artbox_foreground" pivot="center" rotation="45" color="[smxhud_diamond_frame]" globalopacitymod="1.2" /-->
 
+					<sprite name="smxhud_unitframe_frameseparator" depth="3" pos="25,-12" width="225" height="3" sprite="smxlib_window_separation_line_1" rotation="0" color="[smxhud_unitframe_separation]" globalopacitymod="1.8" />
+					<sprite name="smxhud_unitframe_frameseparator" depth="3" pos="40,-43" width="200" height="3" sprite="smxlib_window_separation_line_1" rotation="0" color="[smxhud_unitframe_separation]" globalopacitymod="1.8" />
+					<sprite name="smxhud_unitframe_frameseparator" depth="3" pos="55,-70" width="175" height="3" sprite="smxlib_window_separation_line_1" rotation="0" color="[smxhud_unitframe_separation]" globalopacitymod="1.8" />
+					<sprite name="smxhud_unitframe_frameseparator" depth="3" pos="55,-86" width="135" height="3" sprite="smxlib_window_separation_line_1" rotation="0" color="[smxhud_unitframe_separation]" globalopacitymod="1.8" />
 
-<!--	// SMX // Time Display UI -->
-
-		<append xpath="/windows">
-			<window name="SMXhudDayTimeUI" depth="0" pos="55,-115" size="105,105" controller="MapStats">
-				<sprite name="SMXhudDaytimeUIBackground" depth="1" pos="-5,10" size="110,125" sprite="smxlib_ui_game_element_lootitem_background" color="[SMXlibElementsBG]" rotation="-90" globalopacitymod="1.0" pivot="center" />
-				<sprite depth="2" pos="0,0" sprite="" color="255,255,255,255" globalopacitymod="1.8">
-					<label name="SMXhudDayTime" depth="1" pos="0,5" size="90,24" text="{mapdaytime}" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="center" pivot="center" overflow="ShrinkContent" />
-				</sprite>
-			</window>
-		</append>
-
-
-<!--	// SMX // Environment Display -->
-
-		<append xpath="/windows">
-			<window name="SMXhudEnvironment" depth="1" pos="178,-120" size="180,90">
-				<rect name="SMXhudEnvironment" depth="2" pos="0,0">
-					<rect name="SMXhudEnvironmentElevation" depth="3" pos="-60,5" size="60,60" pivot="center">
-						<sprite name="SMXhudIconBackground" depth="1" pos="0,0" size="62,62" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" globalopacitymod="1.0" pivot="center" />
-						<sprite name="SMXhudElevationIcon" depth="2" pos="0,0" size="35,30" sprite="ui_game_symbol_climb" color="[SMXlibElementsIcon]" pivot="center" />
-						<label name="SMXhudElevationValue" depth="2" pos="0,-38" size="60,30" text="{mapelevation} M" font_size="20" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" controller="MapStats" />
+					<!-- SMX COMMENT: This module contains the unitframe stealth bar design in the lower left corner. -->
+					<rect name="smxhud_statbar_stealth" pos="50,4" width="240" height="20" controller="HUDStatBar" stat_type="Stealth" visible="{statvisible}">
+						<sprite name="smxhud_stealth_main_background" depth="3" pos="-10,-1" width="210" height="18" sprite="smxhud_unitframe_background" flip="vertically" color="[smxhud_element_bg]" globalopacitymod="1.8" />
+						<sprite name="smxhud_stealth_icon_background" depth="6" pos="-10,-10" width="40" height="50" sprite="smxhud_icon_background" pivot="center" rotation="90" color="[smxhud_element_bg]" globalopacitymod="1.8" />
+						<sprite name="smxhud_stealth_bar_background" depth="4" pos="0,-6" width="180" height="8" sprite="smxhud_unitframe_healthbar_empty" color="[smxhud_bar_background]" />
+						<filledsprite name="BarContent" depth="5" pos="0,-6" width="180" height="8" sprite="smxhud_unitframe_healthbar_fill" type="filled" fill="0" color="[smxhud_unitframe_stealth_bar]" />
+						<sprite name="Icon" depth="7" pos="-17,-2" size="16,16" sprite="ui_game_symbol_stealth" color="[smxhud_icons_1]" foregroundlayer="true" />
+						<label name="TextContent" depth="7" pos="90,-10" style="smxlib_label_normal" text="{statcurrent}" font_size="14" pivot="center" justify="center" color="[smxhud_labelcolor_1]" />
 					</rect>
 
-					<rect name="SMXhudEnvironmentMapTemp" depth="3" pos="0,5" size="60,60" pivot="center">
-						<sprite name="SMXhudIconBackground" depth="1" pos="0,0" size="62,62" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" globalopacitymod="1.0" pivot="center" />
-						<sprite name="SMXhudMapTempIcon" depth="2" pos="0,0" size="35,30" sprite="ui_game_symbol_temperature" color="[SMXlibElementsIcon]" pivot="center" />
-						<label name="SMXhudMapTempValue" depth="2" pos="0,-38" size="60,30" text="{maptemperature}" font_size="20" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" controller="MapStats" />
+					<!-- SMX COMMENT: This module contains the unitframe health bar design in the lower left corner. -->
+					<rect name="smxhud_statbar_health" pos="-14,-8" width="240" height="55" controller="HUDStatBar" stat_type="Health" visible="{statvisible}">
+						<sprite name="smxhud_health_main_background" depth="2" pos="60,-8" width="205" height="28" sprite="smxhud_unitframe_healthbar_empty" color="[smxhud_unitframe_background]" globalopacitymod="1.8" />
+						<filledsprite name="background" depth="3" pos="60,-8" width="205" height="28" sprite="smxhud_unitframe_healthbar_empty" type="filled" fill="{statmodifiedmax}" color="[smxhud_bar_background]" globalopacitymod="1.3" />
+						<filledsprite name="BarContent" depth="5" pos="60,-8" width="205" height="28" sprite="smxhud_unitframe_healthbar_fill" type="filled" fill="0" color="[smxhud_unitframe_health_bar]" globalopacitymod="1.8" />
+						<sprite name="Icon" depth="7" pos="82,-13" size="18,18" sprite="ui_game_symbol_add" color="[smxhud_icons_1]" foregroundlayer="true" />
+						<label name="TextContent" depth="7" pos="210,-18" width="32" height="26" style="smxlib_label_normal" text=" [I]{playerhealth}[/I] " font_size="18" pivot="center" justify="right" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+						<label name="TextContent" depth="7" pos="228,-17" width="30" height="26" style="smxlib_label_normal" text=" / " font_size="16" pivot="center" justify="center" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+						<label name="TextContent" depth="7" pos="243,-16" width="30" height="26" style="smxlib_label_normal" text=" [I]{playermaxhealth}[/I] " font_size="14" pivot="center" justify="left" color="[smxhud_labelcolor_2_alt2]" controller="PlayerStatWindow, SMXhud" />
 					</rect>
 
-					<rect name="SMXhudEnvironmentCoreTemp" depth="3" pos="60,5" size="60,60" pivot="center">
-						<sprite name="SMXhudIconBackground" depth="1" pos="0,0" size="62,62" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" globalopacitymod="1.0" pivot="center" />
-						<sprite name="SMXhudCoreTempIcon" depth="2" pos="0,0" size="35,30" sprite="ui_game_symbol_light_armor" color="[SMXlibElementsIcon]" pivot="center" />
-						<label name="SMXhudCoreTempValue" depth="2" pos="0,-38" size="60,30" text="{playercoretemp}" font_size="20" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" controller="PlayerStatsWindow" />
+					<!-- SMX COMMENT: This module contains the unitframe stamina bar design in the lower left corner. -->
+					<rect name="smxhud_statbar_stamina" pos="-8,-37" width="240" height="55" controller="HUDStatBar" stat_type="Stamina" visible="{statvisible}">
+						<sprite name="smxhud_stamina_main_background" depth="2" pos="66,-10" width="184" height="22" sprite="smxhud_unitframe_staminabar_empty" color="[smxhud_unitframe_background]" globalopacitymod="1.8" />
+						<filledsprite name="background" depth="3" pos="66,-10" width="184" height="22" sprite="smxhud_unitframe_staminabar_empty" type="filled" fill="{statmodifiedmax}" color="[smxhud_bar_background]" globalopacitymod="1.3" />
+						<filledsprite name="BarContent" depth="5" pos="66,-10" width="184" height="22" sprite="smxhud_unitframe_staminabar_fill" type="filled" fill="0" color="[smxhud_unitframe_stamina_bar]" globalopacitymod="1.8" />
+						<sprite name="Icon" depth="7" pos="74,-12" size="18,18" sprite="ui_game_symbol_run" color="[smxhud_icons_1]" foregroundlayer="true" />
+						<label name="TextContent" depth="7" pos="196,-19" width="32" height="26" style="smxlib_label_normal" text=" [I]{playerstamina}[/I] " font_size="18" pivot="center" justify="right" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+						<label name="TextContent" depth="7" pos="214,-18" width="30" height="26" style="smxlib_label_normal" text=" / " font_size="16" pivot="center" justify="center" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+						<label name="TextContent" depth="7" pos="229,-17" width="30" height="26" style="smxlib_label_normal" text=" [I]{playermaxstamina}[/I] " font_size="14" pivot="center" justify="left" color="[smxhud_labelcolor_2_alt2]" controller="PlayerStatWindow, SMXhud" />
+					</rect>
+
+					<!-- SMX COMMENT: This module contains the unitframe hunger bar design in the lower left corner. -->
+					<rect name="smxhud_statbar_hunger" pos="65,-70" width="240" height="20" controller="HUDStatBar" stat_type="Food" visible="{statvisible}">
+						<sprite name="smxhud_hunger_main_background" depth="2" pos="-10,9" width="170" height="32" sprite="smxhud_unitframe_background" color="[smxhud_element_bg]" globalopacitymod="1.8" />
+						<sprite name="smxhud_hunger_icon_background" depth="10" pos="-10,-10" width="40" height="50" sprite="smxhud_icon_background" pivot="center" flip="vertically" color="[smxhud_element_bg]" globalopacitymod="1.8" />
+						<sprite name="smxhud_hunger_bar_background" depth="8" pos="-8,-4" width="155" height="12" sprite="smxhud_unitframe_healthbar_empty" flip="vertically" color="[smxhud_bar_background]" />
+						<filledsprite name="BarContent" depth="9" pos="-8,-4" width="155" height="12" sprite="smxhud_unitframe_healthbar_fill" type="filled" fill="0" flip="vertically" color="[smxhud_unitframe_hunger_bar]" globalopacitymod="1.8" />
+						<sprite name="Icon" depth="11" pos="-14,-1" size="18,18" sprite="ui_game_symbol_fork" color="[smxhud_icons_1]" foregroundlayer="true" />
+						<label name="TextContent" depth="9" pos="116,-11" width="30" height="26" style="smxlib_label_normal" text=" [I]{playerfood}[/I] " font_size="14" pivot="center" justify="center" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+					</rect>
+
+					<!-- SMX COMMENT: This module contains the unitframe thirst bar design in the lower left corner. -->
+					<rect name="smxhud_statbar_thirst" pos="-12,-17" width="90" height="90" controller="HUDStatBar" stat_type="Water" visible="{statvisible}">
+						<sprite name="smxhud_thirst_bar_background" depth="11" pos="0,0" width="69" height="69" sprite="smxhud_unitframe_thirst_bar" color="[smxhud_bar_background]" globalopacitymod="1.4" />
+						<sprite name="BarContent" depth="12" pos="0,0" width="69" height="69" sprite="smxhud_unitframe_thirst_bar" type="filled" fill="0" filldirection="vertical" color="[smxhud_unitframe_thirst_bar]" globalopacitymod="1.8" />
+						<sprite name="Icon" depth="13" pos="12,-12" size="40,40" sprite="smxlib_ui_game_symbol_thirst" rotation="0" color="[smxhud_icons_1]" foregroundlayer="true" />
+						<label name="TextContent" depth="16" pos="33,-62" width="30" height="26" style="smxlib_label_normal" text=" {playerwater} " font_size="14" pivot="center" justify="center" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+					</rect>
+				</rect>
+
+				<!-- SMX COMMENT: This module contains the popup buffs design in the lower left corner. It is "disabled" in favor of the new Enhanced Buff Frames. -->
+				<rect name="smxhud_buffs_module" depth="4" pos="-180,60" width="200" height="300" controller="BuffPopoutList" pivot="BottomLeft">
+					<rect name="item" pos="0,0" width="168" height="43" style="press" pivot="right" sound="[recipe_click]" on_hover="true" visible="false" >
+						<sprite name="Background" depth="3" pos="99999,99999" width="60" height="60" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_bg]" globalopacitymod="1.0" />
+						<sprite name="smxhud_buff_background" depth="3" pos="42,0" width="60" height="60" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_bg]" globalopacitymod="1.2" />
+						<sprite name="Icon" depth="4" pos="42,0" size="36,32" pivot="center" color="[transparent]" />
+						<label name="TextContent" depth="6" pos="100,2" height="30" style="smxlib_label_normal" font_size="22" pivot="center" justify="center" color="[smxhud_labelcolor_1]" />
 					</rect>
 				</rect>
 			</window>
@@ -152,100 +224,28 @@
 		<remove xpath="/windows/window[@name='windowGroupBars']" />
 
 		<append xpath="/windows">
-			<window name="windowGroupBars" depth="-20" pos="0,-200" size="380,300" controller="PartyWindow">
-				<grid name="hud" pos="32,-15" width="168" rows="7" cols="1" cell_width="168" cell_height="40" side="left" repeat_content="true" controller="PartyEntryList">
+			<window name="windowGroupBars" depth="-20" pos="0,-200" width="380" height="300" controller="PartyWindow">
+				<grid name="hud" pos="32,-15" width="168" rows="7" cols="1" cell_width="168" cell_height="45" repeat_content="true" controller="PartyEntryList">
 					<smxhud_party_entry />
+				</grid>
+
+				<grid name="hud" pos="32,-25" width="168" rows="7" cols="1" cell_width="168" cell_height="45" repeat_content="true" controller="CompanionEntryList" >
+					<smxhud_companion_entry />
 				</grid>
 			</window>
 		</append>
 
 
-<!--	// SMX // Chat Output -->
+<!--	// SMX // Enhanced Buff Frames -->
 
-		<remove xpath="/windows/window[@name='chatoutput']" />
-
-		<append xpath="/windows">
-			<window name="chatoutput" depth="-99" pos="10,-465" size="500,250" anchor="LeftTop" controller="ChatOutput" fadeout_wait_time="5" fadeout_duration="2">
-				<textlist name="txtOutput" depth="2" pos="8,-214" size="484,210" list_style="chat" pivot="bottomleft" font_size="22" crispness="Never" effect="outline" effect_distance="1,1" />
-			</window>
-		</append>
-
-
-<!--	// SMX // Chat Input -->
-
-		<remove xpath="/windows/window[@name='chat']" />
+		<set xpath="/windows/window[@name='HUDLeftStatBars']/rect[@controller='BuffPopoutList']/@pos">99999,99999</set>
 
 		<append xpath="/windows">
-			<window name="chat" depth="-99" pos="10,-465" size="500,250" anchor="LeftTop" controller="Chat" cursor_area="true">
-				<sprite name="SMXhudChatBackground" depth="1" pos="-30,0" size="550,265" sprite="smxlib_ui_game_element_panel_background" color="[SMXlibElementsBG]" type="sliced" globalopacitymod="0.8" />
-				<rect name="input" depth="2" pos="0,-222" height="32">
-					<sprite name="SMXhudSeparationLine" depth="8" pos="20,0" size="3,450" sprite="smxlib_ui_element_vertical_separation_line" color="[SMXlibElementsLine]" rotation="90" globalopacitymod="1.5" />
-					<smxhud_chat_combobox name="cbxTarget" pos="2,-8" width="100" height="22" type="ComboBoxList`1[EChatType]" value_max="party" font_size="22" localization_prefix="xuiChatTarget" />
-					<textfield name="txtInput" depth="2" pos="110,-18" width="386" height="28" font_size="22" crispness="Never" backgroundcolor="[transparent]" pivot="left" justify="left" overflow="ClampContent" max_line_count="1" />
-				</rect>
-			</window>
-		</append>
-
-
-<!--	// SMX // Unit Frames -->
-
-		<remove xpath="/windows/window[@name='HUDLeftStatBars']" />
-
-		<append xpath="/windows">
-			<window name="HUDLeftStatBars" depth="1" pos="5,125" size="350,120">
-				<rect name="SMXhudStatBars" depth="2" pos="0,0" size="350,80" rows="2" cols="1" side="right">
-					<rect name="SMXhudStatStealthBar" pos="70,0" size="240,20" controller="HUDStatBar" stat_type="Stealth" visible="{statvisible}">
-						<sprite name="SMXhudStatsIconBackground" depth="6" pos="-10,-10" size="40,50" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" pivot="center" globalopacitymod="1.8" rotation="90" />
-						<sprite name="SMXhudStatsMainBackground" depth="3" pos="-10,-1" size="210,18" sprite="smxlib_ui_element_unit_frame_background" type="sliced" globalopacitymod="1.8" color="[SMXlibElementsBG]" flip="vertically" />
-						<filledsprite name="barBackground" depth="4" pos="8,-6" size="190,8" sprite="smxlib_ui_element_unit_frame_healthbar_empty" type="filled" fill="1" color="[darkGrey]" />
-						<filledsprite name="BarContent" depth="5" pos="8,-6" size="190,8" sprite="smxlib_ui_element_unit_frame_healthbar_filled" type="filled" fill="0" color="[SMXlibElementsStealth]" />
-						<sprite name="Icon" depth="7" pos="-17,-2" size="16,16" sprite="ui_game_symbol_stealth" color="[SMXlibElementsIcon]" foregroundlayer="true" />
-						<label name="TextContent" depth="7" pos="-20,-2" text="{statcurrent}" font_size="14" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="topleft" />
-					</rect>
-					<rect name="SMXhudStatHealthBar" pos="0,-15" size="240,55" controller="HUDStatBar" stat_type="Health" visible="{statvisible}">
-						<sprite name="SMXhudStatsMainBackground" depth="2" pos="20,8" size="265,83" sprite="smxlib_ui_element_unit_frame_background" type="sliced" globalopacitymod="1.5" color="[SMXlibElementsBG]" />
-						<sprite name="SMXhudStatsIconBackground" depth="6" pos="40,-50" size="130,80" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" pivot="center" globalopacitymod="1.8" rotation="90" />
-						<sprite name="background" depth="2" pos="60,-8" size="226,28" sprite="smxlib_ui_element_unit_frame_healthbar_empty" type="sliced" globalopacitymod="1.0" color="[black]" />
-						<filledsprite name="background" depth="3" pos="60,-8" size="226,28" sprite="smxlib_ui_element_unit_frame_healthbar_empty" type="filled" fill="{statmodifiedmax}" globalopacitymod="1.3" color="[darkGrey]" />
-						<filledsprite name="BarContent" depth="5" pos="60,-8" size="226,28" sprite="smxlib_ui_element_unit_frame_healthbar_filled" type="filled" fill="0" color="[SMXlibElementsHealth]" />
-						<sprite name="Icon" depth="7" pos="30,-9" size="26,26" sprite="ui_game_symbol_cardio" color="[SMXlibElementsIcon]" foregroundlayer="true" />
-						<label name="TextContent" depth="7" pos="100,-12" text="{statcurrentwithmax}" font_size="18" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="topleft" />
-					</rect>
-					<rect name="SMXhudStatStaminaBar" pos="0,-45" size="240,55" controller="HUDStatBar" stat_type="Stamina" visible="{statvisible}">
-						<sprite name="background" depth="2" pos="66,-10" size="194,22" sprite="smxlib_ui_element_unit_frame_staminabar_empty" type="sliced" globalopacitymod="1.0" color="[black]" />
-						<filledsprite name="background" depth="3" pos="66,-10" size="194,22" sprite="smxlib_ui_element_unit_frame_staminabar_empty" type="filled" fill="{statmodifiedmax}" globalopacitymod="1.3" color="[darkGrey]" />
-						<filledsprite name="BarContent" depth="5" pos="66,-10" size="194,22" sprite="smxlib_ui_element_unit_frame_staminabar_filled" type="filled" fill="0" color="[SMXlibElementsStamina]" />
-						<sprite name="Icon" depth="7" pos="32,-8" size="24,24" sprite="ui_game_symbol_agility" color="[SMXlibElementsIcon]" foregroundlayer="true" />
-						<label name="TextContent" depth="7" pos="90,-12" text="{statcurrentwithmax}" font_size="16" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="topleft" />
-					</rect>
-				</rect>
-
-				<rect name="SMXhudWellnessBars" depth="3" pos="0,-79" size="350,38" rows="2" cols="1" side="right">
-					<rect name="SMXhudHungerBar" pos="31,5" size="240,35" controller="HUDStatBar" stat_type="Food" visible="{statvisible}">
-						<sprite name="SMXhudWellnessMainBackground" depth="3" pos="10,1" size="190,38" sprite="smxlib_ui_element_unit_frame_background" type="sliced"  color="[SMXlibElementsBG]" globalopacitymod="1.5" />
-						<sprite name="SMXhudStatsIconBackground" depth="6" pos="10,-20" size="50,60" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" pivot="center" globalopacitymod="1.8" rotation="90" />
-						<!--filledsprite name="background" depth="3" pos="25,-6" size="170,10" sprite="smxlib_ui_element_unit_frame_healthbar_empty" type="filled" fill="{statmodifiedmax}" color="[darkGrey]" /-->
-						<filledsprite name="BarContent" depth="4" pos="25,-6" size="170,10" sprite="smxlib_ui_element_unit_frame_healthbar_filled" color="[SMXlibElementsFood]" type="filled" fill="0" globalopacity="false" />
-						<sprite name="Icon" depth="7" pos="3,-2" size="16,16" sprite="ui_game_symbol_hunger" color="[SMXlibElementsIcon]" foregroundlayer="true" />
-						<!--label name="TextContent" depth="7" pos="35,-3" text="{statcurrent}" font_size="14" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="topleft" /-->
-						<label name="TextContent" depth="7" pos="35,-3" text="{playerfood}" font_size="14" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="topleft" controller="PlayerStatsWindow" />
-					</rect>
-					<rect name="SMXhudThirstBar" pos="31,-8" size="240,35" controller="HUDStatBar" stat_type="Water" visible="{statvisible}">
-						<!--filledsprite name="background" depth="3" pos="25,-6" size="150,10" sprite="smxlib_ui_element_unit_frame_staminabar_empty" type="filled" fill="{statmodifiedmax}" color="[darkGrey]" flip="vertically" /-->
-						<filledsprite name="BarContent" depth="4" pos="25,-6" size="150,10" sprite="smxlib_ui_element_unit_frame_staminabar_filled" color="[SMXlibElementsWater]" type="filled" fill="0" globalopacity="false" />
-						<sprite name="Icon" depth="7" pos="3,-6" size="16,16" sprite="ui_game_symbol_water" color="[SMXlibElementsIcon]" foregroundlayer="true" />
-						<!--label name="TextContent" depth="7" pos="20,-3" text="{statcurrent}" font_size="14" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="topleft" /-->
-						<label name="TextContent" depth="7" pos="20,-3" text="{playerwater}" font_size="14" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="topleft" controller="PlayerStatsWindow" />
-					</rect>
-				</rect>
-
-				<rect name="SMXhudBuffs" depth="4" pos="0,20" size="200,300" controller="BuffPopoutList" pivot="BottomLeft" side="left">
-					<panel name="item" pos="0,0" size="168,43" disableautobackground="true" style="press" sound="[recipe_click]" on_hover="true" pivot="right" visible="false" >
-						<sprite name="Background" depth="3" pos="99999,99999" size="60,60" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" pivot="center" globalopacitymod="1.0" />
-						<sprite name="SMXhudBuffBackground" depth="3" pos="42,0" size="60,60" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" pivot="center" globalopacitymod="1.2" />
-						<sprite name="Icon" depth="4" pos="42,0" size="36,32" pivot="center" color="[transparent]" />
-						<label name="TextContent" depth="6" pos="100,2" height="30" font_size="22" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
-					</panel>
+			<window name="smxhudBuffFrame" pos="0,150" width="43" height="500" controller="ToolbeltWindow">
+				<rect name="content" depth="0" pos="0,0" controller="ActiveBuffWindow">
+					<grid name="buffs" pos="26,-35" rows="1" cols="15" cell_width="52" cell_height="70" pivot="center" flip="horizontally" repeat_content="true" controller="ActiveBuffList">
+						<smxhud_active_buff_entry />
+					</grid>
 				</rect>
 			</window>
 		</append>
@@ -256,91 +256,147 @@
 		<remove xpath="/windows/window[@name='windowToolbelt']" />
 
 		<append xpath="/windows">
-			<window name="windowToolbelt" depth="0" pos="0,65" size="720,125" controller="ToolbeltWindow" visible="{toolbeltvisible}" cursor_area="true">
-				<rect>
-					<sprite name="SMXhudToolbeltMainBackground" depth="0" pos="-631,160" size="1322,230" sprite="smxlib_ui_game_element_toolbelt_background" color="[SMXlibElementsBG]" globalopacitymod="1.4" />
+			<window name="windowToolbelt" depth="5" pos="-440,110" width="880" height="90" anchor="CenterBottom" controller="ToolbeltWindow" backgroundcolor="[black]" cursor_area="true">
 
-					<rect depth="2" pos="0,0" controller="Toolbelt">
-						<grid name="inventory" depth="10" pos="43,-40" rows="1" cols="10" cell_width="85" cell_height="85" repeat_content="true" pivot="center">
-							<smxhud_toolbelt_itemstack_85 name="0" />
-						</grid>
-						<grid name="inventory2" depth="10" pos="43,50" rows="1" cols="10" cell_width="85" cell_height="85" repeat_content="true" pivot="center" visible="{secondrow}">
-							<smxhud_toolbelt_itemstack_85 name="0" />
-						</grid>
-					</rect>
-					<grid name="SMXhudToolbeltSlotNumbers" depth="2" pos="38,-52" rows="1" cols="10" cell_width="85" cell_height="22" repeat_content="false" pivot="center">
-						<label name="SMXhudToolbeltSlotNumber1" depth="10" size="12,22" text="1" font_size="20" color="[SMXlibElementsTBSlotLBL]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
-						<label name="SMXhudToolbeltSlotNumber2" depth="10" size="12,22" text="2" font_size="20" color="[SMXlibElementsTBSlotLBL]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
-						<label name="SMXhudToolbeltSlotNumber3" depth="10" size="12,22" text="3" font_size="20" color="[SMXlibElementsTBSlotLBL]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
-						<label name="SMXhudToolbeltSlotNumber4" depth="10" size="12,22" text="4" font_size="20" color="[SMXlibElementsTBSlotLBL]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
-						<label name="SMXhudToolbeltSlotNumber5" depth="10" size="12,22" text="5" font_size="20" color="[SMXlibElementsTBSlotLBL]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
-						<label name="SMXhudToolbeltSlotNumber6" depth="10" size="12,22" text="6" font_size="20" color="[SMXlibElementsTBSlotLBL]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
-						<label name="SMXhudToolbeltSlotNumber7" depth="10" size="12,22" text="7" font_size="20" color="[SMXlibElementsTBSlotLBL]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
-						<label name="SMXhudToolbeltSlotNumber8" depth="10" size="12,22" text="8" font_size="20" color="[SMXlibElementsTBSlotLBL]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
-						<label name="SMXhudToolbeltSlotNumber9" depth="10" size="12,22" text="9" font_size="20" color="[SMXlibElementsTBSlotLBL]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
-						<label name="SMXhudToolbeltSlotNumber0" depth="10" size="12,22" text="0" font_size="20" color="[SMXlibElementsTBSlotLBL]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" />
+				<!-- SMX COMMENT: 	The toolbelt control is now dynamic. If you want to change it's size you only need to modify the values of the following attributes inside the two grids:
+									pos(grid), cell_width(both grid & entry), cell_height(both grid & entry). Then you can set the typeicon size with the size(entry) value and nudge it into
+									place with the pos(entry) value (not a full pos of x,y here, only a modifier so single digit, start with 1 and increase as needed.
+									
+									When this has been done the toolbelt should resize itself to fit your new size values. Not 100% perfect but hey, it kinda works! -->
+
+				<rect name="smxhud_toolbelt_content" pos="440,-45" width="880" height="90" controller="Toolbelt">
+					<grid name="inventory" depth="10" pos="44,-43" rows="1" cols="10" cell_width="88" cell_height="86" pivot="center" repeat_content="true"> <!-- SMX COMMENT: grid -->
+						<smxui_toolbelt_item_stack name="0" pos="0" size="18,18" cell_width="86" cell_height="86" /> <!-- SMX COMMENT: entry -->
+					</grid>
+					<grid name="inventory2" depth="10" pos="44,43" rows="1" cols="10" cell_width="88" cell_height="86" pivot="center" repeat_content="true" visible="{secondrow}">
+						<smxui_toolbelt_item_stack name="0" pos="0" size="18,18" cell_width="86" cell_height="86" />
 					</grid>
 				</rect>
 			</window>
 		</append>
 
 
-<!--	// SMX // Item Frames -->
+<!--	// SMX // Item Frame - Right -->
 
 		<remove xpath="/windows/window[@name='HUDRightStatBars']" />
 
 		<append xpath="/windows">
-			<window name="HUDRightStatBars" depth="1">
-				<rect name="SMXhudItemCollection" pos="-90,70" controller="CollectedItemList" pivot="BottomLeft" side="right">
-					<panel name="item" pos="70,0" size="168,43" disableautobackground="true" pivot="right" visible="false">
-						<sprite name="Background" depth="3" pos="20,0" size="192,56" sprite="smxlib_ui_game_element_lootitem_background" color="[SMXlibElementsBG]" flip="horizontally" pivot="center" globalopacitymod="1.0" />
-						<sprite name="Icon" depth="4" pos="50,0" size="40,40" atlas="ItemIconAtlas" foregroundlayer="true" pivot="center" />
-						<label name="TextContent" depth="6" pos="-30,2" size="100,36" font_size="28" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="right" pivot="center" overflow="ShrinkContent" />
-						<sprite name="Negative" depth="6" pos="-25,22" width="40" height="40" sprite="ui_game_symbol_x" color="[SMXlibElementsAccentColor1]" />
-					</panel>
-				</rect>
+			<window name="HUDRightStatBars" depth="2" pos="-183,108" width="360" height="210">
+				<rect name="smxhud_unitframe_content" depth="2" pos="140,0" width="350" height="80">
 
-				<grid name="SMXhudAmmoCounter" pos="-177,52" rows="2" cols="1" width="168" cell_width="168" cell_height="60" repeat_content="false" side="right">
-					<rect width="168" height="55" controller="HUDStatBar" stat_type="ActiveItem" visible="{statvisible}">
-						<sprite name="SMXhudAmmoCounterBackground" depth="0" pos="-53,-100" size="168,355" sprite="smxlib_ui_game_element_itemframe_background" color="[SMXlibElementsBG]" justify="right" rotation="90" globalopacitymod="1.0" />
-						<sprite name="Icon" depth="4" pos="100,5" size="54,54" atlas="{staticonatlas|once}" sprite="{staticon}" color="{staticoncolor}" foregroundlayer="true" />
-						<label name="TextContent" depth="6" pos="-70,10" text="{statcurrentwithmax}" font_size="32" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
-					</rect>
-				</grid>
+					<!-- SMX COMMENT: This module contains the item collection design in the lower right corner. -->
+					<rect name="smxhud_item_collection" depth="2" pos="-65,40" width="100" height="100" pivot="center" controller="CollectedItemList">
 
-				<rect name="SMXhudVehicleStats" pos="-215,160" width="240" rows="2" cols="1" side="right">
-					<rect name="SMXhudVehicleHealth" pos="0,-35" size="240,35" controller="HUDStatBar" stat_type="VehicleHealth" visible="{statvisible}">
-						<sprite name="SMXhudVehicleMainBackground" depth="2" pos="-60,-8" size="265,80" sprite="smxlib_ui_element_unit_frame_background" type="sliced" globalopacitymod="1.5" color="[SMXlibElementsBG]" flip="horizontally" />
-						<sprite name="SMXhudVehicleStatsIconBackground" depth="6" pos="174,-50" size="120,70" sprite="smxlib_ui_game_element_icon_background" color="[SMXlibElementsBG]" pivot="center" globalopacitymod="1.8" rotation="90" />
-						<sprite name="background" depth="2" pos="167,-51" size="220,28" sprite="smxlib_ui_element_unit_frame_healthbar_empty" type="sliced" globalopacitymod="1.3" color="[darkGrey]" flip="vertically" rotation="180" />
-						<filledsprite name="BarContent" depth="5" pos="167,-51" size="220,28" sprite="smxlib_ui_element_unit_frame_healthbar_filled" type="filled" fill="0" color="[SMXlibElementsHealth]" flip="vertically" rotation="180" />
-						<sprite name="Icon" depth="7" pos="164,-24" size="24,24" atlas="{staticonatlas|once}" sprite="{staticon|once}" color="[SMXlibElementsIcon]" foregroundlayer="true" />
-						<label name="TextContent" depth="7" pos="-120,-28" text="{statcurrentwithmax}" font_size="16" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="topleft" />
+						<!-- SMX COMMENT: This section contains the backpack, lootstage and inventory info design in the lower right corner. -->
+						<rect name="smxhud_collection_information" depth="2" pos="13,-81" width="110" height="110" pivot="center">
+
+							<sprite name="smxhud_collection_main_background" depth="1" pos="-212,42" width="265" height="82" sprite="smxhud_unitframe_background" flip="horizontally" color="[smxhud_element_bg]" globalopacitymod="1.6" />
+
+							<sprite name="smxhud_collection_frameseparator" depth="3" pos="-197,29" width="225" height="3" sprite="smxlib_window_separation_line_1" rotation="0" color="[smxhud_unitframe_separation]" globalopacitymod="1.8" />
+							<sprite name="smxhud_collection_frameseparator" depth="3" pos="-177,-30" width="195" height="3" sprite="smxlib_window_separation_line_1" rotation="0" color="[smxhud_unitframe_separation]" globalopacitymod="1.8" />
+							<sprite name="smxhud_collection_frameseparator" depth="3" pos="-125,-47" width="135" height="3" sprite="smxlib_window_separation_line_1" rotation="0" color="[smxhud_unitframe_separation]" globalopacitymod="1.8" />
+
+							<sprite name="smxhud_collection_label_background" depth="3" pos="-150,-28" width="170" height="25" sprite="smxhud_unitframe_background" flip="horizontally" color="[smxhud_element_bg]" globalopacitymod="1.8" />
+
+							<sprite name="smxhud_backpack_main_background" depth="1" pos="29,-13" width="110" height="110" sprite="smxhud_levelxp_background" pivot="center" flip="horizontally" color="[smxhud_element_bg]" globalopacitymod="1.5" />
+							<sprite name="smxhud_backpack_background" depth="2" pos="30,-12" width="80" height="80" sprite="smxhud_unitframe_wellness_background" pivot="center" color="[smxhud_element_bg]" globalopacitymod="1.4" />
+							<sprite name="smxhud_backpack_foreground1" depth="16" pos="30,-12" width="80" height="80" sprite="smxhud_unitframe_thirst_bar" pivot="center" color="[smxhud_module_bg]" globalopacitymod="1.3" />
+							<sprite name="smxhud_backpack_foreground2" depth="17" pos="30,-12" width="80" height="80" sprite="smxhud_unitframe_wellness_foreground" pivot="center" color="[smxhud_bar_background_alt]" globalopacitymod="1.3" />
+
+							<sprite name="smxhud_backpack_bar" depth="19" pos="30,-12" width="80" height="80" sprite="smxhud_unitframe_wellness_foreground" type="filled" fill="{playerbagfill}" filldirection="radial360" pivot="center" color="{playerbagfillcolor}" globalopacitymod="1.8" controller="PlayerStatWindow, SMXhud" />
+							<sprite name="smxhud_backpack_icon" depth="18" pos="30,-12" size="50,50" sprite="ui_game_symbol_loot_sack" pivot="center" color="[smxhud_icons_1]" globalopacitymod="1.4" />
+
+							<sprite name="smxhud_artbox_background_45" depth="19" pos="30,32" width="37" height="37" sprite="smxlib_artbox_background" pivot="center" rotation="45" color="[smxhud_element_bg]" globalopacitymod="1.8" />
+							<sprite name="smxhud_artbox_foreground_45" depth="20" pos="30,32" width="33" height="33" sprite="smxlib_artbox_foreground" pivot="center" rotation="45" color="[smxhud_diamond_frame]" globalopacitymod="1.2" />
+
+							<label name="smxhud_backpack_lockedslots" depth="21" pos="29,32" width="30" height="30" style="smxlib_label_normal" text="{playercarrycapacity}" font_size="16" pivot="center" justify="center" overflow="ShrinkContent" color="[smxhud_labelcolor_2_alt2]" controller="PlayerStatWindow, SMXhud" />
+
+							<!--label name="smxhud_backpack_lootstage" depth="21" pos="30,-12" width="30" height="30" style="smxlib_label_normal" text="{playerbagsize}" font_size="40" pivot="center" justify="center" overflow="ShrinkContent" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" /-->
+
+							<!--label name="smxhud_backpack_lootstage" depth="21" pos="30,32" width="30" height="30" style="smxlib_label_normal" text="{playerlootstage}" font_size="16" pivot="center" justify="center" overflow="ShrinkContent" color="[smxhud_labelcolor_2_alt2]" controller="PlayerStatWindow, SMXhud" />
+							<label name="smxhud_backpack_slotinfo" depth="3" pos="-60,-42" width="90" height="24" style="smxlib_label_normal" text=" {playerbagusedslots} / {playercarrycapacity} ([C0C0C0]{playerbagsize}[-]) " font_size="16" pivot="center" justify="center" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" /-->
+							<label name="smxhud_backpack_lootstage" depth="3" pos="-70,-41" width="100" height="24" style="smxlib_label_normal" text=" [808080]Lootstage:[-] [C0C0C0]{playerlootstage}[-] " font_size="14" pivot="center" justify="center" upper_case="true" color="[smxhud_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+						</rect>
+
+						<!-- SMX COMMENT: This module contains the item collection design in the lower right corner. -->
+						<rect name="item" pos="70,0" width="168" height="52" pivot="right" visible="false">
+							<sprite name="Background" depth="3" pos="-10,0" width="130" height="56" sprite="smxhud_unitframe_background_cut" pivot="center" flip="both" color="[smxhud_element_bg]" globalopacitymod="1.2" />
+
+							<sprite name="smxhud_artbox_background_45" depth="4" pos="43,0" width="52" height="52" sprite="smxlib_artbox_background" pivot="center" rotation="45" color="[smxhud_element_bg]" globalopacitymod="1.8" />
+							<sprite name="smxhud_artbox_foreground_45" depth="5" pos="43,0" width="48" height="48" sprite="smxlib_artbox_foreground" pivot="center" rotation="45" color="[smxhud_diamond_frame_alt]" globalopacitymod="1.2" />
+
+							<sprite name="Icon" depth="6" pos="43,0" size="45,45" atlas="ItemIconAtlas" pivot="center" foregroundlayer="true" />
+							<label name="TextContent" depth="6" pos="-30,0" width="80" height="36" style="smxlib_label_normal" font_size="22" pivot="center" justify="right" overflow="ShrinkContent" color="[smxhud_labelcolor_1]" />
+							<sprite name="Negative" depth="6" pos="-45,22" width="40" height="40" sprite="ui_game_symbol_x" color="[smxlib_cancel_color]" globalopacitymod="1.8" />
+						</rect>
 					</rect>
-					<rect name="SMXhudVehicleFuel" pos="0,-70" width="240" height="35" controller="HUDStatBar" stat_type="VehicleFuel" visible="{statvisible}">
-						<sprite name="background" depth="2" pos="167,-41" size="194,22" sprite="smxlib_ui_element_unit_frame_staminabar_empty" type="sliced" globalopacitymod="1.3" color="[darkGrey]" flip="vertically" rotation="180" />
-						<filledsprite name="BarContent" depth="5" pos="167,-41" size="194,22" sprite="smxlib_ui_element_unit_frame_staminabar_filled" type="filled" fill="0" color="[SMXlibElementsFuel]" flip="vertically" rotation="180" />
-						<sprite name="Icon" depth="7" pos="165,-19" size="22,22" sprite="ui_game_symbol_gas" color="[SMXlibElementsIcon]" foregroundlayer="true" />
-						<label name="TextContent" depth="7" pos="-100,-21" text="{statcurrentwithmax}" font_size="16" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="topleft" />
+
+					<!-- SMX COMMENT: This module contains the ammo counter design in the lower right corner. -->
+					<rect name="smxhud_ammo_counter" pos="-140,0" width="350" height="80">
+						<rect name="smxhud_ammo_content" depth="12" pos="-14,-8" width="240" height="55" controller="HUDStatBar" stat_type="ActiveItem" visible="{statvisible}">
+							<sprite name="Icon" depth="4" pos="49,-24" size="75,75" atlas="{staticonatlas|once}" sprite="{staticon}" pivot="center" color="{staticoncolor}" foregroundlayer="true" />
+
+							<!-- SMX COMMENT: Test label to output icon name, upcoming feature. NOT READY! -->
+							<!--label name="Icon" depth="6" pos="-55,110" width="500" height="60" style="smxlib_label_normal" text="{staticon}" font_size="22" pivot="center" justify="right" color="[smxhud_labelcolor_1]" /-->
+
+							<label name="TextContent" depth="6" pos="-55,-10" width="100" height="60" style="smxlib_label_normal" text="{statcurrent}" font_size="60" pivot="center" justify="right" color="[smxhud_labelcolor_1]" />
+							<label name="TextContent" depth="6" pos="-55,-45" width="100" height="30" style="smxlib_label_normal" text="{statmax2}" font_size="18" pivot="center" justify="right" color="[smxhud_labelcolor_2_alt2]" />
+						</rect>
+					</rect>
+
+					<!-- SMX COMMENT: This module contains the vehicle unit frame design in the lower right corner. -->
+					<rect name="smxhud_vehicle_stats" pos="-140,0" width="350" height="80">
+
+						<!-- SMX COMMENT: This module contains the vehicle health bar in the lower right corner. -->
+						<rect name="smxhud_vehiclestat_health" depth="12" pos="-14,-8" width="240" height="55" controller="HUDStatBar" stat_type="VehicleHealth" visible="{statvisible}">
+							<sprite name="smxhud_vehicle_frameseparator" depth="3" pos="-85,-36" width="195" height="3" sprite="smxlib_window_separation_line_1" rotation="0" color="[smxhud_unitframe_separation]" globalopacitymod="1.8" />
+							<sprite name="background" depth="2" pos="-95,-8" width="205" height="28" sprite="smxhud_unitframe_healthbar_empty" flip="horizontally" color="[smxhud_unitframe_background]" globalopacitymod="1.8" />
+							<filledsprite name="BarContent" depth="5" pos="-95,-8" width="205" height="28" sprite="smxhud_unitframe_healthbar_fill" type="filled" fill="0" fillinvert="true" flip="horizontally" color="[smxhud_unitframe_health_bar]" globalopacitymod="1.8" />
+							<sprite name="Icon" depth="7" pos="74,-12" size="18,18" sprite="ui_game_symbol_wrench" color="[smxhud_icons_1]" foregroundlayer="true" />
+							<label name="TextContent" depth="7" pos="-65,-16" width="100" height="26" style="smxlib_label_normal" text=" [I]{statcurrent} / [C0C0C0]{statmax}[-][/I] " font_size="13" color="[smxhud_labelcolor_1]" justify="right" pivot="center" />
+						</rect>
+
+						<!-- SMX COMMENT: This module contains the vehicle fuel bar in the lower right corner. -->
+						<rect name="smxhud_vehiclestat_fuel" depth="14" pos="0,0" width="110" height="110" controller="HUDStatBar" stat_type="VehicleFuel" visible="{statvisible}">
+							<sprite name="background" depth="2" pos="-103,-38" width="184" height="22" sprite="smxhud_unitframe_staminabar_empty" flip="horizontally" color="[smxhud_unitframe_background]" globalopacitymod="1.8" />
+							<filledsprite name="BarContent" depth="5" pos="-103,-48" width="184" height="22" sprite="smxhud_unitframe_staminabar_fill" type="filled" fill="0" fillinvert="true" flip="horizontally" color="[smxhud_vehicle_fuel_bar]" globalopacitymod="1.8" />
+							<sprite name="Icon" depth="7" pos="58,-49" size="18,18" sprite="ui_game_symbol_gas" color="[smxhud_icons_1]" foregroundlayer="true" />
+
+							<label name="TextContent" depth="7" pos="-100,-56" width="100" height="26" style="smxlib_label_normal" text=" [I]{statcurrentwithmax}[/I] " font_size="13" color="[smxhud_labelcolor_1]" justify="right" pivot="center" />
+						</rect>
 					</rect>
 				</rect>
 			</window>
 		</append>
 
 
-<!--	// SMX // Quest Tracker -->
+<!--	// SMX // Interaction Prompt -->
 
-		<remove xpath="/windows/window[@name='windowQuestTracker']" />
+		<remove xpath="/windows/window[@name='interactionPrompt']" />
 
 		<append xpath="/windows">
-			<window name="windowQuestTracker" depth="-20" pos="-255,-90" size="400,400" controller="QuestTrackerWindow" visible="{showquest}">
-				<sprite name="SMXhudQuestTrackerBackground" depth="0" pos="-90,14" size="360,182" sprite="smxlib_ui_game_element_quest_tracker_background" color="[SMXlibElementsBG]" globalopacitymod="1.5" />
+			<window name="interactionPrompt" pos="0,50" width="480" height="50" anchor="CenterCenter" controller="InteractionPrompt" fade_delay="0.02">
+				<sprite name="smxhud_borderbar_1" depth="2" pos="0,23" width="480" height="5" sprite="smxlib_window_separation_line_1" pivot="center" color="[smxhud_accentcolor_1]" globalopacitymod="1.8" />
+				<sprite name="background" depth="1" pos="0,0" width="480" height="50" sprite="smxhud_timer_background" pivot="center" color="[smxhud_element_bg]" globalopacitymod="1.5" />
+				<sprite name="smxhud_borderbar_2" depth="2" pos="0,-23" width="480" height="5" sprite="smxlib_window_separation_line_1" pivot="center" flip="horizontally" color="[smxhud_accentcolor_1]" globalopacitymod="1.8" />
+				<label name="lblText" depth="2" pos="0,0" style="smxlib_label_normal" text="{text}" font_size="24" pivot="center" justify="center" parse_actions="true" actions_default_format="( [AF1E19]###[-] )" />
+			</window>
+		</append>
 
-				<label name="SMXhudQuestTitle" depth="1" pos="105,-15" width="280" height="28" text="{questtitle}" font_size="26" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" upper_case="true" justify="center" pivot="center" overflow="ShrinkContent" />
-				<sprite name="windowIcon" depth="1" pos="-75,1" style="icon32px" sprite="{questicon}" color="[SMXlibElementsIcon]" justify="left" effect="outline" />
-				<grid name="objectiveList" depth="1" pos="-60,-50" rows="12" cols="1" cell_width="300" cell_height="26" repeat_content="true" arrangement="vertical" controller="QuestTrackerObjectiveList" complete_icon="ui_game_symbol_check" incomplete_icon="ui_game_symbol_x" complete_color="[green]" incomplete_color="[red]">
-					<smxhud_quest_objective_tracker_entry />
-				</grid>
+
+<!--	// SMX // Loot Timer -->
+
+		<remove xpath="/windows/window[@name='windowTimer']" />
+
+		<append xpath="/windows">
+			<window name="windowTimer" anchor="CenterCenter">
+				<rect depth="15" pos="0,0" width="250" height="50" style="hover" on_press="true" pivot="center" highlight_color="[lightGrey]" controller="Timer">
+					<label name="action" depth="3" pos="0,50" width="200" height="26" style="smxlib_label_normal" text="{caption}" font_size="24" pivot="center" justify="center" />
+					<sprite name="border" depth="1" sprite="smxhud_timer_background" pivot="center" color="[smxhud_element_bg]" globalopacitymod="1.2" />
+					<sprite name="background" depth="2" pos="0,23" width="250" height="5" sprite="smxlib_window_separation_line_1" type="filled" fill="{percent}" filldirection="horizontal" pivot="center" color="[smxhud_accentcolor_1]" globalopacitymod="1.8" />
+					<sprite name="borderbar" depth="2" pos="0,-23" width="250" height="5" sprite="smxlib_window_separation_line_1" pivot="center" color="[smxhud_accentcolor_1]" globalopacitymod="1.8" />
+					<label name="time" depth="3" pos="0,0" width="250" height="50" style="smxlib_label_normal" text="{timeleft}" font_size="32" pivot="center" justify="center" color="[smxhud_labelcolor_1]" />
+				</rect>
 			</window>
 		</append>
 
@@ -363,24 +419,7 @@
 					<radial_entry />
 					<radial_entry />
 					<radial_entry />
-					<label name="selection" depth="10" width="150" height="50" text=" " font_size="20" crispness="Never" effect="outline" effect_distance="1,1" justify="center" pivot="center" />
-				</rect>
-			</window>
-		</append>
-
-
-<!--	// SMX // Loot Timer -->
-
-		<remove xpath="/windows/window[@name='windowTimer']" />
-
-		<append xpath="/windows">
-			<window name="windowTimer" anchor="CenterCenter">
-				<rect depth="15" pos="0,0" size="250,50" style="hover" on_press="true" highlight_color="[lightGrey]" pivot="center" controller="Timer">
-					<label name="action" depth="3" pos="0,50" width="200" height="26" text="{caption}" font_size="24" crispness="Never" effect="outline" effect_distance="1,1" pivot="center" justify="center" />
-					<sprite name="border" depth="1" sprite="smxlib_ui_element_searchtimer_background" color="[SMXlibElementsBG]" pivot="center" globalopacitymod="1.2" />
-					<sprite name="background" depth="2" pos="0,23" size="250,4" sprite="smxlib_ui_element_searchtimer_bar" color="[SMXlibElementsAccentColor1]" pivot="center" type="filled" fill="{percent}" filldirection="horizontal" globalopacitymod="1.8" />
-					<sprite name="borderbar" depth="2" pos="0,-23" size="250,4" sprite="smxlib_ui_element_searchtimer_bar" color="[SMXlibElementsAccentColor1]" pivot="center" globalopacitymod="1.8" />
-					<label name="time" depth="3" pos="0,2" size="250,50" text="{timeleft}" font_size="32" color="[SMXlibElementsLBLPri]" crispness="Never" effect="outline" effect_distance="1,1" pivot="center" justify="center" />
+					<label name="selection" depth="10" width="150" height="50" style="smxlib_label_normal" text=" " font_size="20" pivot="center" justify="center" />
 				</rect>
 			</window>
 		</append>
@@ -393,23 +432,95 @@
 		<append xpath="/windows">
 			<window name="windowThrow" anchor="CenterCenter" controller="ThrowPower">
 				<rect pos="0,-60">
-					<sprite name="background" depth="1" pos="-152,0" size="304,14" sprite="smxlib_ui_element_throwpower_background" color="[SMXlibElementsBG]" pivot="left" type="sliced" />
-					<sprite name="bar" depth="2" pos="-150,0" size="300,10" sprite="smxlib_ui_element_throwpower_bar" color="[SMXlibElementsTHRWBar]" pivot="left" type="filled" fill="{fill}" filldirection="horizontal" foregroundlayer="true" />
+					<sprite name="background" depth="1" pos="-202,0" width="404" height="14" sprite="smxhud_objective_background" pivot="left" color="[smxhud_element_bg]" globalopacitymod="1.2" />
+					<sprite name="bar" depth="2" pos="-200,0" width="400" height="10" sprite="smxhud_objective_background" type="filled" fill="{fill}" filldirection="horizontal" pivot="left" color="[smxhud_throw_bar]" globalopacitymod="1.4" foregroundlayer="true" />
 				</rect>
 			</window>
 		</append>
 
 
-<!--	// SMX // Interaction Prompt -->
+<!--	// SMX // Block Health -->
 
-		<remove xpath="/windows/window[@name='interactionPrompt']" />
+		<remove xpath="/windows/window[@name='focusedBlockHealth']" />
 
 		<append xpath="/windows">
-			<window name="interactionPrompt" pos="0,50" width="380" height="32" anchor="CenterCenter" controller="InteractionPrompt" fade_delay="0.02">
-				<sprite name="borderbar1" depth="2" pos="-5,17" width="100%" height="2" sprite="smxlib_ui_element_searchtimer_bar" color="[SMXlibElementsAccentColor1]" pivot="center" globalopacitymod="1.8" />
-				<sprite name="background" depth="1" pos="0,-1" width="100%" height="40" sprite="smxlib_ui_element_searchtimer_background" color="[SMXlibElementsBG]" pivot="center" type="sliced" globalopacitymod="1.5" />
-				<sprite name="borderbar2" depth="2" pos="-5,-20" width="100%" height="2" sprite="smxlib_ui_element_searchtimer_bar" color="[SMXlibElementsAccentColor1]" pivot="center" globalopacitymod="1.8" />
-				<label name="lblText" depth="2" text="{text}" font_size="24" crispness="Never" effect="outline" effect_distance="1,1" effect_color="0,0,0,150" justify="center" pivot="center" parse_actions="true" actions_default_format="( [AF1E19]###[-] )" />
+			<window name="focusedBlockHealth" pos="0,-40" width="200" height="50" anchor="CenterCenter" controller="FocusedBlockHealth" fade_window="false">
+				<sprite name="background" depth="1" pos="0,40" width="42" height="42" sprite="smxhud_unitframe_wellness_foreground" pivot="center" color="[white]" globalopacitymod="1.2" />
+				<sprite name="bar" depth="2" pos="0,40" width="48" height="48" sprite="ui_game_symbol_twitch_overhead_hp_ring" type="filled" fill="{fill}" filldirection="radial360" pivot="center" color="[white]" globalopacitymod="1.8" />
+				<label name="lblText" pos="80,40" height="30" style="smxlib_label_normal" text="{text}" font_size="22" pivot="center" justify="center" />
+			</window>
+		</append>
+
+
+<!--	// SMX // PopUp ToolTip -->
+
+		<remove xpath="/windows/window[@name='toolTipPopups']" />
+
+		<append xpath="/windows">
+			<window name="toolTipPopups" depth="-100" pos="-5,205" width="340" height="92" anchor="LeftBottom" controller="PopupToolTip">
+				<sprite name="smxhud_poptip_background" depth="1" pos="150,-40" width="340" height="92" update_position="true" sprite="smxhud_unitframe_background_cut" pivot="center" color="7,7,7,{textalpha}" globalopacitymod="1.6" />
+				<sprite name="smxhud_unitframe_frameseparator" depth="3" pos="155,-10" width="315" height="3" sprite="smxlib_window_separation_line_1" rotation="0" pivot="center" color="192,192,192,{textalpha}" globalopacitymod="1.8" />
+				<sprite name="smxhud_unitframe_frameseparator" depth="3" pos="140,-75" width="290" height="3" sprite="smxlib_window_separation_line_1" rotation="0" pivot="center" color="192,192,192,{textalpha}" globalopacitymod="1.8" />
+				<label name="lblText" depth="3" pos="160,-43" width="300" height="60" update_position="true" style="smxlib_label_normal" text="{text}" color="255,255,255,{textalpha}" font_size="22" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" parse_actions="true" />
+			</window>
+		</append>
+
+
+<!--	// SMX // Quest Tracker -->
+
+		<remove xpath="/windows/window[@name='windowQuestTracker']" />
+
+		<append xpath="/windows">
+			<window name="windowQuestTracker" depth="-20" pos="-255,-90" width="400" height="400" controller="QuestTrackerWindow" visible="{showquest}">
+				<sprite name="smxhud_questtracker_background" depth="0" pos="-90,14" width="360" height="182" sprite="smxhud_questtracker_background" color="[smxhud_element_bg]" globalopacitymod="1.5" />
+				<label name="smxhud_questtracker_title" depth="1" pos="105,-15" width="280" height="28" style="smxlib_label_normal" text="{questtitle}" font_size="26" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" color="[smxhud_labelcolor_1]" />
+				<sprite name="windowIcon" depth="1" pos="-75,1" style="icon32px" sprite="{questicon}" justify="left" color="[smxhud_icons_1]" />
+				<grid name="objectiveList" depth="1" pos="-60,-50" rows="12" cols="1" cell_width="300" cell_height="26" repeat_content="true" arrangement="vertical" controller="QuestTrackerObjectiveList" complete_icon="ui_game_symbol_check" incomplete_icon="ui_game_symbol_x" complete_color="[smxhud_quest_complete_color]" incomplete_color="[smxhud_quest_incomplete_color]">
+					<smxhud_quest_objective_tracker_entry />
+				</grid>
+			</window>
+		</append>
+
+
+<!--	// SMX // Chat Output -->
+
+		<remove xpath="/windows/window[@name='chatoutput']" />
+
+		<append xpath="/windows">
+			<window name="chatoutput" depth="-99" pos="10,-565" width="500" height="250" anchor="LeftTop" controller="ChatOutput" fadeout_wait_time="5" fadeout_duration="2">
+				<textlist name="txtOutput" depth="2" pos="8,-214" width="484" height="210" list_style="chat" font_size="22" crispness="Always" effect="outline" effect_distance="1,1" effect_color="[black]" pivot="bottomleft" />
+			</window>
+		</append>
+
+
+<!--	// SMX // Chat Input -->
+
+		<remove xpath="/windows/window[@name='chat']" />
+
+		<append xpath="/windows">
+			<window name="chat" depth="-99" pos="10,-565" width="500" height="250" anchor="LeftTop" controller="Chat" cursor_area="true">
+
+				<sprite name="smxhud_chat_main_background" depth="1" pos="-30,0" width="550" height="265" sprite="smxhud_chat_background" color="[smxhud_element_bg]" type="sliced" globalopacitymod="0.9" />
+
+				<rect name="input" depth="2" pos="0,-222" height="32">
+					<sprite name="smxhud_chat_separation_line" depth="8" pos="20,3" width="450" height="3" sprite="smxlib_window_separation_line_1" color="[smxhud_unitframe_separation]" globalopacitymod="1.5" />
+					<smxhud_chat_combobox name="cbxTarget" pos="2,-8" width="100" height="22" type="ComboBoxList`1[EChatType]" value_max="party" font_size="22" localization_prefix="xuiChatTarget" />
+					<smxhudtextfield name="txtInput" depth="2" pos="110,-18" width="386" height="28" font_size="22" crispness="Always" effect="outline" effect_distance="1,1" effect_color="[black]" pivot="left" justify="left" overflow="ClampContent" backgroundcolor="[transparent]" max_line_count="1" open_vk_on_open="true" />
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Twitch DeathBar -->
+
+		<remove xpath="/windows/window[@name='windowDeathBar']" />
+
+		<append xpath="/windows">
+			<window name="windowDeathBar" controller="DeathBar">
+				<rect pos="0,145" width="1200" height="86" visible="{visible}">
+					<sprite name="backgroundMain" width="1440" height="374" sprite="death_message_twitch" pivot="center" />
+					<label name="TextContent" depth="3" pos="0,-2" height="80" style="smxlib_label_normal" text="{death_text}" font_size="50" pivot="center" justify="center" color="[white]" />
+				</rect>
 			</window>
 		</append>
 
@@ -421,5 +532,82 @@
 
 		<set xpath="/windows/window[@name='windowTwitch']/panel[@name='buttonBar']/label/@pos">30,-6</set>
 		<set xpath="/windows/window[@name='windowTwitch']/panel[@name='buttonBar']/label/@justify">left</set>
+
+
+<!--	// SMX // Twitch Integration --> <!-- SMX COMMENT: NOT 100% done yet. Still some work to do, especially with VOTES! -->
+
+		<remove xpath="/windows/window[@name='windowTwitch']" />
+
+		<append xpath="/windows">
+			<window name="windowTwitch" depth="-51" pos="-305,200" width="300" height="400" controller="TwitchWindow" anchor="RightCenter" visible="false">
+				<sprite name="smxhud_twitch_background" depth="0" pos="-40,14" width="360" height="182" sprite="smxhud_questtracker_background" color="[smxhud_element_bg]" globalopacitymod="1.5" />
+				<label name="smxhud_twitch_title" depth="1" pos="155,-15" width="280" height="28" style="smxlib_label_normal" text="{status_title}" font_size="26" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" color="[smxhud_labelcolor_1]" />
+				<sprite name="smxhud_twitch_window_icon" depth="1" pos="-25,1" size="40,40" sprite="smxlib_ui_game_symbol_twitch_logo" color="[smxhud_icons_1]" justify="left" globalopacitymod="1.8" />
+
+				<sprite name="smxhud_pause_background" depth="1" pos="238,46" width="50" height="50" sprite="smxhud_icon_background" color="[smxhud_element_bg]" globalopacitymod="1.8" />
+				<button name="pauseButton" depth="2" pos="260,21" size="22,22" style="smxlib_icon_colors" sprite="ui_game_symbol_twitch_pause" pivot="center" defaultcolor="[white]" collider_scale="1.5" tooltip_key="TwitchInfo_PauseButton" sound="[paging_click]"/>
+
+				<sprite name="smxhud_options_background" depth="1" pos="268,46" width="50" height="50" sprite="smxhud_icon_background" color="[smxhud_element_bg]" globalopacitymod="1.8" />
+				<button name="optionsButton" depth="2" pos="290,21" size="22,22" style="smxlib_icon_colors" sprite="ui_game_symbol_modded" pivot="center" defaultcolor="[white]" collider_scale="1.5" tooltip_key="TwitchInfo_InfoButton" sound="[paging_click]"/>
+
+				<label name="smxhud_pot_balance" depth="2" pos="155,-15" width="280" height="28" style="smxlib_label_normal" text="{potbalance}" font_size="26" color="[smxhud_labelcolor_1]" pivot="center" justify="right" upper_case="true" overflow="ShrinkContent" visible="{showpotbalance}" />
+				
+				<rect name="cooldownBar" depth="1" pos="-8,-50" height="40">
+					<sprite name="smxhud_cooldown_background" depth="0" pos="-15,11" width="330" height="36" sprite="smxhud_objective_background" color="[smxhud_element_bg]" globalopacitymod="1.8" />
+					<filledsprite name="BarContent" depth="1" pos="-15,11" width="330" height="36" sprite="smxhud_objective_background" type="filled" fill="{cooldownfill}" color="255,0,0,160" globalopacitymod="1.6" />
+
+					<label name="smxhud_twitch_timer" depth="2" pos="155,-4" width="280" height="28" style="smxlib_label_normal" text="{status}" font_size="22" pivot="center" justify="right" upper_case="true" overflow="ShrinkContent" color="[smxhud_labelcolor_1]" />
+				</rect>
+
+				<rect name="titleHeader" depth="1" pos="0,-80" height="43" visible="{grouptitlevisible}">
+					<sprite name="smxhud_twitch_background" depth="0" pos="-40,14" width="360" height="182" sprite="smxhud_questtracker_background" color="[smxhud_element_bg]" globalopacitymod="1.5" />
+					<label name="smxhud_spawn_title" depth="1" pos="155,-15" width="280" height="28" style="smxlib_label_normal" text="{grouptitle}" font_size="26" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" color="[smxhud_labelcolor_1]" />
+
+					<button name="leftButton" depth="2" pos="20,-18" width="24" height="24" style="smxlib_icon_colors" sprite="ui_game_symbol_arrow_left" pivot="center" defaultcolor="[white]" collider_scale="1.5" sound="[paging_click]" visible="{arrowvisible}" />
+					<button name="rightButton" depth="2" pos="277,-18" width="24" height="24" style="smxlib_icon_colors" sprite="ui_game_symbol_arrow_right" pivot="center" defaultcolor="[white]" collider_scale="1.5" sound="[paging_click]" visible="{arrowvisible}" />
+				</rect>
+
+				<rect name="content" pos="0,-130" height="303" depth="1" pivot="center" visible="{showcontent}">
+					<grid visible="{showcommands}" depth="0" pos="0,0" width="327" cols="1" cell_height="26" repeat_content="false" arrangement="vertical" controller="TwitchCommandList">
+						
+						<smx_twitch_command_entry backgroundcolor="[darkGrey]"    index="1" />
+						<smx_twitch_command_entry backgroundcolor="[darkestGrey]" index="2" />
+						<smx_twitch_command_entry backgroundcolor="[darkGrey]"    index="3" />
+						<smx_twitch_command_entry backgroundcolor="[darkestGrey]" index="4" />
+						<smx_twitch_command_entry backgroundcolor="[darkGrey]"    index="5" />
+						<smx_twitch_command_entry backgroundcolor="[darkestGrey]" index="6" />
+						<smx_twitch_command_entry backgroundcolor="[darkGrey]"    index="7" />
+						<smx_twitch_command_entry backgroundcolor="[darkestGrey]" index="8" />
+						<smx_twitch_command_entry backgroundcolor="[darkGrey]"    index="9" />
+						<smx_twitch_command_entry backgroundcolor="[darkestGrey]" index="10" />
+					</grid>
+					
+					<grid visible="{showvotes1}" depth="0" pos="0,0" width="327" cols="1" cell_height="26" repeat_content="false" arrangement="vertical" controller="TwitchVoteList" line_count="1">
+						<smx_twitch_vote_entry_one backgroundcolor="[darkGrey]" altbackgroundcolor="[darkestGrey]" index="1" />
+						<smx_twitch_vote_entry_one backgroundcolor="[darkestGrey]" altbackgroundcolor="[darkGrey]" index="2" />
+						<smx_twitch_vote_entry_one backgroundcolor="[darkGrey]" altbackgroundcolor="[darkestGrey]" index="3" />
+						<smx_twitch_vote_entry_one backgroundcolor="[darkestGrey]" altbackgroundcolor="[darkGrey]" index="4" />
+						<smx_twitch_vote_entry_one backgroundcolor="[darkGrey]" altbackgroundcolor="[darkestGrey]" index="5" />
+					</grid>
+
+					<grid visible="{showvotes2}" depth="0" pos="0,0" width="327" cols="1" cell_height="26" repeat_content="false" arrangement="vertical" controller="TwitchVoteList" line_count="2">
+						<smx_twitch_vote_entry_two backgroundcolor="[darkGrey]" altbackgroundcolor="[darkestGrey]" index="1" />
+						<smx_twitch_vote_entry_two backgroundcolor="[darkestGrey]" altbackgroundcolor="[darkGrey]" index="2" />
+						<smx_twitch_vote_entry_two backgroundcolor="[darkGrey]" altbackgroundcolor="[darkestGrey]" index="3" />
+						<smx_twitch_vote_entry_two backgroundcolor="[darkestGrey]" altbackgroundcolor="[darkGrey]" index="4" />
+						<smx_twitch_vote_entry_two backgroundcolor="[darkGrey]" altbackgroundcolor="[darkestGrey]" index="5" />
+					</grid>
+
+					<grid visible="{showvotes3}" depth="0" pos="0,0" width="327" cols="1" cell_height="26" repeat_content="false" arrangement="vertical" controller="TwitchVoteList" line_count="3">
+						<smx_twitch_vote_entry backgroundcolor="[darkGrey]" altbackgroundcolor="[darkestGrey]" index="1" />
+						<smx_twitch_vote_entry backgroundcolor="[darkestGrey]" altbackgroundcolor="[darkGrey]" index="2" />
+						<smx_twitch_vote_entry backgroundcolor="[darkGrey]" altbackgroundcolor="[darkestGrey]" index="3" />
+						<smx_twitch_vote_entry backgroundcolor="[darkestGrey]" altbackgroundcolor="[darkGrey]" index="4" />
+						<smx_twitch_vote_entry backgroundcolor="[darkGrey]" altbackgroundcolor="[darkestGrey]" index="5" />
+					</grid>
+
+				</rect>
+			</window>
+		</append>
 
 </SMXhud>
