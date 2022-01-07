@@ -1,7 +1,7 @@
 # SMXhud - A20
 
 <p align="center">
-  <img src="https://staticdelivery.nexusmods.com/mods/1059/images/22/22-1641470152-1545638046.jpeg" width="700" title="SMXhud - A19">
+  <img src="https://staticdelivery.nexusmods.com/mods/1059/images/22/22-1641470152-1545638046.jpeg" width="700" title="SMXhud - A20">
 </p>
 
 **Description:**
