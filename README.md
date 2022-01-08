@@ -1,4 +1,5 @@
 # SMXhud - A20
+> Credits: Sirillion, sphereii, TormentedEMu
 
 <p align="center">
   <img src="https://staticdelivery.nexusmods.com/mods/1059/images/22/22-1641470152-1545638046.jpeg" width="700" title="SMXhud - A20">
