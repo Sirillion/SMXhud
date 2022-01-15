@@ -1,4 +1,8 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
+
+xuiChangeLogHeaderHUD,UI,Menu,x,,ChangeLog - SMXhud - r20.rc4
+xuiChangeLogHUD,UI,Menu,x,,[AF1E19]*[-]  CHANGE: Added a new throw/draw bar design.\n[AF1E19]*[-]  ADDED: Available skillpoints indicator.\n[AF1E19]*[-]  ADDED: Animated art elements. Smoky'!.\n[AF1E19]*[-]  CHANGE: Increased buff size by 10px.\n[AF1E19]*[-]  ADDED: ZMXhudCPBH1080. New modlet for 1080p users.\n[AF1E19]*[-]  CHANGE: Updated most color style references.\n,,,,,
+
 itemTooltipFocusedOne,UI,Use Prompt,,,{0} Collect: {1},,{0} Sammle: {1},{0} Recoger: {1},{0} pour récupérer : {1},{0} Ottieni: {1},{0} 回収： {1},{0} 수집: {1},{0} Zdobądź: {1},{0} coletar: {1},{0} Собрать: {1},{0} Topla: {1},{0} 收集：{1},{0} 收集：{1},{0} Recoger: {1}
 itemTooltipFocusedSeveral,UI,Use Prompt,,,{0} Collect: {2} of {1},,{0} Sammle: {2} von {1},{0} Recogido: {2} de {1},{0} pour récupérer : {2} sur {1},{0} Ottieni: {2} di {1},{0} 回収： {2} / {1},{0} 수집: {1}의 {2},{0} Zdobądź: {2} z {1},{0} coletar: {2} de {1},{0} Собрать: {2} из {1},{0} Topla: {2}/{1},{0} 收集：{2} /{1},{0} 收集：{2}的{1},{0} Recogido: {2} de {1}
 lootEntity,UI,Use Prompt,,,{0} Search {1} ([3F8117]Untouched[-]),,{0} {1} durchsuchen ([3F8117]Unberührt[-]),{0} Registrar {1} ([3F8117]Intacto[-]),{0} Fouiller {1} ([3F8117]intact[-]),{0} Esamina {1} ([3F8117]Nuovo[-]),{0} {1}を調べる （[3F8117]未使用[-]）,{0} {1}([3F8117]손대지 않은[-]) 검색,{0} Przeszukaj: {1} ([3F8117]nienaruszone[-]),{0} Buscar {1} ([3F8117]intocado[-]),{0}: обыскать тело ({1}) ([3F8117]нетронуто[-]),{0} Ara: {1} ([3F8117]Dokunulmamış[-]),{0} 搜索 {1}（[3F8117]未触碰过[-]）,{0} 搜索{1}（[3F8117]未觸及[-]）,{0} Registrar {1} ([3F8117]Intacto[-])
@@ -18,8 +22,7 @@ xuiOpeningLoot,UI,Use Prompt,,,Searching...,,Suchen...,Procurando...,Recherche..
 
 xuiCompassWindowHUD,UI,,,,Compass Window.,,,,,
 
-xuiXPToNextLevelHUD1,UI,,,,XP to next level:,,,,,
-xuiXPToNextLevelHUD2,UI,,,,XP to next level.,,,,,
+xuiUnspentSkillpointsHUD,UI,,,,You have unspent skillpoints!,,,,,
 
 xuiCurrentDayHUD,UI,,,,Have a nice day!,,,,,
 xuiCurrentTimeHUD,UI,,,,We hope you are having the time of your life!,,,,,
@@ -45,6 +48,3 @@ xuiVehicleFuelHUD,UI,,,,Fuel Level.,,,,,
 
 xuiTwitchIntegrationHUD,UI,,,,Twitch Integration.,,,,,
 xuiQuestTrackerHUD,UI,,,,Quest Tracker.,,,,,
-
-xuiChangeLogHeaderHUD,UI,Menu,x,,ChangeLog - SMXhud - r20.rc3
-xuiChangeLogHUD,UI,Menu,x,,[AF1E19]*[-]  FIXED: Twitch vote UI not showing.\n[AF1E19]*[-]  FIXED: Missing assets in party window.\n[AF1E19]*[-]  ADDED: Hover descriptions to HUD elements.\n[AF1E19]*[-]  ADDED: Binding for free inventory slots.\n[AF1E19]*[-]  ADDED: UI Scale Lock.\n[AF1E19]*[-]  TWEAK: Increased icon size for the buffs.\n,,,,,

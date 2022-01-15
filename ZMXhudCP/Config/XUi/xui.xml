@@ -4,7 +4,7 @@
 
 		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r20.rc3
+		// VERSION:			r20.rc4
 
 		// BUILD:			A20.0
 
@@ -45,6 +45,8 @@
 							available to the public.
 
 		// CREDITS:			Sirillion (main developer/designer/harmony/frontend/backend/author), sphereii (developer/harmony/backend), TormentedEmu (developer/harmony/backend)
+
+		// CONTRIBUTORS:	Laydor (code), Mumpfy (art)
 -->
 
 <!--	// SMX // File Attribute Restore - A20 Values -->

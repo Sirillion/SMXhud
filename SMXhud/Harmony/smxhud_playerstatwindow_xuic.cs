@@ -315,7 +315,6 @@ internal class XUiC_PlayerStatWindow : XUiController
                 var freeslots = total - used;
 
                 value = freeslots.ToString();
-
             }
             return true;
         }
@@ -373,41 +372,41 @@ internal class XUiC_PlayerStatWindow : XUiController
             return true;
         }
 
-        
-        // WORK IN PROGRESS BELOW
 
-
-        // From XUiC_SkillListWindow - WIP - NOT READY!
+        // From XUiC_SkillListWindow
         if (bindingName == "skillpointsavailable")
         {
             string v = this.pointsAvailable;
             EntityPlayerLocal entityPlayer = base.xui.playerUI.entityPlayer;
             if (XUi.IsGameRunning() && entityPlayer != null)
             {
-                /*if (string.IsNullOrEmpty(this.skillPointsAvailableFormatter.Format(v, entityPlayer.Progression.SkillPoints)))
-                    value = "";
-                else
-                    value = this.skillPointsAvailableFormatter.Format(v, entityPlayer.Progression.SkillPoints);
-                */
                 value = this.skillPointsAvailableFormatter.Format(v, entityPlayer.Progression.SkillPoints);
             }
             return true;
         }
 
-        // From TormentedEmu - Custom Code to hide skillpointsavailable - WIP - NOT READY!
+
+        // From TormentedEmu - Custom Code - Hides entries when no skillpoints are available.
         if (bindingName == "hasskillpoint")
         {
-            EntityPlayerLocal entityPlayer = base.xui.playerUI.entityPlayer;
-            if (XUi.IsGameRunning() && entityPlayer != null)
+            if (XUi.IsGameRunning() && this.player != null)
             {
-                int points = entityPlayer.Progression.SkillPoints;
-                if (points > 0)
+                if (player.Progression.SkillPoints > 0)
                     value = "true";
                 else
                     value = "false";
             }
             return true;
         }
+
+
+        // From Sirillion - Custom Code - Displays weapon damage on HUD.
+ /*       if (bindingName == "damageonhud")
+        {
+            value = (!this.itemStack.IsEmpty() ? XUiM_ItemStack.GetStatItemValueTextWithModInfo(this.itemStack, base.xui.playerUI.entityPlayer(0) : "");
+            return true;
+        }*/
+
 
         return false;
     }
@@ -436,6 +435,7 @@ internal class XUiC_PlayerStatWindow : XUiController
     }
 
     private EntityPlayer player;
+    public EntityVehicle Vehicle { get; private set; }
 
     public EntityNPC NPC;
 
@@ -460,7 +460,7 @@ internal class XUiC_PlayerStatWindow : XUiController
     private readonly CachedStringFormatter<int> playerZombieKillsFormatter = new CachedStringFormatter<int>((int _i) => _i.ToString());
 
 
-// From CharacterWindow
+    // From CharacterWindow
 
     private readonly CachedStringFormatter<int> playerWaterMaxFormatter = new CachedStringFormatter<int>((int _i) => _i.ToString());
 

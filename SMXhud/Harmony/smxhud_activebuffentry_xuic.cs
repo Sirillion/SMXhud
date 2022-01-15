@@ -12,7 +12,7 @@ public class SMXhud_activebuffentry_xuic
     [HarmonyPatch(typeof(XUiC_ActiveBuffEntry))]
     [HarmonyPatch("GetBindingValue")]
 
-    public class SMXhudActiveBuffEntry
+    public class SMXhudActiveBuffEntryHasBuff
     {
         static bool Prefix(ref bool __result, ref string value, ref string bindingName, string ___buffName)
         {
