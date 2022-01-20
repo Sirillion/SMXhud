@@ -6,6 +6,13 @@
 > Compatibility: Will probably work with most mods that doesn't modify the same windows in the XUI files.
 
 
+## **DESCRIPTION:**
+
+With the release of A20 SMXhud has now evolved into the world of Harmony. This means that it does now mod deeper than ever before and that opens the door for more and better features. On the flip side this means it is no longer EAC friendly, so turn EAC off.
+
+SMXhud changes the game HUD. Everything you see on the interface while running around in the game world is part of the HUD experience. The purpose of SMXhud is to change that part of the user interface and change it into a more horror like and gritty art style all while trying to be as informative as possible but not intrusive.
+
+
 <p align="center">
   <img src="https://7dtd-community.s3.us-east-2.amazonaws.com/monthly_2022_01/A20.0_2022-01-17_17-29-52.jpg.c47b1410dce3d44709065c07d1b578a7.jpg" width="1080" title="SMXhud - A20">
 </p>
@@ -50,13 +57,6 @@ As of A20 I decided to move SMX into the lands of Harmony and with that digging 
 > Main Credits: Sirillion (main developer/designer/xml/coding), sphereii (developer/coding), TormentedEmu (developer/coding)
 
 > Contributors: Laydor(code), Mumpfy(art)
-
-
-## **DESCRIPTION:**
-
-With the release of A20 SMXhud has now evolved into the world of Harmony. This means that it does now mod deeper than ever before and that opens the door for more and better features. On the flip side this means it is no longer EAC friendly, so turn EAC off.
-
-SMXhud changes the game HUD. Everything you see on the interface while running around in the game world is part of the HUD experience. The purpose of SMXhud is to change that part of the user interface and change it into a more horror like and gritty art style all while trying to be as informative as possible but not intrusive.
 
 
 ## **NEED SUPPORT?**
