@@ -1,5 +1,5 @@
 # SMXhud - THE HUD REPLACEMENT MODLET
-> Verified to work with: A20.0B238 & A20.1B5
+> Verified to work with: A20.2B2
 
 > Dependencies: SMXlib, ZMXhudCP.
 
