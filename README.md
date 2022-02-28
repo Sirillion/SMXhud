@@ -1,7 +1,7 @@
 # SMXhud - THE HUD REPLACEMENT MODLET
 > Verified to work with: A20.3B3
 
-> Dependencies: SMXlib, ZMXhudCP.
+> Dependencies: [SMXlib](https://github.com/Sirillion/SMXlib), ZMXhudCP(part of this repo).
 
 > Compatibility: Will probably work with most mods that doesn't modify the same windows in the XUI files.
 
