@@ -4,9 +4,9 @@
 
 		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r20.rc4
+		// VERSION:			r20.rc5
 
-		// BUILD:			A20.0
+		// BUILD:			A20.3
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -18,35 +18,36 @@
 
 		// DEPENDENCIES:	SMXlib, ZMXhudCP.
 
-		// TERMS OF USE:	You are allowed to use this modlet as is for your own personal use and/or on a server you run and/or administrate.
+		// TERMS OF USE:	1. You are allowed to use this modlet as is for your own personal use and/or on a server you run and/or administrate.
 
-							You are under no circumstance allowed to distribute any SMX and/or ZMX branded modlets without written consent from the main developer.
+							2. You are under no circumstance allowed to distribute any SMX and/or ZMX branded modlets without written consent from the main developer.
 
-							If you wish to distribute SMX and/or ZMX branded modlets as part of your own project and consent have been given you are required
+							3. If you wish to distribute SMX and/or ZMX branded modlets as part of your own project and consent have been given you are required
 							to do so in such a way so that all the files of the SMX and/or ZMX modlet or modlets in question remain unaltered and you cannot
 							under any circumstance claim credit for creating the modlet or modlets or any of the files provided with it/them.
 
-							If consent is given you are required to make the changes as a new modlet that injects into the modlet in question and
+							4. If consent is given you are required to make the changes as a new modlet that injects into the modlet in question and
 							keeping load order in mind it is to be named so that it loads AFTER the original modlet. The original modlet shall be distributed
 							as is with no change to its files what so ever.
 
-							If consent is given it is only given on a case to case basis and those that receive consent cannot pass that consent on to another
+							5. If consent is given it is only given on a case to case basis and those that receive consent cannot pass that consent on to another
 							party or project. Nor will the consent pass on to other creators that opt to include consented work into their project.
 
-							You are not allowed to use any of the assets bundled with SMX and/or ZMX branded modlets in other projects. This restriction
+							6. You are not allowed to use any of the assets bundled with SMX and/or ZMX branded modlets in other projects. This restriction
 							applies to all files that the SMX and/or ZMX modlets consist of. EXCEPTION: The content of the Harmony folder is to be considered
 							open source and can be used freely as long as the original credit comments within the files are not removed or altered other than
 							adding to.
 
-							You are required to seek special consent from the main developer should you wish to make changes to any asset files provided with the
+							7. You are required to seek special consent from the main developer should you wish to make changes to any asset files provided with the
 							SMX and/or ZMX branded modlets.
 
-							You are required to inform the main developer when your project that contains any SMX and/or ZMX modlet or modlets have been made
+							8. You are required to inform the main developer when your project that contains any SMX and/or ZMX modlet or modlets have been made
 							available to the public.
 
-		// CREDITS:			Sirillion (main developer/designer/harmony/frontend/backend/author), sphereii (developer/harmony/backend), TormentedEmu (developer/harmony/backend)
+		// CREDITS:			Sirillion (main developer/designer/harmony/frontend/backend/author)
+							sphereii (developer/harmony/backend), TormentedEmu (developer/harmony/backend), Laydor (developer/harmony/backend)
 
-		// CONTRIBUTORS:	Laydor (code), Mumpfy (art)
+		// CONTRIBUTORS:	Mumpfy (art)
 -->
 
 <!--	// SMX // Compass -->
@@ -57,7 +58,7 @@
 			<window name="windowCompass" depth="5" pos="-300,-12" width="600" height="43" anchor="CenterTop" controller="CompassWindow" tooltip_key="xuiCompassWindowHUD">
 
 				<!-- SMX COMMENT: The compass backsplash was removed with the A20 design upgrade. A "new" version can be enabled by activating the commented code below should you still want to use one. -->
-				<!--sprite name="smxhud_compass_background" depth="0" pos="-250,15" width="1200" height="108" sprite="smxhud_element_background" flip="vertically" color="[smxlib_window_body_bg]" globalopacitymod="1.2" /-->
+				<!--sprite name="smxhud_compass_background" depth="0" pos="-250,15" width="1200" height="108" sprite="smxhud_element_background" flip="vertically" color="[smxlib_element_background]" globalopacitymod="1.2" /-->
 
 				<sprite name="smxhud_compass_indicator" depth="9" pos="295,10" width="10" height="10" sprite="smxhud_compass_indicator" color="[smxhud_element_compass_indicator_1]" globalopacitymod="0.8" />
 				<texture name="smxhud_compass_texture" depth="8" pos="50,-2" width="500" height="27" texture="@modfolder(SMXlib)://Textures/smxhud_compass_texture.png" color="[iconColor]" rect_size="0.50,1" rect_offset="{#compass_rotation / 360 + 0.3785 - 0.125},0" />
@@ -73,17 +74,19 @@
 
 					<!-- SMX COMMENT: This module contains the levelXP display in the top left corner. -->
 					<rect name="smxhud_levelxp_module" depth="2" pos="-85,0" controller="PlayerStatWindow, SMXhud">
-						<sprite name="smxhud_levelxp_smokeeffect_bg" depth="-2" pos="0,0" width="120" height="120" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="0.8" controller="Spinner, SMXhud" spin="true" angle_per_second="1" />
-						<sprite name="smxhud_levelxp_smokeeffect_mg" depth="-1" pos="0,0" width="119" height="119" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.1" controller="Spinner, SMXhud" spin="true" angle_per_second="-3" />
-						<sprite name="smxhud_levelxp_smokeeffect_fg" depth="0" pos="0,0" width="118" height="118" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.3" controller="Spinner, SMXhud" spin="true" angle_per_second="5" />
+						<sprite name="smxhud_levelxp_smokeeffect_bg" depth="-2" pos="0,0" width="120" height="120" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="0.8" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="1" />
+						<sprite name="smxhud_levelxp_smokeeffect_mg" depth="-1" pos="0,0" width="119" height="119" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.1" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="-3" />
+						<sprite name="smxhud_levelxp_smokeeffect_fg" depth="0" pos="0,0" width="118" height="118" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.3" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="5" />
 						<sprite name="smxhud_levelxp_background" depth="1" pos="0,0" width="110" height="110" sprite="smxhud_levelxp_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.5" />
 						<sprite name="smxhud_levelxp_foreground" depth="2" pos="0,5" width="60" height="50" sprite="smxhud_levelxp_foreground" pivot="center" rotation="-15" color="[smxhud_element_accentcolor_1]" globalopacitymod="1.3" />
 						<sprite name="smxhud_levelxp_bar_background" depth="3" pos="1,3" width="80" height="80" sprite="smxhud_levelxp_bar" pivot="center" color="[smxhud_unitframe_bar_background_1]" globalopacitymod="1.5" />
 						<sprite name="smxhud_levelxp_bar_fill" depth="4" pos="1,3" width="80" height="80" sprite="smxhud_levelxp_bar" type="filled" fill="{xp}" filldirection="radial360" pivot="center" color="{xpcolor}" standard_xp_color="[smxhud_unitframe_xp_bar_normal]" updating_xp_color="[smxhud_unitframe_xp_bar_update]" deficit_xp_color="[smxhud_unitframe_xp_bar_deficit]" globalopacitymod="1.5" xp_fill_speed="2.5" controller="ToolbeltXP, SMXhud" />
 						<label name="smxhud_levelxp_level" depth="5" pos="0,0" width="70" height="50" style="hover, smxlib_label_normal" text="{playerlevel}" font_size="42" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" color="[smxhud_element_labelcolor_1]" controller="PlayerStatWindow, SMXhud" tooltip_key="XP to next Level: {playerxptonextlevel}"/>
+						<!--curvedlabel name="smxhud_levelxp_xpnextlevel" depth="6" pos="0,0" width="120" height="22" style="smxlib_curved_label" text="XP to next Level: {playerxptonextlevel}" justify="center" radius="50" arc_degrees="180" angular_offset="-90" /-->
 
 						<rect name="smxhud_skillpoints_current" depth="-2" pos="0,0" width="60" height="60" pivot="center" visible="{hasskillpoint}">
-							<sprite name="smxhud_skillpoints_indicator" depth="4" pos="2,3" width="116" height="116" sprite="smxlib_jagged_circle" pivot="center" color="[smxhud_element_accentcolor_1]" globalopacitymod="1.1" controller="Spinner, SMXhud" spin="true" angle_per_second="3" tooltip_key="xuiUnspentSkillpointsHUD" />
+							<sprite name="smxhud_skillpoints_indicator" depth="4" pos="2,3" width="116" height="116" style="hover" sprite="smxlib_jagged_circle" pivot="center" color="[smxhud_element_accentcolor_1]" globalopacitymod="1.1" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="3" tooltip="You have {skillpointsavailable} unspent skillpoints!" />
+							<!--curvedlabel name="smxhud_levelxp_xpnextlevel" depth="6" pos="0,2" width="120" height="24" style="smxlib_curved_label" text="You have {skillpointsavailable} skillpoints!" justify="center" radius="50" arc_degrees="360" angular_offset="-90" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="10" /-->
 						</rect>
 					</rect>
 
@@ -133,9 +136,9 @@
 					<!-- SMX COMMENT: This contains the unitframe core design in the lower left corner. -->
 					<sprite name="smxhud_unitframe_main_background" depth="2" pos="0,0" width="265" height="82" sprite="smxhud_unitframe_background" color="[smxhud_element_background]" globalopacitymod="1.6" />
 
-					<sprite name="smxhud_unitframe_wellness_smokeeffect_bg" depth="-2" pos="19,-54" width="110" height="110" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="0.8" controller="Spinner, SMXhud" spin="true" angle_per_second="1" />
-					<sprite name="smxhud_unitframe_wellness_smokeeffect_mg" depth="-1" pos="19,-54" width="109" height="109" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.1" controller="Spinner, SMXhud" spin="true" angle_per_second="-3" />
-					<sprite name="smxhud_unitframe_wellness_smokeeffect_fg" depth="0" pos="19,-54" width="108" height="108" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.3" controller="Spinner, SMXhud" spin="true" angle_per_second="5" />
+					<sprite name="smxhud_unitframe_wellness_smokeeffect_bg" depth="-2" pos="19,-54" width="110" height="110" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="0.8" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="1" />
+					<sprite name="smxhud_unitframe_wellness_smokeeffect_mg" depth="-1" pos="19,-54" width="109" height="109" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.1" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="-3" />
+					<sprite name="smxhud_unitframe_wellness_smokeeffect_fg" depth="0" pos="19,-54" width="108" height="108" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.3" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="5" />
 					<sprite name="smxhud_unitframe_wellness_main_background" depth="1" pos="19,-54" width="110" height="110" sprite="smxhud_levelxp_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.5" />
 					<!--sprite name="smxhud_unitframe_wellness_main_background" depth="1" pos="-35,1" width="110" height="110" sprite="smxhud_levelxp_background" color="[white]" globalopacitymod="1.5" /--> <!-- original --> 
 					<sprite name="smxhud_unitframe_wellness_background" depth="10" pos="-18,-12" width="80" height="80" sprite="smxhud_unitframe_wellness_background" color="[smxhud_element_background]" globalopacitymod="1.4" />
@@ -189,7 +192,7 @@
 						<sprite name="smxhud_hunger_bar_background" depth="8" pos="-8,-4" width="155" height="12" sprite="smxhud_unitframe_healthbar_empty" flip="vertically" color="[smxhud_unitframe_bar_background_1]" />
 						<filledsprite name="BarContent" depth="9" pos="-8,-4" width="155" height="12" sprite="smxhud_unitframe_healthbar_fill" type="filled" fill="0" flip="vertically" color="[smxhud_unitframe_hunger_bar]" globalopacitymod="1.8" tooltip_key="xuiHungerBarHUD" />
 						<sprite name="Icon" depth="11" pos="-14,-1" size="18,18" sprite="ui_game_symbol_fork" color="[smxhud_element_iconcolor_1]" foregroundlayer="true" />
-						<label name="TextContent" depth="9" pos="116,-11" width="30" height="26" style="smxlib_label_normal" text=" [I]{playerfood}[/I] " font_size="14" pivot="center" justify="center" color="[smxhud_element_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+						<label name="TextContent" depth="10" pos="116,-11" width="30" height="26" style="hover, smxlib_label_normal" text=" [I]{playerfood}[/I] " font_size="14" pivot="center" justify="center" color="[smxhud_element_labelcolor_1]" controller="PlayerStatWindow, SMXhud" tooltip="You have a deficiency of: {playerhungerdeficiency} food." />
 					</rect>
 
 					<!-- SMX COMMENT: This module contains the unitframe thirst bar design in the lower left corner. -->
@@ -197,13 +200,13 @@
 						<sprite name="smxhud_thirst_bar_background" depth="11" pos="0,0" width="69" height="69" sprite="smxhud_unitframe_thirst_bar" color="[smxhud_unitframe_bar_background_1]" globalopacitymod="1.4" />
 						<sprite name="BarContent" depth="12" pos="0,0" width="69" height="69" sprite="smxhud_unitframe_thirst_bar" type="filled" fill="0" filldirection="vertical" color="[smxhud_unitframe_thirst_bar]" globalopacitymod="1.8" tooltip_key="xuiThirstBarHUD" />
 						<sprite name="Icon" depth="13" pos="12,-12" size="40,40" sprite="smxlib_ui_game_symbol_thirst" rotation="0" color="[smxhud_element_iconcolor_1]" foregroundlayer="true" />
-						<label name="TextContent" depth="16" pos="33,-62" width="30" height="26" style="smxlib_label_normal" text=" {playerwater} " font_size="14" pivot="center" justify="center" color="[smxhud_element_labelcolor_1]" controller="PlayerStatWindow, SMXhud" />
+						<label name="TextContent" depth="16" pos="33,-62" width="30" height="26" style="hover, smxlib_label_normal" text=" {playerwater} " font_size="14" pivot="center" justify="center" color="[smxhud_element_labelcolor_1]" controller="PlayerStatWindow, SMXhud" tooltip="You have a deficiency of: {playerthirstdeficiency} water." />
 					</rect>
 				</rect>
 
 				<!-- SMX COMMENT: This module contains the popup buffs design in the lower left corner. It is "disabled" in favor of the new Enhanced Buff Frames. -->
 				<rect name="smxhud_buffs_module" depth="4" pos="-180,60" width="200" height="300" controller="BuffPopoutList" pivot="BottomLeft">
-					<rect name="item" pos="0,0" width="168" height="43" style="press" pivot="right" sound="[recipe_click]" on_hover="true" visible="false" >
+					<rect name="item" pos="0,0" width="168" height="43" style="hover, press" pivot="right" sound="[recipe_click]" visible="false" >
 						<sprite name="Background" depth="3" pos="99999,99999" width="60" height="60" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.0" />
 						<sprite name="smxhud_buff_background" depth="3" pos="42,0" width="60" height="60" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.2" />
 						<sprite name="Icon" depth="4" pos="42,0" size="36,32" pivot="center" color="[transparent]" />
@@ -300,9 +303,9 @@
 
 							<sprite name="smxhud_collection_label_background" depth="3" pos="-150,-28" width="170" height="25" sprite="smxhud_unitframe_background" flip="horizontally" color="[smxhud_element_background]" globalopacitymod="1.8" />
 
-							<sprite name="smxhud_backpack_smokeeffect_bg" depth="-2" pos="29,-13" width="110" height="110" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="0.8" controller="Spinner, SMXhud" spin="true" angle_per_second="1" />
-							<sprite name="smxhud_backpack_smokeeffect_mg" depth="-1" pos="29,-13" width="109" height="109" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.1" controller="Spinner, SMXhud" spin="true" angle_per_second="-3" />
-							<sprite name="smxhud_backpack_smokeeffect_fg" depth="0" pos="29,-13" width="108" height="108" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.3" controller="Spinner, SMXhud" spin="true" angle_per_second="5" />
+							<sprite name="smxhud_backpack_smokeeffect_bg" depth="-2" pos="29,-13" width="110" height="110" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="0.8" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="1" />
+							<sprite name="smxhud_backpack_smokeeffect_mg" depth="-1" pos="29,-13" width="109" height="109" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.1" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="-3" />
+							<sprite name="smxhud_backpack_smokeeffect_fg" depth="0" pos="29,-13" width="108" height="108" sprite="smxhud_icon_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.3" controller="XUiC.Spinner, XUiComponents" spin="true" angle_per_second="5" />
 
 							<sprite name="smxhud_backpack_main_background" depth="1" pos="29,-13" width="110" height="110" sprite="smxhud_levelxp_background" pivot="center" flip="horizontally" color="[smxhud_element_background]" globalopacitymod="1.5" />
 							<sprite name="smxhud_backpack_background" depth="2" pos="30,-12" width="80" height="80" sprite="smxhud_unitframe_wellness_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.4" />
@@ -330,6 +333,7 @@
 
 							<sprite name="smxhud_artbox_background_45" depth="4" pos="43,0" width="52" height="52" sprite="smxlib_artbox_background" pivot="center" rotation="45" color="[smxhud_element_background]" globalopacitymod="1.8" />
 							<sprite name="smxhud_artbox_foreground_45" depth="5" pos="43,0" width="48" height="48" sprite="smxlib_artbox_foreground" pivot="center" rotation="45" color="[smxhud_element_accentcolor_3]" globalopacitymod="1.2" />
+							<!--sprite name="smxhud_artbox_foreground_45" depth="6" pos="43,0" width="48" height="48" sprite="smxlib_artbox_foreground" pivot="center" rotation="45" color="{durabilitycolor}" globalopacitymod="1.8" visible="{hasdurability}" /-->
 
 							<sprite name="Icon" depth="6" pos="43,0" size="45,45" atlas="ItemIconAtlas" pivot="center" foregroundlayer="true" />
 							<label name="TextContent" depth="6" pos="-30,0" width="80" height="36" style="smxlib_label_normal" font_size="22" pivot="center" justify="right" overflow="ShrinkContent" color="[smxhud_element_labelcolor_1]" />

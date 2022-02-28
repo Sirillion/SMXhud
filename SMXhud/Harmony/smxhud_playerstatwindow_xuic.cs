@@ -362,6 +362,36 @@ internal class XUiC_PlayerStatWindow : XUiController
         }
 
 
+        // From Sirillion - Custom Code - Player Hunger & Thirst Deficiency
+        if (bindingName == "playerhungerdeficiency")
+        {
+            if (XUi.IsGameRunning() && this.player != null)
+            {
+                var total = StringParsers.ParseSInt32(this.playerFoodMaxFormatter.Format(XUiM_Player.GetFoodMax(this.player)));
+                var missing = StringParsers.ParseSInt32(this.playerFoodFormatter.Format(XUiM_Player.GetFood(this.player)));
+
+                var deficit = total - missing;
+
+                value = deficit.ToString();
+            }
+            return true;
+        }
+
+        if (bindingName == "playerthirstdeficiency")
+        {
+            if (XUi.IsGameRunning() && this.player != null)
+            {
+                var total = StringParsers.ParseSInt32(this.playerWaterMaxFormatter.Format(XUiM_Player.GetWaterMax(this.player)));
+                var missing = StringParsers.ParseSInt32(this.playerWaterFormatter.Format(XUiM_Player.GetWater(this.player)));
+
+                var deficit = total - missing;
+
+                value = deficit.ToString();
+            }
+            return true;
+        }
+
+
         // From sphereii - Custom Code - "Free's" NPC Portrait for use.
         if (bindingName == "npcportrait")
         {

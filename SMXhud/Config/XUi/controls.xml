@@ -15,7 +15,7 @@
 					<sprite name="smxhud_party_frameseparator" depth="4" pos="0,-26" width="160" height="2" sprite="smxlib_separation_line_1" rotation="0" color="[smxhud_unitframe_separation]" globalopacitymod="1.8" />
 
 					<filledsprite name="BarHealthModifiedMax" depth="4" pos="1,-12" width="185" height="8" sprite="smxhud_unitframe_healthbar_empty" type="filled" fill="{healthmodifiedmax}" color="[smxhud_unitframe_bar_background_1]" globalopacitymod="1.3" />
-					<filledsprite name="BarStaminaModifiedMax" depth="4" pos="1,-22" width="170" height="4" sprite="smxhud_unitframe_staminabar_empty" type="filled" fill="{staminamodifiedmax}" color="[smxhud_unitframe_bar_background_1]" globalopacitymod="1.3" />
+					<filledsprite name="BarStaminaModifiedMax" depth="4" pos="1,-22" width="170" height="4" sprite="smxhud_unitframe_staminabar_empty" type="filled" fill="{staminamodifiedmax}" color="[smxhud_partyframe_health_bar]" globalopacitymod="1.3" />
 
 					<filledsprite name="BarHealth" depth="5" pos="1,-12" width="185" height="8" sprite="smxhud_unitframe_healthbar_fill" type="filled" fill="{healthfill}" color="{healthcolor}" globalopacitymod="1.8" />
 					<filledsprite name="BarStamina" depth="5" pos="1,-22" width="170" height="4" sprite="smxhud_unitframe_staminabar_fill" type="filled" fill="{staminafill}" color="[smxhud_unitframe_stamina_bar]" globalopacitymod="1.8" />
@@ -83,6 +83,10 @@
 					<sprite name="durability" depth="6" pos="0,${-cell_height/2+8}" width="${cell_width-12}" height="5" sprite="smxlib_item_durability_bar" pivot="center" type="filled" fill="{durabilityfill}" color="{durabilitycolor}" foregroundlayer="true" visible="{hasdurability}" />
 
 					<label name="stackValue" depth="7" pos="0,${-cell_height/2+12}" width="${cell_width-14}" height="${cell_height-68}" style="smxlib_label_normal" text="{itemcount}" font_size="18" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxhud_element_labelcolor_1]" visible="{#!hasdurability}" />
+					<!--label name="stackValue" depth="7" pos="0,${-cell_height/2+17}" width="${cell_width-14}" height="${cell_height-68}" style="smxlib_label_normal" text="{itemcount}" font_size="14" pivot="center" justify="{#hasdurability ? 'Right' : 'Center'}" color="[smxhud_element_labelcolor_3]" visible="{hasdurability}" /-->
+
+			<!--label name="stackValue" depth="7" pos="${cell_width-cell_width},${cell_height-cell_height+cell_height/2-12}" width="${cell_width-14}" height="${cell_height-68}" style="smxlib_label_normal" text=" [C0C0C0]QL{itemcount}[-] " font_size="14" pivot="center" justify="{#hasdurability ? 'Center' : 'Right'}" color="[smxhud_element_labelcolor_1]" visible="{hasdurability}" /-->
+
 					<label name="timer" depth="7" pos="0,-2" width="${cell_width-6}" height="${cell_height-62}" style="smxlib_label_normal" font_size="18" upper_case="true" pivot="center" justify="center" color="[smxhud_slot_timer_color]" />
 
 					<sprite name="cancel" depth="14" pos="0,0" size="${cell_width-8},${cell_height-8}" sprite="ui_game_symbol_x" pivot="center" color="[smxui_slot_cancel_color]" foregroundlayer="true" visible="false" />

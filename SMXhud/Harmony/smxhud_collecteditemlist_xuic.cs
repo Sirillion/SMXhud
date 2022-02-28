@@ -12,7 +12,7 @@ public class SMXhud_collecteditemlist_xuic
     [HarmonyPatch(typeof(XUiC_CollectedItemList))]
     [HarmonyPatch("SetYOffset")]
 
-    public class SMXhudCollectedItemList
+    public class SMXhudCollectedItemListSetYOffset
     {
         public static bool Prefix()
         {
