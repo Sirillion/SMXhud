@@ -1,7 +1,7 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
 
-xuiChangeLogHeaderHUD,UI,Menu,x,,ChangeLog - SMXhud - r20.rc6
-xuiChangeLogHUD,UI,Menu,x,,[AF1E19]*[-]  ADDED: Icon for chat activity on party window.\n[AF1E19]*[-]  CHANGE: Updated references for SMXcore rename.\n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
+xuiChangeLogHeaderHUD,UI,Menu,x,,ChangeLog - SMXhud - r20.rc7
+xuiChangeLogHUD,UI,Menu,x,,[AF1E19]*[-]  ADDED: Block damage display for tools.\n[AF1E19]*[-]  ADDED: Entity damage display for melee.\n[AF1E19]*[-]  CHANGE: Moved elevation to active tools.\n[AF1E19]*[-]  ADDED: Bloodmoon indicator under the compass.\n[AF1E19][-]  \n[AF1E19][-]  \n,,,,,
 
 itemTooltipFocusedOne,UI,Use Prompt,,,{0} Collect: {1},,{0} Sammle: {1},{0} Recoger: {1},{0} pour récupérer : {1},{0} Ottieni: {1},{0} 回収： {1},{0} 수집: {1},{0} Zdobądź: {1},{0} coletar: {1},{0} Собрать: {1},{0} Topla: {1},{0} 收集：{1},{0} 收集：{1},{0} Recoger: {1}
 itemTooltipFocusedSeveral,UI,Use Prompt,,,{0} Collect: {2} of {1},,{0} Sammle: {2} von {1},{0} Recogido: {2} de {1},{0} pour récupérer : {2} sur {1},{0} Ottieni: {2} di {1},{0} 回収： {2} / {1},{0} 수집: {1}의 {2},{0} Zdobądź: {2} z {1},{0} coletar: {2} de {1},{0} Собрать: {2} из {1},{0} Topla: {2}/{1},{0} 收集：{2} /{1},{0} 收集：{2}的{1},{0} Recogido: {2} de {1}
@@ -33,6 +33,11 @@ xuiCoreTempHUD,UI,,,,Player Temperature.,,,,,
 
 xuiCurrentAmmoCountHUD,UI,,,,Current Magazine Size.,,,,,
 xuiTotalAmmoCountHUD,UI,,,,Total Ammunition Stock.,,,,,
+
+xuiElevationHUD,UI,,,,Elevation.,,,,,
+
+xuiToolBlockDamageHUD,UI,,,,Tool Block Damage.,,,,,
+xuiMeleeEntityDamageHUD,UI,,,,Melee Entity Damage.,,,,,
 
 xuiCarryCapacityHUD,UI,,,,Encumbrance: Current unlocked backpack slots.,,,,,
 xuiLootStageHUD,UI,,,,Lootstage: The higher the stage the better the loot.,,,,,

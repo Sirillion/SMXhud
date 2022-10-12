@@ -102,7 +102,7 @@
 
 		<append xpath="/controls">
 			<smxhud_active_buff_entry>
-				<rect width="${width}" height="${height}" controller="ActiveBuffEntry" visible="{hasbuff}">
+				<rect width="${width}" height="${height}" controller="SMXcore.ActiveBuffEntry, SMXcore" visible="{hasbuff}">
 					<sprite name="background" depth="1" pos="0,0" width="${width}" height="${height}" style="hover" sprite="smxhud_unitframe_buff_background" pivot="center" color="[smxhud_unitframe_buff_background]" globalopacitymod="1.8" tooltip="{buffname}" />
 					<sprite name="Icon" depth="2" pos="0,10" width="${Round(width/2,0)}" height="${Round(width/2,0)}" sprite="{bufficon|once}" pivot="center" color="{buffcolor}" />
 					<label name="smxhud_buff_label" depth="3" pos="0,${Round(height-height-height/2,0)+pos}" width="40" height="20" style="smxcore_label_normal" text="{buffdisplayinfo}" font_size="${font_size}" pivot="center" justify="center" color="[smxhud_element_labelcolor_1]" overflow="ShrinkContent" />
@@ -168,7 +168,7 @@
 					value="" active_text_color="[labelColor]" caret_color="[labelColor]" selection_color="[mediumGrey_half_alpha]" 
 					character_limit="0" validation="none" backgroundcolor="[black]" on_hover="false" on_scroll="false" virtual_keyboard_prompt=""
 					pivot="topleft" visible="true" on_return="submit" tooltip_key="" search_field="false" password_field="false" focus_on_open="false" clear_on_open="false" close_group_on_tab="false" open_vk_on_open="false"
-					foregroundlayer="false" justify="center" overflow="ShrinkContent" max_line_count="0" font_face="ReferenceFont" crispness="Always">
+					foregroundlayer="false" justify="center" overflow="ShrinkContent" max_line_count="0" font_face="ReferenceFont" crispness="OnDesktop">
 				<panel name="${name}" depth="${depth}" controller="TextInput" pos="${pos}" width="${width}" height="${height}" value="${value}"
 					active_text_color="${active_text_color}" caret_color="${caret_color}" selection_color="${selection_color}" 
 					character_limit="${character_limit}" validation="${validation}" backgroundcolor="${backgroundcolor}" style="press, select" on_hover="${on_hover}" on_scroll="${on_scroll}" snapCursor="true" virtual_keyboard_prompt="${virtual_keyboard_prompt}"

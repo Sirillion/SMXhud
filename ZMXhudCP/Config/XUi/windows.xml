@@ -5,7 +5,7 @@
 		<remove xpath="/windows/window[@name='windowTargetBar']" />
 
 		<append xpath="/windows">
-			<window name="windowTargetBar" controller="TargetBar" visibility="never">
+			<window name="windowTargetBar" controller="SMXcore.TargetBar, SMXcore" visibility="never">
 				<rect name="smxhud_targetframe_normal_content" pos="0,-120" size="420,80" visible="{isnotboss}">
 					<sprite name="border" depth="1" pos="0,0" width="400" height="50" sprite="smxhud_targetframe_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.8" />
 
