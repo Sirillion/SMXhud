@@ -63,7 +63,7 @@
 				<sprite name="smxhud_compass_indicator" depth="9" pos="295,10" width="10" height="10" sprite="smxhud_compass_indicator" color="[smxhud_element_compass_indicator_1]" globalopacitymod="0.8" />
 				<texture name="smxhud_compass_texture" depth="8" pos="50,-2" width="500" height="27" texture="@modfolder(SMXcore)://Textures/smxhud_compass_texture.png" color="[iconColor]" rect_size="0.50,1" rect_offset="{#compass_rotation / 360 + 0.3785 - 0.125},0" />
 
-				<sprite name="smxhud_compass_indicator" depth="9" pos="277,-130" width="50" height="50" sprite="smxcore_bloodmoon_indicator" color="[smxhud_element_compass_indicator_1]" globalopacitymod="0.8" controller="SMXcore.BloodMoon, SMXcore" fullmoontime="1:00" bloodmoontime="2:00" bloodmooncolortint="[red]" mooncolortint="[white]" />
+				<sprite name="smxhud_bloodmoon_indicator" depth="9" pos="286,-38" size="30,30" sprite="smxcore_bloodmoon_indicator" color="[smxhud_element_compass_indicator_1]" globalopacitymod="1.0" controller="SMXcore.BloodMoon, SMXcore" fullmoontime="2:00" bloodmoontime="1:00" bloodmooncolortint="[red]" mooncolortint="[white]" />
 
 			</window>
 		</append>
