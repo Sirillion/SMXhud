@@ -1,5 +1,5 @@
 # SMXhud - THE HUD REPLACEMENT MODLET
-> Verified to work with: A20.6B9
+> Verified to work with: A21.0B317
 
 > Dependencies: [SMXcore](https://github.com/Sirillion/SMXcore), ZMXhudCP(part of this repo).
 
@@ -8,7 +8,7 @@
 
 ## **DESCRIPTION:**
 
-With the release of A20 SMXhud has now evolved into the world of Harmony. This means that it does now mod deeper than ever before and that opens the door for more and better features. On the flip side this means it is no longer EAC friendly, so turn EAC off.
+With the release of A21 SMXhud has now evolved into the world of Harmony. This means that it does now mod deeper than ever before and that opens the door for more and better features. On the flip side this means it is no longer EAC friendly, so turn EAC off.
 
 SMXhud changes the game HUD. Everything you see on the interface while running around in the game world is part of the HUD experience. The purpose of SMXhud is to change that part of the user interface and change it into a more horror like and gritty art style all while trying to be as informative as possible but not intrusive.
 
