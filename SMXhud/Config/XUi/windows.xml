@@ -4,9 +4,9 @@
 
 		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r20.rc7
+		// VERSION:			21.0.317.0
 
-		// BUILD:			A20.6
+		// BUILD:			A21.0
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -63,8 +63,67 @@
 				<sprite name="smxhud_compass_indicator" depth="9" pos="295,10" width="10" height="10" sprite="smxhud_compass_indicator" color="[smxhud_element_compass_indicator_1]" globalopacitymod="0.8" />
 				<texture name="smxhud_compass_texture" depth="8" pos="50,-2" width="500" height="27" texture="@modfolder(SMXcore)://Textures/smxhud_compass_texture.png" color="[iconColor]" rect_size="0.50,1" rect_offset="{#compass_rotation / 360 + 0.3785 - 0.125},0" />
 
-				<sprite name="smxhud_bloodmoon_indicator" depth="9" pos="286,-38" size="30,30" sprite="smxcore_bloodmoon_indicator" color="[smxhud_element_compass_indicator_1]" globalopacitymod="1.0" controller="SMXcore.BloodMoon, SMXcore" fullmoontime="2:00" bloodmoontime="1:00" bloodmooncolortint="[red]" mooncolortint="[white]" />
+				<sprite name="smxhud_bloodmoon_indicator" depth="9" pos="284,-85" size="30,30" sprite="smxcore_bloodmoon_indicator" color="[smxhud_element_compass_indicator_1]" globalopacitymod="1.0" controller="SMXcore.BloodMoon, SMXcore" fullmoontime="2:00" bloodmoontime="1:00" bloodmooncolortint="[red]" mooncolortint="[white]" />
 
+			</window>
+		</append>
+
+
+<!--	// SMX // Entering POI Popup -->
+
+		<remove xpath="/windows/window[@name='windowEntering']" />
+
+		<append xpath="/windows">
+			<window name="windowEntering" depth="99" controller="EnteringArea" difficulty_color="[red]" biome_color="[green]" inactive_color="[lightGrey]" difficulty_icon="smxlib_ui_game_symbol_minion" biome_icon="ui_game_symbol_foliage" > 
+				<rect pos="-150,-145" width="300" height="100" visible="{visible}">
+					<sprite name="smx_compasslocation_separator" depth="4" pos="0,-55" width="300" height="4" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" />
+					<sprite name="smx_compasslocation_smoke_up" depth="3" pos="0,-8" width="350" height="50" sprite="smxhud_element_background" color="[smxcore_element_backdrop_2]" />
+					<sprite name="smx_compasslocation_smoke_down" depth="3" pos="320,-105" width="350" height="50" rotation="180" sprite="smxhud_element_background" color="[smxcore_element_backdrop_2]" />
+					<label name="smx_compasslocation_name" depth="3" pos="0,-10" width="290" height="60" pivot="topleft" style="smx_label_outline" text="{locationname}" font_size="42" justify="center" />
+
+					<grid name="smx_location_entry" depth="3" padding="8,10" pos="150,-83" pivot="center" cols="8" cell_width="34" cell_height="32">
+						<sprite depth="2" name="windowicon" style="icon32px" sprite="smxlib_ui_game_symbol_minion" color="{color1}" visible="{visible1}"/>
+						<sprite depth="2" name="windowicon" style="icon32px" sprite="smxlib_ui_game_symbol_minion" color="{color2}" visible="{visible2}"/>
+						<sprite depth="2" name="windowicon" style="icon32px" sprite="smxlib_ui_game_symbol_minion" color="{color3}" visible="{visible3}"/>
+						<sprite depth="2" name="windowicon" style="icon32px" sprite="smxlib_ui_game_symbol_minion" color="{color4}" visible="{visible4}"/>
+						<sprite depth="2" name="windowicon" style="icon32px" sprite="smxlib_ui_game_symbol_minion" color="{color5}" visible="{visible5}"/>
+						<sprite depth="2" name="windowicon" style="icon32px" sprite="smxlib_ui_game_symbol_minion" color="{color6}" visible="{visible6}"/>
+						<sprite depth="2" name="windowicon" style="icon32px" sprite="smxlib_ui_game_symbol_minion" color="{color7}" visible="{visible7}"/>
+						
+						<rect width="32" height="32" visible="{visible_half}">
+							<sprite depth="2" name="windowicon" style="icon32px" sprite="smxlib_ui_game_symbol_minion" type="filled" fill="0.5" color="255,128,0"/>
+							<sprite depth="2" name="windowicon" style="icon32px" sprite="smxlib_ui_game_symbol_minion" type="filled" fill="0.5" fillinvert="true" color="[lightGrey]"/>
+						</rect>
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+
+<!--	// SMX // Location Display -->
+
+		<remove xpath="/windows/window[@name='windowLocation']" />
+
+		<append xpath="/windows">
+			<window name="windowLocation" depth="-20" pos="-300,-40" width="600" height="60" anchor="CenterTop" controller="Location" tooltip_key="xuiLocationWindowHUD">
+				<sprite name="smx_compasslocation_separator" depth="3" pos="0,-5" width="600" height="4" sprite="smxlib_separation_line_1" color="[smxui_element_separation_1]" />
+				<label name="smx_compasslocation_name" depth="3" pos="0,-15" width="600" height="28" style="smx_label_outline" text="{locationname}" font_size="20" justify="center" />
+
+				<grid name="smx_compasslocation_difficulty" depth="3" pos="300,-45" width="100" height="20" pivot="center" rows="1" cols="8" cell_width="18" cell_height="16">
+					<sprite name="windowicon" depth="4" size="16,16" sprite="smxlib_ui_game_symbol_minion" color="{difficultycolor1}" visible="{visible1}" />
+					<sprite name="windowicon" depth="4" size="16,16" sprite="smxlib_ui_game_symbol_minion" color="{difficultycolor2}" visible="{visible2}" />
+					<sprite name="windowicon" depth="4" size="16,16" sprite="smxlib_ui_game_symbol_minion" color="{difficultycolor3}" visible="{visible3}" />
+					<sprite name="windowicon" depth="4" size="16,16" sprite="smxlib_ui_game_symbol_minion" color="{difficultycolor4}" visible="{visible4}" />
+					<sprite name="windowicon" depth="4" size="16,16" sprite="smxlib_ui_game_symbol_minion" color="{difficultycolor5}" visible="{visible5}" />
+					<sprite name="windowicon" depth="4" size="16,16" sprite="smxlib_ui_game_symbol_minion" color="{difficultycolor6}" visible="{visible6}" />
+					<sprite name="windowicon" depth="4" size="16,16" sprite="smxlib_ui_game_symbol_minion" color="{difficultycolor7}" visible="{visible7}" />
+					<rect width="16" height="16" visible="{visible_half}">
+						<sprite name="windowicon" depth="4" size="16,16" sprite="smxlib_ui_game_symbol_minion" type="filled" fill="0.5" color="255,128,0" />
+						<sprite name="windowicon" depth="4" size="16,16" sprite="smxlib_ui_game_symbol_minion" type="filled" fill="0.5" fillinvert="true" color="[lightGrey]" />
+					</rect>
+				</grid>
+				
 			</window>
 		</append>
 
@@ -97,7 +156,7 @@
 					<rect name="smxhud_daytime_module" depth="1" pos="-120,300" width="300" height="130" controller="CompassWindow">
 						<sprite name="smxhud_daytime_background" depth="1" pos="160,-305" width="220" height="130" sprite="smxhud_daytime_background" pivot="center" color="[smxhud_element_background]" globalopacitymod="1.3" />
 
-						<rect name="smxhud_daytime_labels" depth="2" pos="140,-275">
+						<rect name="smxhud_daytime_labels" depth="2" pos="140,-275" visible="{showtime}">
 							<label name="smxhud_day_label" depth="3" pos="0,-5" width="100" height="40" style="smxcore_label_normal" text=" [C0C0C0]{daytitle}[-] [{daycolor}]{day}[-] " font_size="40" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" tooltip_key="xuiCurrentDayHUD" />
 							<label name="smxhud_time_label" depth="3" pos="0,-40" width="100" height="40" style="smxcore_label_normal" text="{time}" font_size="32" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" tooltip_key="xuiCurrentTimeHUD" />
 						</rect>
@@ -250,7 +309,7 @@
 									
 									When this has been done the buffs should resize themself to fit your new size values. Not 100% perfect but hey, it kinda works! -->
 
-				<rect name="content" depth="0" pos="0,0" controller="ActiveBuffWindow">
+				<rect name="content" depth="0" pos="0,0">
 					<grid name="buffs" pos="26,-35" rows="1" cols="15" cell_width="57" cell_height="77" pivot="center" flip="horizontally" repeat_content="true" controller="ActiveBuffList"> <!-- SMX COMMENT: grid -->
 						<smxhud_active_buff_entry pos="24" width="55" height="77" font_size="12" /> <!-- SMX COMMENT: entry -->
 					</grid>
@@ -276,9 +335,17 @@
 					<grid name="inventory" depth="10" pos="44,-43" rows="1" cols="10" cell_width="88" cell_height="86" pivot="center" repeat_content="true"> <!-- SMX COMMENT: grid -->
 						<smxui_toolbelt_item_stack name="0" pos="0" size="18,18" cell_width="86" cell_height="86" /> <!-- SMX COMMENT: entry -->
 					</grid>
+
+					<sprite name="smx_clearinventory_bg" depth="2" pos="470,0" size="50,50"	pivot="center" sprite="ui_game_header_fill" type="sliced" color="[smxcore_element_backdrop_1]" visible="{creativewindowopen}" />
+					<button name="btnClearInventory1" depth="3" pos="470,0" pivot="center" style="icon32px, press, hover" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" sound="[paging_click]" visible="{creativewindowopen}" />
+
 					<grid name="inventory2" depth="10" pos="44,43" rows="1" cols="10" cell_width="88" cell_height="86" pivot="center" repeat_content="true" visible="{secondrow}">
 						<smxui_toolbelt_item_stack name="0" pos="0" size="18,18" cell_width="86" cell_height="86" />
 					</grid>
+
+					<sprite name="smx_clearinventory_bg" depth="2" pos="470,85" size="50,50"	pivot="center" sprite="ui_game_header_fill" type="sliced" color="[smxcore_element_backdrop_1]" visible="{# creativewindowopen and secondrow}" />
+					<button name="btnClearInventory2" depth="3" pos="470,85" pivot="center" style="icon32px, press, hover" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" sound="[paging_click]" visible="{# creativewindowopen and secondrow}" />
+
 				</rect>
 			</window>
 		</append>
@@ -499,8 +566,29 @@
 				<sprite name="smxhud_questtracker_background" depth="0" pos="-90,14" width="360" height="182" sprite="smxhud_questtracker_background" color="[smxhud_element_background]" globalopacitymod="1.5" tooltip_key="xuiQuestTrackerHUD" />
 				<label name="smxhud_questtracker_title" depth="1" pos="105,-15" width="280" height="28" style="smxcore_label_normal" text="{questtitle}" font_size="26" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" color="[smxhud_element_labelcolor_1]" />
 				<sprite name="windowIcon" depth="1" pos="-75,1" style="icon32px" sprite="{questicon}" justify="left" color="[smxhud_element_iconcolor_1]" />
-				<grid name="objectiveList" depth="1" pos="-60,-50" rows="12" cols="1" cell_width="300" cell_height="26" repeat_content="true" arrangement="vertical" controller="QuestTrackerObjectiveList" complete_icon="ui_game_symbol_check" incomplete_icon="ui_game_symbol_x" complete_color="[smxhud_quest_complete_color]" incomplete_color="[smxhud_quest_incomplete_color]">
+				<grid name="objectiveList" depth="1" pos="-60,-50" rows="12" cols="1" cell_width="300" cell_height="26" repeat_content="true" arrangement="vertical" controller="QuestTrackerObjectiveList" complete_icon="ui_game_symbol_check" incomplete_icon="ui_game_symbol_x" complete_color="[green]" incomplete_color="[smxhud_quest_incomplete_color]">
 					<smxhud_quest_objective_tracker_entry />
+				</grid>
+
+				<rect pos="-160,{#trackerheight * -1 - 50}" width="400" height="86" visible="{questhintavailable}">
+					<label name="smx_questtracker_hints" depth="3" style="smx_label_outline" text="{questhint}" font_size="20" justify="right" parse_actions="true" actions_default_format="( [e61a16]###[-] )" spacing_y="5" />
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// SMX // Recipe Tracker -->
+
+		<remove xpath="/windows/window[@name='windowRecipeTracker']" />
+
+		<append xpath="/windows">
+			<window name="windowRecipeTracker" depth="-20" pos="-255,-90" width="400" height="400" controller="RecipeTrackerWindow" visible="{showrecipe}">
+				<sprite name="smx_recipetracker_background" depth="0" pos="-90,14" width="360" height="182" sprite="smxhud_questtracker_background" color="[smxhud_element_background]" globalopacitymod="1.5" tooltip_key="xuiRecipeTrackerHUD" />
+				<label name="smx_recipetracker_title" depth="1" pos="105,-15" width="280" height="28" style="smxcore_label_normal" text="{recipetitle}" font_size="26" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" color="[smxhud_element_labelcolor_1]" />
+				<sprite name="windowIcon" depth="1" pos="-75,1" style="icon32px" sprite="ui_game_symbol_hammer" justify="left" color="[smxhud_element_iconcolor_1]" />
+
+				<grid name="recipeList" depth="1" pos="-60,-50" rows="12" cols="1" cell_width="300" cell_height="26" repeat_content="true" arrangement="vertical" controller="RecipeTrackerIngredientsList" complete_icon="ui_game_symbol_check" incomplete_icon="ui_game_symbol_x" complete_color="[green]" incomplete_color="[smxhud_quest_incomplete_color]">
+					<smx_recipe_ingredient_tracker_entry />
 				</grid>
 			</window>
 		</append>
@@ -570,6 +658,9 @@
 				<label name="smxhud_twitch_title" depth="1" pos="155,-15" width="280" height="28" style="smxcore_label_normal" text="{status_title}" font_size="26" pivot="center" justify="center" upper_case="true" overflow="ShrinkContent" color="[smxhud_element_labelcolor_1]" />
 				<sprite name="smxhud_twitch_window_icon" depth="1" pos="-15,1" size="40,40" sprite="smxlib_ui_game_symbol_twitch_logo" color="[smxhud_element_iconcolor_1]" justify="left" globalopacitymod="1.8" />
 
+				<sprite name="smxhud_options_background" depth="1" pos="208,46" width="50" height="50" sprite="smxhud_icon_background" color="[smxhud_element_background]" globalopacitymod="1.8" />
+				<button name="historyButton" depth="2" pos="230,21" size="22,22" style="smxcore_icon_colors" sprite="ui_game_symbol_twitch_history" pivot="center" defaultcolor="[white]" collider_scale="1.5" tooltip_key="TwitchInfo_ActionHistory" sound="[paging_click]"/>
+
 				<sprite name="smxhud_pause_background" depth="1" pos="238,46" width="50" height="50" sprite="smxhud_icon_background" color="[smxhud_element_background]" globalopacitymod="1.8" />
 				<button name="pauseButton" depth="2" pos="260,21" size="22,22" style="smxcore_icon_colors" sprite="ui_game_symbol_twitch_pause" pivot="center" defaultcolor="[white]" collider_scale="1.5" tooltip_key="TwitchInfo_PauseButton" sound="[paging_click]"/>
 
@@ -630,6 +721,13 @@
 						<smxhud_twitch_vote_entry backgroundcolor="[darkestGrey]" altbackgroundcolor="[darkGrey]" index="4" />
 						<smxhud_twitch_vote_entry backgroundcolor="[darkGrey]" altbackgroundcolor="[darkestGrey]" index="5" />
 					</grid>
+
+<!-- NEW -->
+					<rect pos="0,{tip_offset}" visible="{show_vote_tip}" height="86">
+						<sprite depth="8" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+						<sprite depth="1" color="[darkGrey]" type="sliced" />
+						<label pos="150,-46" depth="2" text="{vote_tip}" justify="center" width="293" font_size="20" height="70" color="[selectedColor]" pivot="center" />
+					</rect>
 
 				</rect>
 			</window>

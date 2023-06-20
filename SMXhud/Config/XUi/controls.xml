@@ -131,13 +131,27 @@
 
 		<append xpath="/controls">
 			<smxhud_quest_objective_tracker_entry>
-				<rect name="smxhud_questtracker_entry" wisth="280" height="26" controller="QuestTrackerObjectiveEntry" visible="{hasobjective}">
+				<rect name="smxhud_questtracker_entry" width="280" height="26" controller="QuestTrackerObjectiveEntry" visible="{hasobjective}">
 					<sprite name="iconTrack" depth="2" pos="280,6" size="22,22" sprite="{objectivecompletesprite}" color="{objectivecompletecolor}" visible="{objectiveshowicon}" />
 					<sprite name="smxhud_questtracker_objective_background" depth="0" pos="-15,11" width="340" height="36" sprite="smxhud_objective_background" color="[smxhud_element_background]" globalopacitymod="1.4" />
 					<label name="smxhud_questtracker_objective" depth="1" pos="0,6" width="{objectivetextwidth}" style="smxcore_label_normal" text="{objectiveoptional}{objectivedescription} " font_size="20" justify="left" upper_case="true" color="[smxhud_element_labelcolor_1]" visible="{hasobjective}" />
 					<label name="smxhud_questtracker_state" depth="1" pos="0,6" width="{objectivetextwidth}" style="smxcore_label_normal" text=" [{objectivecompletehexcolor}]{objectivestate}[-]" font_size="20" justify="right" upper_case="true" color="[smxhud_element_labelcolor_1]" visible="{hasobjective}" />
 				</rect>
 			</smxhud_quest_objective_tracker_entry>
+		</append>
+
+
+<!--	// SMX // Recipe Tracker -->
+
+		<append xpath="/controls">
+			<smx_recipe_ingredient_tracker_entry>
+				<rect name="smx_recipetracker_entry" width="280" height="26" controller="RecipeTrackerIngredientEntry" visible="{hasingredient}">
+					<sprite name="smx_recipetracker_ingredient_background" depth="0" pos="-15,11" width="340" height="36" sprite="smxhud_objective_background" color="[smxhud_element_background]" globalopacitymod="1.4" visible="{hasingredient}" />
+					<sprite name="iconTrack" depth="2" pos="-5,6" size="22,22" atlas="ItemIconAtlas" sprite="{itemicon}" color="{objectivecompletecolor}" visible="{hasingredient}" />
+					<label name="smx_recipetracker_ingredient" depth="1" pos="25,6" width="275" style="smxcore_label_normal" text="{itemname}" font_size="20" justify="left" upper_case="true" color="[smxhud_element_labelcolor_1]" visible="{hasobjective}" />
+					<label name="smx_recipetracker_ingredient" depth="1" pos="25,6" width="275" style="smxcore_label_normal" text=" [{ingredientcompletehexcolor}]{itemcount}[-]" font_size="20" justify="right" upper_case="true" color="[smxhud_element_labelcolor_1]" visible="{hasingredient}" />
+				</rect>
+			</smx_recipe_ingredient_tracker_entry>
 		</append>
 
 

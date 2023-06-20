@@ -4,9 +4,9 @@
 
 		// EAC:				Non Friendly, SMX requires EAC to be DISABLED.
 
-		// VERSION:			r20.rc7
+		// VERSION:			21.0.317.0
 
-		// BUILD:			A20.6
+		// BUILD:			A21.0
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -63,6 +63,8 @@
 
 		<set xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
 			<window name="windowCompass" />
+			<window name="windowLocation" anchor="CenterTop" />
+			<window name="windowEntering" anchor="CenterTop" />
 			<window name="windowTargetBar" anchor="CenterTop" />
 			<window name="onScreenIcons" />
 			<window name="smxhudLevelXP" anchor="LeftTop" />
@@ -80,6 +82,7 @@
 			<!--window name="smxhudBuffFrame" anchor="CenterBottom" /-->
 			<window name="HUDRightStatBars" anchor="RightBottom" />
 			<window name="windowQuestTracker" anchor="RightTop" />
+			<window name="windowRecipeTracker" anchor="RightTop" />
 			<window name="windowGroupBars" anchor="LeftTop" />
 		</set>
 
