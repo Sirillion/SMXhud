@@ -2,7 +2,7 @@
 <news>
 
   <entry>
-    <date>2024-06-14 20:00:00</date>
+    <date>2024-06-14 20:00:00Z</date>
     <title>Test12</title>
     <text>Test12
 				</text>
@@ -10,7 +10,7 @@
   </entry>
 
   <entry>
-    <date>2023-06-14 20:01:00</date>
+    <date>2023-06-14 20:01:00Z</date>
     <title>Test2</title>
     <text>Test2
 		</text>
