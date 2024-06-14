@@ -4,7 +4,7 @@
   <entry>
     <date>2024-06-14 23:00:00Z</date>
     <title>Changelog</title>
-    <text>SMXhud Test 1
+    <text>SMXhud Changelog Test
 				</text>
     <link></link>
   </entry>
@@ -12,7 +12,15 @@
   <entry>
     <date>2024-06-14 23:00:00Z</date>
     <title>Changelog</title>
-    <text>SMXhud Test 2
+    <text>SMXui Changelog Test
+		</text>
+    <link></link>
+  </entry>
+
+  <entry>
+    <date>2024-06-14 23:00:00Z</date>
+    <title>Changelog</title>
+    <text>SMXmenu Changelog Test
 		</text>
     <link></link>
   </entry>
