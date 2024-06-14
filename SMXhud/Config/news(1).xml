@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<news>
+
+  <entry>
+    <date>2022-11-20 19:00:00Z</date>
+    <title>Boo3</title>
+    <text>Boo3
+				</text>
+    <link></link>
+  </entry>
+
+  <entry>
+    <date>2023-08-10 16:00:00Z</date>
+    <title>Boo4</title>
+    <text>Boo7
+		</text>
+    <link>https://store.steampowered.com/news/app/251570/view/7160213079727903916</link>
+  </entry>
+
+</news>
