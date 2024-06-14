@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<news>
+
+  <entry>
+    <date>2024-06-14 23:00:00Z</date>
+    <title>Changelog</title>
+    <text>SMXhud Test 1
+				</text>
+    <link></link>
+  </entry>
+
+  <entry>
+    <date>2024-06-14 23:00:00Z</date>
+    <title>Changelog</title>
+    <text>SMXhud Test 2
+		</text>
+    <link></link>
+  </entry>
+
+</news>
