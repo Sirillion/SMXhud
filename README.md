@@ -14,7 +14,7 @@ SMXhud changes the game HUD. Everything you see on the interface while running a
 
 
 <p align="center">
-  <img src="https://7dtd-community.s3.us-east-2.amazonaws.com/monthly_2022_01/A20.0_2022-01-17_17-29-52.jpg.c47b1410dce3d44709065c07d1b578a7.jpg" width="1080" title="SMXhud - A20">
+  <img src="https://imgur.com/VySVKkh.png" width="1080" title="SMXhud - 1.0">
 </p>
 
 
