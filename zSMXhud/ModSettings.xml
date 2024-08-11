@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModSettings>
+  <Global>
+    <Tab name="Optionals" displayKey="smxhudOptionalDownloads" tooltipKey="smxhudOptionalDownloadsTooltip">
+      <Category name="Optionals" displayKey="smxhudSettingOptionals" tooltipKey="smxhudSettingOptionalsTooltip">
+        <Switch name="TargetHealthBar" displayKey="smxhudSettingTargetHealthBar" tooltipKey="smxhudSettingTargetHealthBarTooltip" value="On" defaultValue="Off" leftValue="Off" rightValue="On" />
+      </Category>
+    </Tab>
+    <Tab name="UIElements" displayKey="smxhudUIElements" tooltipKey="smxhudUIElementsTooltip">
+      <Category name="NoElements" displayKey="smxhudSettingNoElements" tooltipKey="smxhudSettingNoElementsTooltip">
+        <Switch name="ScreenshotMode" displayKey="smxhudSettingScreenshotMode" tooltipKey="smxhudSettingScreenshotModeTooltip" value="Off" defaultValue="Off" leftValue="Off" rightValue="On" />
+      </Category>
+      <Category name="Elements" displayKey="smxhudSettingElements" tooltipKey="smxhudSettingElementsTooltip">
+        <Switch name="Compass" displayKey="smxhudSettingCompass" tooltipKey="smxhudSettingCompassTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+        <Switch name="OnScreenIcons" displayKey="smxhudSettingOnScreenIcons" tooltipKey="smxhudSettingOnScreenIconsTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+        <Switch name="EnteringPOIPopup" displayKey="smxhudSettingEnteringPOIPopup" tooltipKey="smxhudSettingEnteringPOIPopupTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+        <Switch name="LocationDifficulty" displayKey="smxhudSettingLocationDifficulty" tooltipKey="smxhudSettingLocationDifficultyTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+        <Switch name="CurrentTime" displayKey="smxhudSettingCurrentTime" tooltipKey="smxhudSettingCurrentTimeTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+        <Switch name="TipPopup" displayKey="smxhudSettingTipPopup" tooltipKey="smxhudSettingTipPopupTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+        <Switch name="ThrowDrawBar" displayKey="smxhudSettingThrowDrawBar" tooltipKey="smxhudSettingThrowDrawBarTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+      </Category>
+    </Tab>
+    <Tab name="SMXFeature" displayKey="smxhudSMXFeature" tooltipKey="smxhudSMXFeatureTooltip">
+      <Category name="Temperatures" displayKey="smxhudSettingTemps" tooltipKey="smxhudSettingTempsTooltip">
+        <Switch name="AmbientTemp" displayKey="smxhudSettingAmbientTemp" tooltipKey="smxhudSettingAmbientTempTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+        <Switch name="PlayerTemp" displayKey="smxhudSettingPlayerTemp" tooltipKey="smxhudSettingPlayerTempTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+      </Category>
+      <Category name="Indicators" displayKey="smxhudSettingIndicators" tooltipKey="smxhudSettingIndicatorsTooltip">
+        <Switch name="BloodMoon" displayKey="smxhudSettingBloodMoon" tooltipKey="smxhudSettingBloodMoonTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+        <Switch name="SkillPoints" displayKey="smxhudSettingSkillPoints" tooltipKey="smxhudSettingSkillPointsTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+        <Switch name="LootStage" displayKey="smxhudSettingLootStage" tooltipKey="smxhudSettingLootStageTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+        <Switch name="LockedSlots" displayKey="smxhudSettingLockedSlots" tooltipKey="smxhudSettingLockedSlotsTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+      </Category>
+    </Tab>
+  </Global>
+  <World />
+</ModSettings>

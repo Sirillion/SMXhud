@@ -1,0 +1,103 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
+
+smxhudOptionalDownloads,UI,Menu,x,,Optionals,,,,,
+smxhudOptionalDownloadsTooltip,UI,Menu,x,,Contains optional UI elements for SMXhud.,,,,,
+smxhudSettingOptionals,UI,Menu,x,,SMXhud Optionals,,,,,
+smxhudSettingOptionalsTooltip,UI,Menu,x,,Turns optional UI elements on/off for SMXhud.,,,,,
+smxhudSettingTargetHealthBar,UI,Menu,x,,Target Health Bar,,,,,
+smxhudSettingTargetHealthBarTooltip,UI,Menu,x,,Turns the Target Health Bar on/off for SMXhud.,,,,,
+
+smxhudSettingNoElements,UI,Menu,x,,Clean HUD,,,,,
+smxhudSettingNoElementsTooltip,UI,Menu,x,,Turns off ALL HUD elements.,,,,,
+smxhudSettingScreenshotMode,UI,Menu,x,,Screenshot Mode,,,,,
+smxhudSettingScreenshotModeTooltip,UI,Menu,x,,No HUD 4 j00!! Turns the entire HUD off!,,,,,
+
+smxhudUIElements,UI,Menu,x,,UI Elements,,,,,
+smxhudUIElementsTooltip,UI,Menu,x,,Contains UI elements.,,,,,
+smxhudSettingElements,UI,Menu,x,,UI Elements,,,,,
+smxhudSettingElementsTooltip,UI,Menu,x,,Turns HUD UI elements on/off.,,,,,
+smxhudSettingCompass,UI,Menu,x,,Compass,,,,,
+smxhudSettingCompassTooltip,UI,Menu,x,,Turns the Compass on/off.,,,,,
+smxhudSettingOnScreenIcons,UI,Menu,x,,OnScreen Icons,,,,,
+smxhudSettingOnScreenIconsTooltip,UI,Menu,x,,Turns the OnScreen Icons System on/off.,,,,,
+smxhudSettingEnteringPOIPopup,UI,Menu,x,,Entering POI Popup,,,,,
+smxhudSettingEnteringPOIPopupTooltip,UI,Menu,x,,Turns the Entering POI Difficulty Popup on/off.,,,,,
+smxhudSettingLocationDifficulty,UI,Menu,x,,Location Difficulty,,,,,
+smxhudSettingLocationDifficultyTooltip,UI,Menu,x,,Turns the Location Difficulty indicator on/off.,,,,,
+smxhudSettingCurrentTime,UI,Menu,x,,Current Time,,,,,
+smxhudSettingCurrentTimeTooltip,UI,Menu,x,,Turns the clock on/off.,,,,,
+smxhudSettingTipPopup,UI,Menu,x,,Tip Popup,,,,,
+smxhudSettingTipPopupTooltip,UI,Menu,x,,Turns the Tip Popup on/off.,,,,,
+smxhudSettingThrowDrawBar,UI,Menu,x,,Draw Bar,,,,,
+smxhudSettingThrowDrawBarTooltip,UI,Menu,x,,Turns the bar when drawing the bow or throwing something on/off.,,,,,
+
+smxhudSMXFeature,UI,Menu,x,,SMX Features,,,,,
+smxhudSMXFeatureTooltip,UI,Menu,x,,Contains SMX Features for SMXhud.,,,,,
+smxhudSettingTemps,UI,Menu,x,,Temperatures,,,,,
+smxhudSettingTempsTooltip,UI,Menu,x,,Turns Temperature Indicators on/off.,,,,,
+smxhudSettingAmbientTemp,UI,Menu,x,,Ambient Temperature,,,,,
+smxhudSettingAmbientTempTooltip,UI,Menu,x,,Turns the Ambient Temperature Indicator on/off.,,,,,
+smxhudSettingPlayerTemp,UI,Menu,x,,Player Temperature,,,,,
+smxhudSettingPlayerTempTooltip,UI,Menu,x,,Turns the Player Temperature Indicator on/off.,,,,,
+
+smxhudSettingIndicators,UI,Menu,x,,Indicators,,,,,
+smxhudSettingIndicatorsTooltip,UI,Menu,x,,Turns SMX Indicators on/off.,,,,,
+smxhudSettingBloodMoon,UI,Menu,x,,Bloodmoon,,,,,
+smxhudSettingBloodMoonTooltip,UI,Menu,x,,Turns the Bloodmoon Indicator on/off.,,,,,
+smxhudSettingSkillPoints,UI,Menu,x,,Unused Skill Points,,,,,
+smxhudSettingSkillPointsTooltip,UI,Menu,x,,Turns the Unused Skill Points Indicator on/off.,,,,,
+smxhudSettingLootStage,UI,Menu,x,,Lootstage,,,,,
+smxhudSettingLootStageTooltip,UI,Menu,x,,Turns the Current Lootstage Indicator on/off.,,,,,
+smxhudSettingLockedSlots,UI,Menu,x,,Locked Slots,,,,,
+smxhudSettingLockedSlotsTooltip,UI,Menu,x,,Turns the Current Locked Slots Indicator on/off.,,,,,
+
+itemTooltipFocusedOne,UI,Use Prompt,,,{0} Collect: {1},,{0} Sammle: {1},{0} Recoger: {1},{0} pour récupérer : {1},{0} Ottieni: {1},{0} 回収： {1},{0} 수집: {1},{0} Zdobądź: {1},{0} coletar: {1},{0} Собрать: {1},{0} Topla: {1},{0} 收集：{1},{0} 收集：{1},{0} Recoger: {1}
+itemTooltipFocusedSeveral,UI,Use Prompt,,,{0} Collect: {2} of {1},,{0} Sammle: {2} von {1},{0} Recogido: {2} de {1},{0} pour récupérer : {2} sur {1},{0} Ottieni: {2} di {1},{0} 回収： {2} / {1},{0} 수집: {1}의 {2},{0} Zdobądź: {2} z {1},{0} coletar: {2} de {1},{0} Собрать: {2} из {1},{0} Topla: {2}/{1},{0} 收集：{2} /{1},{0} 收集：{2}的{1},{0} Recogido: {2} de {1}
+lootEntity,UI,Use Prompt,,,{0} Search {1} ([3F8117]Untouched[-]),,{0} {1} durchsuchen ([3F8117]Unberührt[-]),{0} Registrar {1} ([3F8117]Intacto[-]),{0} Fouiller {1} ([3F8117]intact[-]),{0} Esamina {1} ([3F8117]Nuovo[-]),{0} {1}を調べる （[3F8117]未使用[-]）,{0} {1}([3F8117]손대지 않은[-]) 검색,{0} Przeszukaj: {1} ([3F8117]nienaruszone[-]),{0} Buscar {1} ([3F8117]intocado[-]),{0}: обыскать тело ({1}) ([3F8117]нетронуто[-]),{0} Ara: {1} ([3F8117]Dokunulmamış[-]),{0} 搜索 {1}（[3F8117]未触碰过[-]）,{0} 搜索{1}（[3F8117]未觸及[-]）,{0} Registrar {1} ([3F8117]Intacto[-])
+lootTooltipEmpty,UI,Use Prompt,,,[AF1E19]Empty[-] {1},,[AF1E19]Leere[-] {1},[AF1E19]Vacío[-] {1},[AF1E19]Vider[-] {1},{1} [AF1E19]Vuoto[-],{1}[AF1E19]を空にする[-],[AF1E19]빈[-] {1},[AF1E19]Puste[-] {1},[AF1E19]Esvaziar[-] {1},{1}: [AF1E19]пусто[-],[AF1E19]Boş[-] {1},{1} - [AF1E19]空,空的[-] {1},[AF1E19]Vacío[-] {1}
+lootTooltipNew,UI,Use Prompt,,,{0} Search {1} ([3F8117]Untouched[-]) ,,{0} Durchsuche {1} ([3F8117]Unberührt[-]),{0} Buscar {1} ([3F8117]intacto[-]),{0} Fouiller {1} ([3F8117]intact[-]),{0} esamina {1} ([3F8117]intatto[-]),{0}が{1}を調べる （[3F8117]未使用[-]）,{0} {1} 수색([3F8117]손대지 않음[-]),{0} Przeszukaj: {1} ([3F8117]nienaruszone[-]),{0} Buscar {1} ([3F8117]intocado[-]),{0}: обыскать ({1}) ([3F8117]нетронуто[-]),{0} Ara: {1} ([3F8117]Dokunulmamış[-]),{0}搜索{1}（[3F8117]未触碰过[-]）,{0}搜索{1}（[3F8117]未觸碰[-]）,{0} Buscar {1} ([3F8117]intacto[-])
+lootTooltipTouched,UI,Use Prompt,,,{0} Search {1} ,,{0} Durchsuche {1},{0} Buscar {1},{0} Fouiller {1},{0} esamina {1},{0}が{1}を調べる,{0} {1} 수색,{0} Przeszukaj: {1},{0} Buscar {1},{0}: обыскать ({1}),{0} Ara: {1},{0}搜索{1},{0}搜索{1},{0} Buscar {1}
+questBlockActivate,UI,Use Prompt,,,Press {{0}} to Activate: {1},,Drücke {{0}} zum Aktivieren von: {1},Pulsa {{0}} para Activar: {1},Appuyer sur {{0}} pour activer : {1},Premi {{0}} per attivare: {1},{{0}} を押して作動させる： {1},{{0}}을(를) 눌러 활성화: {1},"Przyciśnij {{0}}, aby aktywować: {1}",Aperte {{0}} para ativar: {1},"Нажмите {{0}}, чтобы задействовать: {1}",{{0}} tuşuna basarak Etkinleştir: {1},按 {{0}} 激活： {1},按 {{0}} 激活{1},Pulsa {{0}} para Activar: {1}
+questRallyActivate,UI,Use Prompt,,,Press {{0}} to Start Quest: [FF9018]{1}[-],,Drücke {{0}} zum Starten der Quest: [FF9018]{1}[-],Pulsar {{0}} para Iniciar misión: [FF9018]{1}[-],Appuyer sur {{0}} pour lancer la quête : [FF9018]{1}[-],Premi {{0}} per iniziare missione: [FF9018]{1}[-],{{0}} を押してクエストを開始： [FF9018]{1}[-],{{0}}을(를) 눌러 퀘스트 시작: [FF9018]{1}[-],"Przyciśnij {{0}}, aby rozpocząć zadanie: [FF9018]{1}[-]",Aperte {{0}} para iniciar a missão: [FF9018]{1}[-],"Нажмите {{0}}, чтобы начать задание: [FF9018]{1}[-]",{{0}} tuşuna basarak Görevi Başlat: [FF9018]{1}[-],按 {{0}} 开始任务： [FF9018]{1}[-],按 {{0}} 激活任務：[FF9018]{1}[-],Pulsar {{0}} para Iniciar misión: [FF9018]{1}[-]
+tooltipInteract,UI,Use Prompt,,,Hold {0} to interact with {1},,"Halte {0} gedrückt, um mit {1} zu interagieren",Mantén presionado {0} para interactuar con {1},Maintenir {0} pour interagir avec {1},Tieni premuto {0} per interagire con {1},{0}を長押しして、{1}を操作する,{0}을(를) 꾹 눌러 {1}과(와) 상호작용,"Przytrzymaj {0}, aby wejść w interakcję z: {1}",Segure {0} para interagir com {1},{1}: Для взаимодействия удерживайте {0},{1} ile etkileşim kurmak için {0} tuşunu basılı tut,按住{0}与{1}互动,長按 {0} 與{1}互動,Mantén presionado {0} para interactuar con {1}
+vendingMachineActivate,UI,Use Prompt,,,{0} to interact with {1},,"Drücke {0}, um mit {1} zu interagieren",{0} para interactuar con {1},{0} pour interagir avec {1},{0} per interagire con {1},{0}で{1}を操作する,{0}(으)로 {1}과(와) 상호작용,"{0}, aby wejść w interakcję z: {1}",Aperte {0} para interagir com {1},{1}: {0} для взаимодействия,{1} ile etkileşim kurmak için {0},{0}与{1}互动,{0} 與{1}互動,{0} para interactuar con {1}
+tooltipJammed,UI,Menu,,,{0} Use {1} ([AF1E19]Jammed[-]),,{0} Verwende {1} ([AF1E19]Blockiert[-]),{0} Usa {1} ([AF1E19]Atascado[-]),{0} pour utiliser {1} ([AF1E19]coincé(e)[-]),{0} Usa {1} ([AF1E19]Inceppato[-]),{0} {1} を使用 ([AF1E19]固定[-]),{0} {1} 사용 ([AF1E19]혼잡[-]),{0} Użyj {1} ([AF1E19]zacięte[-]),{0} Usa {1} ([AF1E19]Emperrado[-]),{0} Использовать {1} ([AF1E19]заклинило[-]),{0} {1} Kullan ([AF1E19]Sıkışmış[-]),{0}使用{1} （[AF1E19]挤满[-]）,{0}用法{1}（[AF1E19]已堵塞[-]),{0} Usa {1} ([AF1E19]Atascado[-])
+tooltipLocked,UI,Menu,,,{0} Use {1} ([AF1E19]Locked[-]),,{0} Verwende {1} ([AF1E19]Verschlossen[-]),{0} Usa {1} ([AF1E19]Bloqueado[-]),{0} pour utiliser {1} ([AF1E19]verrouillé(e)[-]),{0} Usa {1} ([AF1E19]Bloccato[-]),{0} {1} を使用 ([AF1E19]施錠済み[-]),{0} {1} 사용 ([AF1E19]잠김[-]),{0} Użyj {1} ([AF1E19]zablokowane[-]),{0} Usa {1} ([AF1E19]Trancado[-]),{0} Использовать {1} ([AF1E19]заперто[-]),{0} {1} Kullan ([AF1E19]Kilitli[-]),{0} 使用{1}（[AF1E19]锁定[-]）,{0}用法{1}（[AF1E19]已鎖定[-]),{0} Usa {1} ([AF1E19]Bloqueado[-])
+tooltipUnlocked,UI,Menu,,,{0} Use {1} ([3F8117]Unlocked[-]),,{0} Verwende {1} ([3F8117]Entriegelt[-]),{0} Usa {1} ([3F8117]Desbloqueado[-]),{0} pour utiliser {1} ([3F8117]déverrouillé(e)[-]),{0} Usa {1} ([3F8117]Sbloccato[-]),{0} {1} を使用 ([3F8117]解錠済み[-]),{0} {1} 사용 ([3F8117]열림[-]),{0} Użyj {1} ([3F8117]odblokowane[-]),{0} Usa {1} ([3F8117]Destrancado[-]),{0} Использовать {1} ([3F8117]открыто[-]),{0} {1} Kullan ([3F8117]Kilidi Açık[-]),{0}使用{1} （[3F8117]已解锁[-]）,{0}用法{1}（[3F8117]已解鎖[-]),{0} Usa {1} ([3F8117]Desbloqueado[-])
+
+xuiOpeningLoot,UI,Use Prompt,,,Searching...,,Suchen...,Procurando...,Recherche...,Ricerca...,探す...,수색...,Badawczy...,Procurando...,Поиск...,Aranıyor...,正在搜寻...,正在搜尋...,buscando...
+
+
+xuiCompassWindowHUD,UI,,,,Compass Window.,,,,,
+
+xuiUnspentSkillpointsHUD,UI,,,,You have unspent skillpoints!,,,,,
+
+xuiCurrentDayHUD,UI,,,,Have a nice day!,,,,,
+xuiCurrentTimeHUD,UI,,,,We hope you are having the time of your life!,,,,,
+
+xuiMapElevationHUD,UI,,,,Elevation.,,,,,
+xuiMapTempHUD,UI,,,,Ambient Temperature.,,,,,
+xuiCoreTempHUD,UI,,,,Player Temperature.,,,,,
+
+xuiCurrentAmmoCountHUD,UI,,,,Current Magazine Size.,,,,,
+xuiTotalAmmoCountHUD,UI,,,,Total Ammunition Stock.,,,,,
+
+xuiElevationHUD,UI,,,,Elevation.,,,,,
+
+xuiToolBlockDamageHUD,UI,,,,Tool Block Damage.,,,,,
+xuiMeleeEntityDamageHUD,UI,,,,Melee Entity Damage.,,,,,
+
+xuiCarryCapacityHUD,UI,,,,Encumbrance: Current unlocked backpack slots.,,,,,
+xuiLootStageHUD,UI,,,,Lootstage: The higher the stage the better the loot.,,,,,
+
+xuiStealthBarHUD,UI,,,,Stealth.,,,,,
+xuiHealthBarHUD,UI,,,,Health.,,,,,
+xuiStaminaBarHUD,UI,,,,Stamina.,,,,,
+xuiHungerBarHUD,UI,,,,Hunger.,,,,,
+xuiThirstBarHUD,UI,,,,Thirst.,,,,,
+
+xuiVehicleHealthBarHUD,UI,,,,Mechanical State.,,,,,
+xuiVehicleFuelHUD,UI,,,,Fuel Level.,,,,,
+
+xuiTwitchIntegrationHUD,UI,,,,Twitch Integration.,,,,,
+xuiQuestTrackerHUD,UI,,,,Quest Tracker.,,,,,
