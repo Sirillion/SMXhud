@@ -5,6 +5,8 @@
 
 > Compatibility: Will probably work with most mods that doesn't modify the same windows in the XUI files.
 
+> Changelog: https://sirillion.github.io/smxhudchangelog/
+
 
 ## **DESCRIPTION:**
 
