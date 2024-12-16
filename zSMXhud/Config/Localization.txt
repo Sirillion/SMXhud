@@ -1,56 +1,5 @@
 Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
 
-smxhudOptionalDownloads,UI,Menu,x,,Optionals,,,,,
-smxhudOptionalDownloadsTooltip,UI,Menu,x,,Contains optional UI elements for SMXhud.,,,,,
-smxhudSettingOptionals,UI,Menu,x,,SMXhud Optionals,,,,,
-smxhudSettingOptionalsTooltip,UI,Menu,x,,Turns optional UI elements on/off for SMXhud.,,,,,
-smxhudSettingTargetHealthBar,UI,Menu,x,,Target Health Bar,,,,,
-smxhudSettingTargetHealthBarTooltip,UI,Menu,x,,Turns the Target Health Bar on/off for SMXhud.\n\nPress F1 for console and run xui reload to activate.,,,,,
-
-smxhudSettingNoElements,UI,Menu,x,,Clean HUD,,,,,
-smxhudSettingNoElementsTooltip,UI,Menu,x,,Turns off ALL HUD elements.,,,,,
-smxhudSettingScreenshotMode,UI,Menu,x,,Screenshot Mode,,,,,
-smxhudSettingScreenshotModeTooltip,UI,Menu,x,,No HUD 4 j00!! Turns the entire HUD off!\n\nPress F1 for console and run xui reload to activate.,,,,,
-
-smxhudUIElements,UI,Menu,x,,UI Elements,,,,,
-smxhudUIElementsTooltip,UI,Menu,x,,Contains UI elements.,,,,,
-smxhudSettingElements,UI,Menu,x,,UI Elements,,,,,
-smxhudSettingElementsTooltip,UI,Menu,x,,Turns HUD UI elements on/off.,,,,,
-smxhudSettingCompass,UI,Menu,x,,Compass,,,,,
-smxhudSettingCompassTooltip,UI,Menu,x,,Turns the Compass on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxhudSettingOnScreenIcons,UI,Menu,x,,OnScreen Icons,,,,,
-smxhudSettingOnScreenIconsTooltip,UI,Menu,x,,Turns the OnScreen Icons System on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxhudSettingEnteringPOIPopup,UI,Menu,x,,Entering POI Popup,,,,,
-smxhudSettingEnteringPOIPopupTooltip,UI,Menu,x,,Turns the Entering POI Difficulty Popup on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxhudSettingLocationDifficulty,UI,Menu,x,,Location Difficulty,,,,,
-smxhudSettingLocationDifficultyTooltip,UI,Menu,x,,Turns the Location Difficulty indicator on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxhudSettingCurrentTime,UI,Menu,x,,Current Time,,,,,
-smxhudSettingCurrentTimeTooltip,UI,Menu,x,,Turns the clock on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxhudSettingTipPopup,UI,Menu,x,,Tip Popup,,,,,
-smxhudSettingTipPopupTooltip,UI,Menu,x,,Turns the Tip Popup on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxhudSettingThrowDrawBar,UI,Menu,x,,Draw Bar,,,,,
-smxhudSettingThrowDrawBarTooltip,UI,Menu,x,,Turns the bar when drawing the bow or throwing something on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-
-smxhudSMXFeature,UI,Menu,x,,SMX Features,,,,,
-smxhudSMXFeatureTooltip,UI,Menu,x,,Contains SMX Features for SMXhud.,,,,,
-smxhudSettingTemps,UI,Menu,x,,Temperatures,,,,,
-smxhudSettingTempsTooltip,UI,Menu,x,,Turns Temperature Indicators on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxhudSettingAmbientTemp,UI,Menu,x,,Ambient Temperature,,,,,
-smxhudSettingAmbientTempTooltip,UI,Menu,x,,Turns the Ambient Temperature Indicator on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxhudSettingPlayerTemp,UI,Menu,x,,Player Temperature,,,,,
-smxhudSettingPlayerTempTooltip,UI,Menu,x,,Turns the Player Temperature Indicator on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-
-smxhudSettingIndicators,UI,Menu,x,,Indicators,,,,,
-smxhudSettingIndicatorsTooltip,UI,Menu,x,,Turns SMX Indicators on/off.,,,,,
-smxhudSettingBloodMoon,UI,Menu,x,,Bloodmoon,,,,,
-smxhudSettingBloodMoonTooltip,UI,Menu,x,,Turns the Bloodmoon Indicator on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxhudSettingSkillPoints,UI,Menu,x,,Unused Skill Points,,,,,
-smxhudSettingSkillPointsTooltip,UI,Menu,x,,Turns the Unused Skill Points Indicator on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxhudSettingLootStage,UI,Menu,x,,Lootstage,,,,,
-smxhudSettingLootStageTooltip,UI,Menu,x,,Turns the Current Lootstage Indicator on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-smxhudSettingLockedSlots,UI,Menu,x,,Locked Slots,,,,,
-smxhudSettingLockedSlotsTooltip,UI,Menu,x,,Turns the Current Locked Slots Indicator on/off.\n\nPress F1 for console and run xui reload to activate.,,,,,
-
 itemTooltipFocusedOne,UI,Use Prompt,,,{0} Collect: {1},,{0} Sammle: {1},{0} Recoger: {1},{0} pour récupérer : {1},{0} Ottieni: {1},{0} 回収： {1},{0} 수집: {1},{0} Zdobądź: {1},{0} coletar: {1},{0} Собрать: {1},{0} Topla: {1},{0} 收集：{1},{0} 收集：{1},{0} Recoger: {1}
 itemTooltipFocusedSeveral,UI,Use Prompt,,,{0} Collect: {2} of {1},,{0} Sammle: {2} von {1},{0} Recogido: {2} de {1},{0} pour récupérer : {2} sur {1},{0} Ottieni: {2} di {1},{0} 回収： {2} / {1},{0} 수집: {1}의 {2},{0} Zdobądź: {2} z {1},{0} coletar: {2} de {1},{0} Собрать: {2} из {1},{0} Topla: {2}/{1},{0} 收集：{2} /{1},{0} 收集：{2}的{1},{0} Recogido: {2} de {1}
 lootEntity,UI,Use Prompt,,,{0} Search {1} ([3F8117]Untouched[-]),,{0} {1} durchsuchen ([3F8117]Unberührt[-]),{0} Registrar {1} ([3F8117]Intacto[-]),{0} Fouiller {1} ([3F8117]intact[-]),{0} Esamina {1} ([3F8117]Nuovo[-]),{0} {1}を調べる （[3F8117]未使用[-]）,{0} {1}([3F8117]손대지 않은[-]) 검색,{0} Przeszukaj: {1} ([3F8117]nienaruszone[-]),{0} Buscar {1} ([3F8117]intocado[-]),{0}: обыскать тело ({1}) ([3F8117]нетронуто[-]),{0} Ara: {1} ([3F8117]Dokunulmamış[-]),{0} 搜索 {1}（[3F8117]未触碰过[-]）,{0} 搜索{1}（[3F8117]未觸及[-]）,{0} Registrar {1} ([3F8117]Intacto[-])
