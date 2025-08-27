@@ -4,6 +4,8 @@
     <Tab name="Optionals" displayKey="smxhudOptionalDownloads" tooltipKey="smxhudOptionalDownloadsTooltip">
       <Category name="Optionals" displayKey="smxhudSettingOptionals" tooltipKey="smxhudSettingOptionalsTooltip">
         <Switch name="TargetHealthBar" displayKey="smxhudSettingTargetHealthBar" tooltipKey="smxhudSettingTargetHealthBarTooltip" value="On" defaultValue="Off" leftValue="Off" rightValue="On" />
+        <Switch name="CleanCompass" displayKey="smxhudSettingCleanCompass" tooltipKey="smxhudSettingCleanCompassTooltip" value="Off" defaultValue="Off" leftValue="Off" rightValue="On" />
+        <Switch name="ToolbeltNumbers" displayKey="smxhudSettingToolbeltNumbers" tooltipKey="smxhudSettingToolbeltNumbersTooltip" value="Off" defaultValue="Off" leftValue="Off" rightValue="On" />
       </Category>
     </Tab>
     <Tab name="UIElements" displayKey="smxhudUIElements" tooltipKey="smxhudUIElementsTooltip">
@@ -33,5 +35,9 @@
       </Category>
     </Tab>
   </Global>
-  <World />
+  <World>
+      <Category name="Minimap" displayKey="smxhudSettingMinimap" tooltipKey="smxhudSettingMinimapTooltip">
+        <Switch name="MinimapZombies" displayKey="smxhudSettingMinimapZombies" tooltipKey="smxhudSettingMinimapZombiesTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
+      </Category>
+  </World> 
 </ModSettings>
