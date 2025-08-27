@@ -1,5 +1,5 @@
 # SMXhud - THE HUD REPLACEMENT MODLET
-> Verified to work with: 1.2b27
+> Verified to work with: 2.2b3
 
 > Dependencies: [SMXcore](https://github.com/Sirillion/SMXcore).
 
