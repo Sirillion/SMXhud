@@ -19,6 +19,8 @@ xuiOpeningLoot,UI,Use Prompt,,,Searching...,,Suchen...,Procurando...,Recherche..
 
 xuiCompassWindowHUD,UI,,,,Compass Window.,,,,,
 
+xuiLocationWindowHUD,UI,,,,The name of the location you're in.,,,,,
+
 xuiUnspentSkillpointsHUD,UI,,,,You have unspent skillpoints!,,,,,
 
 xuiCurrentDayHUD,UI,,,,Have a nice day!,,,,,
