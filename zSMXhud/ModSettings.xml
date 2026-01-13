@@ -23,10 +23,10 @@
       </Category>
     </Tab>
     <Tab name="SMXFeature" displayKey="smxhudSMXFeature" tooltipKey="smxhudSMXFeatureTooltip">
-      <Category name="Temperatures" displayKey="smxhudSettingTemps" tooltipKey="smxhudSettingTempsTooltip">
+      <!--Category name="Temperatures" displayKey="smxhudSettingTemps" tooltipKey="smxhudSettingTempsTooltip">
         <Switch name="AmbientTemp" displayKey="smxhudSettingAmbientTemp" tooltipKey="smxhudSettingAmbientTempTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
         <Switch name="PlayerTemp" displayKey="smxhudSettingPlayerTemp" tooltipKey="smxhudSettingPlayerTempTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
-      </Category>
+      </Category-->
       <Category name="Indicators" displayKey="smxhudSettingIndicators" tooltipKey="smxhudSettingIndicatorsTooltip">
         <Switch name="BloodMoon" displayKey="smxhudSettingBloodMoon" tooltipKey="smxhudSettingBloodMoonTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />
         <Switch name="SkillPoints" displayKey="smxhudSettingSkillPoints" tooltipKey="smxhudSettingSkillPointsTooltip" value="On" defaultValue="On" leftValue="Off" rightValue="On" />

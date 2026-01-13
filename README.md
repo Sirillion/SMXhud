@@ -1,5 +1,5 @@
 # SMXhud - THE HUD REPLACEMENT MODLET
-> Verified to work with: 2.3b9
+> Verified to work with: 2.5b23
 
 > Dependencies: [SMXcore](https://github.com/Sirillion/SMXcore).
 
@@ -16,13 +16,13 @@ SMXhud changes the game HUD. Everything you see on the interface while running a
 
 
 <p align="center">
-  <img src="https://imgur.com/VySVKkh.png" width="1080" title="SMXhud - 1.0">
+  <img src="https://imgur.com/BrrBf0n.jpg" width="1080" title="SMXhud - 2.5">
 </p>
 
 
 ## **WELCOME**
 
-Welcome to the new and improved SMX series for 7 Days to Die - v2.3.
+Welcome to the new and improved SMX series for 7 Days to Die - v2.5.
 
 The goal with this mod is to give the entire 7 Days to Die user interface an extreme makeover an refashion it into how I believe the user interface for the game should be experienced. SMX consist of several modlets which can be broken down into three separate mods: SMXhud, SMXmenu and SMXui. These are all stand alone and can be used separately or, as is the intention, together with the other two and all three mods combined is what makes the SMX experience complete!
 
